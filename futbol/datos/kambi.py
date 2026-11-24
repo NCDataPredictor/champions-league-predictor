@@ -47,18 +47,24 @@ def _get(url):
 
 
 def _ruta_champions():
-    """Busca en el árbol de grupos de Kambi la ruta de la Champions (por si cambia el nombre)."""
+    """Busca en el árbol de grupos de Kambi la ruta de la Champions de la UEFA (por si cambia el nombre).
+    Hay otras "Champions League" (Golfo, AFC, CONCACAF, femenina, juvenil): se toma la de nombre exacto o con UEFA."""
     g = _get(f"{BASE}/group.json?{Q}")
     pila = [(g.get("group") or g, [])]
+    cands = []
     while pila:
         n, ruta = pila.pop()
         r = ruta + ([n["termKey"]] if n.get("termKey") else [])
-        nom = (n.get("englishName") or n.get("name") or "").lower()
-        if "champions league" in nom and r and r[0] == "football" and len(r) >= 2:
-            return "/".join(r)
+        nom = (n.get("englishName") or n.get("name") or "").lower().strip()
+        if r and r[0] == "football" and "champions league" in nom:
+            otra = any(x in nom for x in ("gulf", "afc", "asian", "concacaf", "caf", "women", "youth", "u19", "arab", "ofc"))
+            if not otra:
+                cands.append((0 if nom in ("champions league", "uefa champions league") else 1, len(r), "/".join(r), nom))
         for h in n.get("groups") or []:
             pila.append((h, r))
-    return None
+    cands.sort()
+    print("Candidatas Kambi:", cands[:5])
+    return cands[0][2] if cands else None
 
 
 def eventos(liga="champions"):
