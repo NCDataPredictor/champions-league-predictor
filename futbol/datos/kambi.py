@@ -26,6 +26,11 @@ from futbol.datos.betano import NOMBRES  # noqa: E402
 
 BASE = "https://eu-offering-api.kambicdn.com/offering/v2018/ub"
 Q = "lang=en_GB&market=ES"
+# Rushbet y BetPlay (Colombia) usan Kambi: si el catálogo de Unibet no trae la Champions, se prueban estos.
+OFERTAS = [("https://eu-offering-api.kambicdn.com/offering/v2018/ub", "lang=en_GB&market=ES", "Kambi (Unibet)"),
+           ("https://eu-offering-api.kambicdn.com/offering/v2018/rsico", "lang=en_GB&market=CO", "Kambi (Rushbet)"),
+           ("https://eu-offering-api.kambicdn.com/offering/v2018/betplay", "lang=en_GB&market=CO", "Kambi (BetPlay)"),
+           ("https://us1-offering-api.kambicdn.com/offering/v2018/rsico", "lang=en_GB&market=CO", "Kambi (Rushbet)")]
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0 Safari/537.36"
 LIGAS = {"champions": "football/champions_league"}
 CASA = "Kambi (Unibet)"
@@ -68,14 +73,26 @@ def _ruta_champions():
 
 
 def eventos(liga="champions"):
-    try:
-        d = _get(f"{BASE}/listView/{LIGAS[liga]}/all/matches.json?{Q}&useCombined=true")
-    except Exception as e:  # noqa: BLE001
-        ruta = _ruta_champions()
-        print(f"Ruta {LIGAS[liga]} falló ({e}); ruta encontrada en group.json: {ruta}")
-        if not ruta:
-            raise
-        d = _get(f"{BASE}/listView/{ruta}/all/matches.json?{Q}&useCombined=true")
+    """Partidos de la liga en el primer catálogo de Kambi que responda (Unibet, Rushbet, BetPlay)."""
+    global BASE, Q, CASA
+    d, err = None, None
+    for base, q, casa in OFERTAS:
+        BASE, Q, CASA = base, q, casa
+        try:
+            d = _get(f"{BASE}/listView/{LIGAS[liga]}/all/matches.json?{Q}&useCombined=true")
+        except Exception as e:  # noqa: BLE001
+            err = e
+            try:
+                ruta = _ruta_champions()
+                d = _get(f"{BASE}/listView/{ruta}/all/matches.json?{Q}&useCombined=true") if ruta else None
+            except Exception as e2:  # noqa: BLE001
+                err, d = e2, None
+        n = len((d or {}).get("events", []))
+        print(f"{casa} ({base.split('/')[2]}, {q}): {n} partidos" + ("" if d else f" · {err}"))
+        if n:
+            break
+    if not d:
+        raise RuntimeError(f"Ningún catálogo de Kambi respondió: {err}")
     out = []
     for e in d.get("events", []):
         ev = e["event"]
@@ -88,7 +105,7 @@ def eventos(liga="champions"):
 def extracto(ev):
     """Extracto en el formato de betano.py a partir de las ofertas del evento."""
     d = _get(f"{BASE}/betoffer/event/{ev['id']}.json?{Q}&includeParticipants=true")
-    mk = {}
+    mk, props = {}, {}
     for b in d.get("betOffers", []):
         crit = (b.get("criterion") or {}).get("englishLabel", "")
         tipo = (b.get("betOfferType") or {}).get("englishName", "")
@@ -110,6 +127,21 @@ def extracto(ev):
                 mk["Ambos equipos anotan"] = [s["OT_YES"], s["OT_NO"]]
             continue
         if tipo != "Over/Under":
+            continue
+        # props de jugador: la línea viene con el nombre del jugador (participant)
+        if any(o.get("participant") for o in oc):
+            cl = crit.lower()
+            stat = ("remates_puerta" if "on target" in cl else "atajadas" if "save" in cl
+                    else "remates" if "shot" in cl else None)
+            if stat and "half" not in cl:
+                jug = next(o.get("participant") for o in oc if o.get("participant"))
+                lado = {}
+                for o in oc:
+                    if o.get("line") is not None and o.get("type") in ("OT_OVER", "OT_UNDER"):
+                        lado.setdefault(o["line"] / 1000, {})[o["type"]] = o["odds"] / 1000
+                for ln, d2 in lado.items():
+                    if "OT_OVER" in d2 and "OT_UNDER" in d2:
+                        props.setdefault(jug, {}).setdefault(stat, []).append([ln, d2["OT_OVER"], d2["OT_UNDER"]])
             continue
         base = crit.replace(" (Settled using Opta data)", "").strip()
         if any(x in base for x in ("Half", "Interval", "0:00")):
@@ -139,7 +171,7 @@ def extracto(ev):
             elif o.get("type") == "OT_UNDER":
                 par[1] = o["odds"] / 1000
     return {"capturado": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "casa": CASA, "evento": ev["nombre"],
-            "kambi_id": ev["id"], "mercados": mk}
+            "kambi_id": ev["id"], "mercados": mk, "props": props}
 
 
 def _betano_nombre(cod):
@@ -173,16 +205,20 @@ def main():
             print(f"{pid}: Kambi no lo ofrece todavía")
             continue
         destino = os.path.join(outdir, pid + ".json")
+        x = extracto(ev)
+        if x.get("props"):
+            p["props"] = {**(p.get("props") or {}), **x["props"]}
+            with open(f, "w", encoding="utf-8") as fh:
+                json.dump(p, fh, ensure_ascii=False, indent=1)
+        hay_betano = False
         if os.path.exists(destino) and not a.forzar:
             with open(destino, encoding="utf-8") as fh:
-                if (json.load(fh).get("casa") or "").startswith("Betano"):
-                    print(f"{pid}: hay cuotas de Betano, se respetan")
-                    continue
-        x = extracto(ev)
-        with open(destino, "w", encoding="utf-8") as fh:
-            json.dump(x, fh, ensure_ascii=False, separators=(",", ":"))
-        print(f"{pid}: {len(x['mercados'])} mercados de Kambi")
-
+                hay_betano = (json.load(fh).get("casa") or "").startswith("Betano")
+        if not hay_betano:
+            with open(destino, "w", encoding="utf-8") as fh:
+                json.dump(x, fh, ensure_ascii=False, separators=(",", ":"))
+        print(f"{pid}: {len(x['mercados'])} mercados de equipo{' (se respetan los de Betano)' if hay_betano else ''} · "
+              f"props de {len(x.get('props') or {})} jugadores")
 
 if __name__ == "__main__":
     main()
