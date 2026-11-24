@@ -23,7 +23,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, RAIZ)
 
 from comun import mercado as MK  # noqa: E402
-from futbol.modelo import base, contexto, fuerza, jugadores, mercados, simular  # noqa: E402
+from futbol.modelo import base, contexto, fuerza, fuerza_mercado, jugadores, mercados, simular  # noqa: E402
 from futbol.modelo import params as P  # noqa: E402
 
 LIGAS = {"champions": {"web": "champions", "nombre": "Champions", "temporada": "2026-27", "anterior": "2025-26"}}
@@ -47,8 +47,11 @@ def predecir(liga, partido, historico, sims):
     eq_ant = {t for p in db["partidos"] if p["temporada"] == cfg["anterior"] for t in (p["local"], p["visitante"])}
     ascendidos = set(partido.get("ascendidos", ())) | ((eq_act - eq_ant) if eq_ant else set())
     fz = fuerza.ajustar(db["partidos"], m["fecha"], ascendidos=ascendidos, temporada=cfg["temporada"])
-    ctx = contexto.armar(db, lambda a, b, neutral: fuerza.esperados(fz, a, b, neutral), partido)
     L, V = m["local"], m["visitante"]
+    lam = partido.get("lambda_mercado")
+    # Champions: los goles esperados del partido salen del mercado (1X2 + total sin margen); fuerza.py solo para el resto
+    goles_fn = lambda a, b, neutral: tuple(lam) if (lam and (a, b) == (L, V)) else fuerza.esperados(fz, a, b, neutral)  # noqa: E731
+    ctx = contexto.armar(db, goles_fn, partido)
     prep = {t: jugadores.preparar_equipo(db, partido, t) for t in (L, V)}
     mult = {}
     bajas_det = {}
@@ -66,7 +69,7 @@ def predecir(liga, partido, historico, sims):
         "match": m, "contexto_partido": partido.get("contexto", {}),
         "modelo": {"version": P.MODEL_VERSION, "ascendidos": sorted(ascendidos), "sims": sim["N"], "fuerza": {"mu": round(fz["mu"], 3), "localia": round(fz["localia"], 3),
                    "rho": fz["rho"], "att": {t: round(fz["att"].get(t, 1), 3) for t in (L, V)},
-                   "def": {t: round(fz["def"].get(t, 1), 3) for t in (L, V)}}, "n_historico": db["n_partidos"]},
+                   "def": {t: round(fz["def"].get(t, 1), 3) for t in (L, V)}, "mercado": lam}, "n_historico": db["n_partidos"]},
         "partido": mercados.partido(sim, L, V),
         "equipos": {t: mercados.equipo(sim, i, t, eqs[t].esp) for i, t in enumerate((L, V))},
         "tramos_sim": {t: mercados.tramos(sim, i) for i, t in enumerate((L, V))},
@@ -313,7 +316,7 @@ def main():
                 extracto = json.load(fh)
             cu = dict(p.get("cuotas") or {})
             cu["equipo"] = list(cu.get("equipo") or []) + betano.cuotas_equipo(p, extracto)
-            p = {**p, "cuotas": cu}
+            p = {**p, "cuotas": cu, "lambda_mercado": fuerza_mercado.desde_extracto(extracto)}
         res = predecir(a.liga, p, hist, a.sims)
         cons = _consenso(a.liga, res["id"])
         if cons:

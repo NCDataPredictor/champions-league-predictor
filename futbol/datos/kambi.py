@@ -31,9 +31,7 @@ LIGAS = {"champions": "football/champions_league"}
 CASA = "Kambi (Unibet)"
 
 # Nombres en inglés de Kambi que no están en betano.NOMBRES
-NOMBRES_K = {**NOMBRES, "Inter Milan": "INT", "AC Milan": "MIL", "Hellas Verona": "VER", "Genoa": "GEN", "Bologna": "BOL",
-             "AS Roma": "ROM", "SS Lazio": "LAZ", "SSC Napoli": "NAP", "Parma": "PAR", "Como": "COM", "Pisa": "PIS",
-             "Monza": "MON", "Venezia": "VEN", "Frosinone": "FRO", "Fiorentina": "FIO", "Atalanta": "ATA"}
+NOMBRES_K = NOMBRES   # Nombres() de equipos_ucl ya reconoce los nombres en inglés de Kambi
 
 # Mercado (inglés de Kambi, sin el sufijo "(Settled using Opta data)") → nombre de mercado del extracto (como Betano)
 MERCADOS = {"Total Goals": "Goles totales Más/Menos", "Total Corners": "Tiros de esquina Menos/Más",
@@ -48,8 +46,30 @@ def _get(url):
         return json.loads(r.read().decode("utf-8"))
 
 
+def _ruta_champions():
+    """Busca en el árbol de grupos de Kambi la ruta de la Champions (por si cambia el nombre)."""
+    g = _get(f"{BASE}/group.json?{Q}")
+    pila = [(g.get("group") or g, [])]
+    while pila:
+        n, ruta = pila.pop()
+        r = ruta + ([n["termKey"]] if n.get("termKey") else [])
+        nom = (n.get("englishName") or n.get("name") or "").lower()
+        if "champions league" in nom and r and r[0] == "football" and len(r) >= 2:
+            return "/".join(r)
+        for h in n.get("groups") or []:
+            pila.append((h, r))
+    return None
+
+
 def eventos(liga="champions"):
-    d = _get(f"{BASE}/listView/{LIGAS[liga]}/all/matches.json?{Q}&useCombined=true")
+    try:
+        d = _get(f"{BASE}/listView/{LIGAS[liga]}/all/matches.json?{Q}&useCombined=true")
+    except Exception as e:  # noqa: BLE001
+        ruta = _ruta_champions()
+        print(f"Ruta {LIGAS[liga]} falló ({e}); ruta encontrada en group.json: {ruta}")
+        if not ruta:
+            raise
+        d = _get(f"{BASE}/listView/{ruta}/all/matches.json?{Q}&useCombined=true")
     out = []
     for e in d.get("events", []):
         ev = e["event"]

@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-FEY-FCP",
+ "id": "2026-11-24-FEY-POR",
  "fuente": "fotmob",
  "fuente_id": "6106307",
  "match": {
@@ -11,7 +11,7 @@
   "hora_bogota": "15:00",
   "utc": "2026-11-24T20:00:00.000Z",
   "local": "FEY",
-  "visitante": "FCP",
+  "visitante": "POR",
   "estadio": "Stadion Feijenoord",
   "neutral": false,
   "competicion": "liga"
@@ -92,23 +92,23 @@
     "p_juega": 0.0
    }
   ],
-  "FCP": [
+  "POR": [
    {
-    "jugador": "FCP-1665982",
+    "jugador": "POR-1665982",
     "nombre": "Gabriel Mec",
     "motivo": "lesion",
     "regreso": "Early December 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "FCP-165823",
+    "jugador": "POR-165823",
     "nombre": "Chris Smalling",
     "motivo": "lesion",
     "regreso": "Day to day",
     "p_juega": 0.0
    },
    {
-    "jugador": "FCP-1285532",
+    "jugador": "POR-1285532",
     "nombre": "Vasco Sousa",
     "motivo": "lesion",
     "regreso": "Day to day",

@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-GAL-AST",
+ "id": "2026-11-24-GAL-AVL",
  "fuente": "fotmob",
  "fuente_id": "6106339",
  "match": {
@@ -11,7 +11,7 @@
   "hora_bogota": "12:45",
   "utc": "2026-11-24T17:45:00.000Z",
   "local": "GAL",
-  "visitante": "AST",
+  "visitante": "AVL",
   "estadio": "RAMS Park",
   "neutral": false,
   "competicion": "liga"
@@ -72,23 +72,23 @@
     "p_juega": 0.0
    }
   ],
-  "AST": [
+  "AVL": [
    {
-    "jugador": "AST-1051097",
+    "jugador": "AVL-1051097",
     "nombre": "Matteo Ruggeri",
     "motivo": "lesion",
     "regreso": "Mid December 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "AST-729731",
+    "jugador": "AVL-729731",
     "nombre": "Matty Cash",
     "motivo": "lesion",
     "regreso": "Late November 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "AST-1185748",
+    "jugador": "AVL-1185748",
     "nombre": "Amadou Onana",
     "motivo": "lesion",
     "regreso": "Mid April 2027",

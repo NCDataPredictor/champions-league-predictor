@@ -27,6 +27,7 @@ RAIZ = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)
 sys.path.insert(0, RAIZ)
 
 from futbol.modelo.contexto import nombre_derbi  # noqa: E402
+from futbol.datos.equipos_ucl import codigo as _codigo_ucl  # noqa: E402
 
 LIGA_ID = 42  # Champions League en FotMob (verificar)
 BASE = "https://www.fotmob.com/api/data"
@@ -69,7 +70,7 @@ def _p_juega(un):
 
 
 def codigo(nombre):
-    return CODIGOS.get(nombre) or "".join(c for c in nombre.upper() if c.isalpha())[:3]
+    return _codigo_ucl(nombre)
 
 
 def temporada_nuestra(t):
@@ -336,6 +337,73 @@ def cmd_normalizar():
         print(f"historico/fotmob_{temp}.json: {len(ps)} partidos")
 
 
+def _partidos_de(obj, out):
+    """Busca en la respuesta de /teams cualquier partido {id, home, away, status} (la estructura cambia a veces)."""
+    if isinstance(obj, dict):
+        if obj.get("id") and isinstance(obj.get("home"), dict) and isinstance(obj.get("away"), dict) and isinstance(obj.get("status"), dict):
+            out[obj["id"]] = obj
+        for v in obj.values():
+            _partidos_de(v, out)
+    elif isinstance(obj, list):
+        for v in obj:
+            _partidos_de(v, out)
+
+
+def cmd_equipos(n=12):
+    """Champions: pocos partidos por equipo en la competición, así que el histórico se arma con los últimos `n`
+    partidos de cada equipo de la jornada en TODAS las competiciones (liga local, copas, Europa).
+    Escribe historico/fotmob_equipos.json (temporada actual para todos) y docs/<web>/data/equipos.json (ids de FotMob)."""
+    ids = {}
+    for f in sorted(glob.glob(os.path.join(DIR_LIGA, "partidos", "*.json"))):
+        with open(f, encoding="utf-8") as fh:
+            p = json.load(fh)
+        try:
+            g = detalle(p["fuente_id"], forzar=True)["general"]
+        except Exception as e:  # noqa: BLE001
+            print(f"{p['id']}: {e}")
+            continue
+        for k in ("homeTeam", "awayTeam"):
+            ids[codigo(g[k]["name"])] = {"fm": g[k]["id"], "nombre": g[k]["name"]}
+    print(f"{len(ids)} equipos")
+    ahora = datetime.now(timezone.utc)
+    vistos = {}
+    for cod, info in sorted(ids.items()):
+        try:
+            d = _get(f"{BASE}/teams?id={info['fm']}")
+        except Exception as e:  # noqa: BLE001
+            print(f"{cod}: /teams falló ({e})")
+            continue
+        time.sleep(PAUSA)
+        ms = {}
+        _partidos_de(d, ms)
+        hechos = [m for m in ms.values() if (m["status"].get("finished") and not m["status"].get("cancelled")
+                  and _utc(m["status"].get("utcTime") or "2000-01-01T00:00:00Z") < ahora)]
+        hechos.sort(key=lambda m: m["status"].get("utcTime") or "")
+        print(f"{cod}: {len(hechos)} jugados, se toman {min(n, len(hechos))}")
+        for m in hechos[-n:]:
+            try:
+                vistos[m["id"]] = detalle(m["id"])
+            except Exception as e:  # noqa: BLE001
+                print(f"  {m['id']}: {e}")
+    ps = []
+    for mid, d in vistos.items():
+        try:
+            x = normalizar(d, "2026-27")
+            x["competicion"] = ((d.get("general") or {}).get("leagueName")) or "otra"
+            ps.append(x)
+        except Exception as e:  # noqa: BLE001
+            print(f"{mid}: no se pudo normalizar ({e})")
+    ps.sort(key=lambda p: p["fecha"])
+    os.makedirs(os.path.join(DIR_LIGA, "historico"), exist_ok=True)
+    with open(os.path.join(DIR_LIGA, "historico", "fotmob_equipos.json"), "w", encoding="utf-8") as fh:
+        json.dump(ps, fh, ensure_ascii=False, separators=(",", ":"))
+    web = os.path.join(RAIZ, "docs", "champions", "data")
+    os.makedirs(web, exist_ok=True)
+    with open(os.path.join(web, "equipos.json"), "w", encoding="utf-8") as fh:
+        json.dump(ids, fh, ensure_ascii=False, indent=1)
+    print(f"historico/fotmob_equipos.json: {len(ps)} partidos")
+
+
 def cmd_proximos(jornada=None):
     lg = liga()
     time.sleep(PAUSA)
@@ -399,6 +467,7 @@ def main():
     p = sub.add_parser("proximos")
     p.add_argument("--jornada", type=int)
     sub.add_parser("normalizar")
+    sub.add_parser("equipos")
     a = ap.parse_args()
     if a.cmd == "historico":
         temps = a.temporadas
@@ -408,6 +477,8 @@ def main():
             todas = lg.get("allAvailableSeasons") or [lg["details"]["selectedSeason"]]
             temps = todas[:2]
         cmd_historico(temps)
+    elif a.cmd == "equipos":
+        cmd_equipos()
     elif a.cmd == "normalizar":
         cmd_normalizar()
     else:

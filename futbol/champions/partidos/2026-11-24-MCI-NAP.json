@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-MAN-NAP",
+ "id": "2026-11-24-MCI-NAP",
  "fuente": "fotmob",
  "fuente_id": "6106256",
  "match": {
@@ -10,7 +10,7 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-24T20:00:00.000Z",
-  "local": "MAN",
+  "local": "MCI",
   "visitante": "NAP",
   "estadio": "Etihad Stadium",
   "neutral": false,
@@ -42,9 +42,9 @@
   "estado": null
  },
  "bajas": {
-  "MAN": [
+  "MCI": [
    {
-    "jugador": "MAN-933576",
+    "jugador": "MCI-933576",
     "nombre": "Antoine Semenyo",
     "motivo": "lesion",
     "regreso": "Mid December 2026",

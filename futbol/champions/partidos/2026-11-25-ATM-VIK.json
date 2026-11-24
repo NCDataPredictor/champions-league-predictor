@@ -1,5 +1,5 @@
 {
- "id": "2026-11-25-ATL-VIK",
+ "id": "2026-11-25-ATM-VIK",
  "fuente": "fotmob",
  "fuente_id": "6106269",
  "match": {
@@ -10,7 +10,7 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-25T20:00:00Z",
-  "local": "ATL",
+  "local": "ATM",
   "visitante": "VIK",
   "estadio": "Riyadh Air Metropolitano",
   "neutral": false,
@@ -42,30 +42,30 @@
   "estado": null
  },
  "bajas": {
-  "ATL": [
+  "ATM": [
    {
-    "jugador": "ATL-1842329",
+    "jugador": "ATM-1842329",
     "nombre": "Jorge Domínguez",
     "motivo": "internationalDuty",
     "regreso": "Mid December 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "ATL-1323897",
+    "jugador": "ATM-1323897",
     "nombre": "Marc Pubill",
     "motivo": "lesion",
     "regreso": "About 1-2 weeks",
     "p_juega": 0.0
    },
    {
-    "jugador": "ATL-690516",
+    "jugador": "ATM-690516",
     "nombre": "Ademola Lookman",
     "motivo": "lesion",
     "regreso": "Early January 2027",
     "p_juega": 0.0
    },
    {
-    "jugador": "ATL-789066",
+    "jugador": "ATM-789066",
     "nombre": "Cristian Romero",
     "motivo": "lesion",
     "regreso": "Doubtful",
