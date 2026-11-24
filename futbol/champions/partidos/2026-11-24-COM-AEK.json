@@ -22,18 +22,18 @@
    "nombre": "Javier Alberola Rojas"
   },
   "clima": {
-   "temperature": 6,
+   "temperature": 7,
    "windSpeed": 1,
    "windDirectionCardinal": "ENE",
    "iconCode": 11,
    "relativeHumidity": 97,
    "precipChance": 35,
-   "precipitation": 0.04,
+   "precipitation": 0.05,
    "snow": 0,
-   "cloudCover": 100,
+   "cloudCover": 96,
    "description": "Light Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T16:00:18Z",
+   "lastUpdated": "2026-11-24T17:00:18Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }

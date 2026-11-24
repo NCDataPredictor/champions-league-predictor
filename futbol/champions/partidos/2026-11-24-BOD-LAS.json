@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": -4,
-   "windSpeed": 5,
+   "windSpeed": 6,
    "windDirectionCardinal": "ESE",
    "iconCode": 31,
-   "relativeHumidity": 79,
-   "precipChance": 2,
+   "relativeHumidity": 81,
+   "precipChance": 6,
    "precipitation": 0,
    "snow": 0,
    "cloudCover": 13,
    "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T16:00:18Z",
+   "lastUpdated": "2026-11-24T17:00:17Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -75,11 +75,11 @@
     "LAS-1420822",
     "LAS-1029360",
     "LAS-939430",
-    "LAS-1118147",
     "LAS-461357",
     "LAS-1254266",
-    "LAS-1232205",
-    "LAS-1188855"
+    "LAS-1118147",
+    "LAS-1188855",
+    "LAS-1232205"
    ],
    "banco": [
     "LAS-1671273",

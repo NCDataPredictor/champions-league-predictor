@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T16:56Z",
+ "actualizado": "2026-11-24T17:50Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -932,7 +932,8 @@
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-24T16:56Z"
+   "armado": "2026-11-24T16:56Z",
+   "congelado": true
   },
   "2026-11-25": {
    "cuota": 51.47,
@@ -1085,7 +1086,7 @@
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-24T16:56Z"
+   "armado": "2026-11-24T17:50Z"
   }
  }
 }
