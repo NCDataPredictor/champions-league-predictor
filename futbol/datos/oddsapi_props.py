@@ -71,7 +71,12 @@ def main():
     ahora = datetime.now(timezone.utc)
     try:
         with open(ESTADO, encoding="utf-8") as fh:
-            ult = datetime.fromisoformat(json.load(fh)["ultima"])
+            est = json.load(fh)
+        ult = datetime.fromisoformat(est["ultima"])
+        if est.get("partidos_con_props") == 0 and not os.environ.get("PROPS_FORZAR"):
+            # 24-nov-2026: las casas "eu" no dan remates de jugador en la Champions y cada consulta cobra igual.
+            print("La última consulta no trajo ningún prop: no se gasta más (PROPS_FORZAR=1 para reintentar).")
+            return
         if ahora - ult < timedelta(hours=MIN_HORAS) and not os.environ.get("PROPS_FORZAR"):
             print(f"Props consultados a las {ult:%H:%M} UTC: todavía no toca (ahorro de créditos).")
             return

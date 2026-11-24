@@ -89,6 +89,6 @@ jobs:
           BEFORE=$(git rev-parse HEAD~1)
           git push origin HEAD:main
           # El push con el token de Actions no dispara ncdata.yml: se pide el redespliegue de Cloudflare aquí.
-          if [ -n "$HOOK" ]; then curl -fsS -X POST "$HOOK" > /dev/null && echo "Redespliegue pedido."; fi
+          if [ -n "$HOOK" ]; then if curl -fsS -X POST "$HOOK" > /dev/null; then echo "Redespliegue pedido."; else echo "::warning::El deploy hook de Cloudflare falló"; fi; fi
           # Los push hechos con el token de Actions no disparan otras acciones: los avisos se mandan aquí mismo.
           python -m futbol.avisos_futbol --before "$BEFORE"
