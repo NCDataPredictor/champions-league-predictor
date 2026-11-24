@@ -83,5 +83,8 @@ SUPLENTE_ORO = True
 MKT_W = 0.20            # peso del modelo en la mezcla con la casa (README §3.4: empezar entre 0,15 y 0,25)
 VALUE_EV = 0.03
 MIN_P = 0.50
+# props de jugador con cuota de un solo lado (escaleras "N+" de Betano): margen que se le supone a la casa.
+# 0 = no se usan (regla original: solo cuota a dos lados).
+MARGEN_UN_LADO = 0.08
 MAX_PICKS_JORNADA = 12
 MAX_PICKS_JUGADOR = 2
