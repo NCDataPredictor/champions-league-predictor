@@ -39,17 +39,65 @@
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "GAL": {
+   "titulares": [
+    "GAL-603669",
+    "GAL-1027472",
+    "GAL-643533",
+    "GAL-291399",
+    "GAL-906945",
+    "GAL-421786",
+    "GAL-592909",
+    "GAL-845991",
+    "GAL-1504343",
+    "GAL-1041660",
+    "GAL-890232"
+   ],
+   "banco": [
+    "GAL-335429",
+    "GAL-1286950",
+    "GAL-1173788",
+    "GAL-902710",
+    "GAL-178818",
+    "GAL-1200631",
+    "GAL-1741323",
+    "GAL-1682656",
+    "GAL-1406300",
+    "GAL-530859"
+   ]
+  },
+  "AVL": {
+   "titulares": [
+    "AVL-1053679",
+    "AVL-966021",
+    "AVL-258269",
+    "AVL-419664",
+    "AVL-966026",
+    "AVL-1174672",
+    "AVL-816325",
+    "AVL-1656860",
+    "AVL-356406",
+    "AVL-1520063",
+    "AVL-1197347"
+   ],
+   "banco": [
+    "AVL-1340673",
+    "AVL-195782",
+    "AVL-760320",
+    "AVL-1190033",
+    "AVL-792645",
+    "AVL-1607333",
+    "AVL-343748",
+    "AVL-215384",
+    "AVL-610184",
+    "AVL-1593857",
+    "AVL-749661"
+   ]
+  }
  },
  "bajas": {
   "GAL": [
-   {
-    "jugador": "GAL-906945",
-    "nombre": "Ismail Jakobs",
-    "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
-   },
    {
     "jugador": "GAL-583601",
     "nombre": "Roland Sallai",

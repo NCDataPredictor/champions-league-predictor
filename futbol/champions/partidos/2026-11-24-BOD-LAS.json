@@ -25,21 +25,74 @@
    "temperature": -4,
    "windSpeed": 5,
    "windDirectionCardinal": "ESE",
-   "iconCode": 33,
-   "relativeHumidity": 81,
+   "iconCode": 31,
+   "relativeHumidity": 79,
    "precipChance": 2,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 21,
-   "description": "Mostly Clear",
+   "cloudCover": 13,
+   "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T15:00:22Z",
+   "lastUpdated": "2026-11-24T16:00:18Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "BOD": {
+   "titulares": [
+    "BOD-625360",
+    "BOD-1281021",
+    "BOD-917774",
+    "BOD-540929",
+    "BOD-630228",
+    "BOD-1160076",
+    "BOD-530635",
+    "BOD-540975",
+    "BOD-1086551",
+    "BOD-837066",
+    "BOD-741397"
+   ],
+   "banco": [
+    "BOD-1441106",
+    "BOD-635198",
+    "BOD-215158",
+    "BOD-1037037",
+    "BOD-1126421",
+    "BOD-1436937",
+    "BOD-902675",
+    "BOD-310763",
+    "BOD-615292",
+    "BOD-1049665"
+   ]
+  },
+  "LAS": {
+   "titulares": [
+    "LAS-1156883",
+    "LAS-979963",
+    "LAS-1437941",
+    "LAS-1420822",
+    "LAS-1029360",
+    "LAS-939430",
+    "LAS-1118147",
+    "LAS-461357",
+    "LAS-1254266",
+    "LAS-1232205",
+    "LAS-1188855"
+   ],
+   "banco": [
+    "LAS-1671273",
+    "LAS-557349",
+    "LAS-1383070",
+    "LAS-1863042",
+    "LAS-1108604",
+    "LAS-426726",
+    "LAS-1366348",
+    "LAS-1756283",
+    "LAS-858198"
+   ]
+  }
  },
  "bajas": {
   "BOD": [

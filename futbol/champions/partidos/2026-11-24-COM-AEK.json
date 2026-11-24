@@ -26,14 +26,14 @@
    "windSpeed": 1,
    "windDirectionCardinal": "ENE",
    "iconCode": 11,
-   "relativeHumidity": 96,
-   "precipChance": 50,
-   "precipitation": 0.08,
+   "relativeHumidity": 97,
+   "precipChance": 35,
+   "precipitation": 0.04,
    "snow": 0,
    "cloudCover": 100,
    "description": "Light Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T15:00:22Z",
+   "lastUpdated": "2026-11-24T16:00:18Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }

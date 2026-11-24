@@ -47,8 +47,8 @@
     "jugador": "INT-362212",
     "nombre": "Piotr Zieliński",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
    },
    {
     "jugador": "INT-1199383",
@@ -61,7 +61,7 @@
     "jugador": "INT-304733",
     "nombre": "Hakan Çalhanoğlu",
     "motivo": "lesion",
-    "regreso": "Mid December 2026",
+    "regreso": "Late December 2026",
     "p_juega": 0.0
    }
   ],
