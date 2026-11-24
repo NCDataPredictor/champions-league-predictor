@@ -25,6 +25,7 @@ sys.path.insert(0, RAIZ)
 from comun import mercado as MK  # noqa: E402
 from futbol.modelo import base, contexto, fuerza, fuerza_mercado, jugadores, mercados, simular  # noqa: E402
 from futbol.modelo import params as P  # noqa: E402
+from futbol.datos import betano_props  # noqa: E402
 
 LIGAS = {"champions": {"web": "champions", "nombre": "Champions", "temporada": "2026-27", "anterior": "2025-26"}}
 
@@ -84,6 +85,8 @@ def predecir(liga, partido, historico, sims):
                       "efecto_equipo": bajas_det[t], "companeros": cambios_cs[t]} for t in (L, V)},
         "jugadores": {t: mercados.jugadores(sim, i, eqs[t]) for i, t in enumerate((L, V))},
     }
+    if P.MARGEN_UN_LADO:   # escaleras de Betano: solo para jugadores sin cuota a dos lados (Kambi / The Odds API)
+        partido = {**partido, "props": {**betano_props.props_para(L, V), **(partido.get("props") or {})}}
     res["picks"] = picks(res, partido, sim, eqs)
     res["ult_cols"] = list(ULT_COLS)
     _recientes_jugadores(res, historico, m["fecha"])
@@ -176,9 +179,14 @@ def _candidato_equipo(out, base, p_over, media_mod, valores, c_over, c_under):
 def _candidato(out, base, p_over, c_over, c_under):
     """Añade los lados que pasan los filtros: mezcla con la casa (MKT_W), p ≥ MIN_P, EV ≥ VALUE_EV."""
     p_casa = MK.sin_margen([c_over, c_under]) if c_over and c_under else None
-    if not p_casa:
+    lados = (("over", p_over, c_over, p_casa[0]), ("under", 1 - p_over, c_under, p_casa[1])) if p_casa else ()
+    if not p_casa and c_over and c_over > 1 and base.get("tipo") == "jugador" and P.MARGEN_UN_LADO:
+        # escalera de Betano (solo "N+"): margen supuesto, solo el lado Más (decisión de Nicolas, 24-nov-2026)
+        base = {**base, "un_lado": True}
+        lados = (("over", p_over, c_over, min(0.99, 1 / (c_over * (1 + P.MARGEN_UN_LADO)))),)
+    if not lados:
         return   # sin cuota a los dos lados no hay precio sin margen: no es pick (regla del proyecto)
-    for lado, p_mod, cuota, pc in (("over", p_over, c_over, p_casa[0]), ("under", 1 - p_over, c_under, p_casa[1])):
+    for lado, p_mod, cuota, pc in lados:
         p = MK.mezclar(p_mod, pc, P.MKT_W)
         e = MK.ev(p, cuota)
         if p >= P.MIN_P and e >= P.VALUE_EV:
