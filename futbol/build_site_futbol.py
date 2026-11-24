@@ -361,7 +361,7 @@ def main():
 
 def _consenso(liga, pid):
     """Última foto del consenso de casas (futbol/<liga>/consenso/*.json, de The Odds API) para ese partido."""
-    for f in sorted(glob.glob(os.path.join(RAIZ, "futbol", liga, "consenso", "*.json")), reverse=True):
+    for f in sorted(glob.glob(os.path.join(RAIZ, "futbol", liga, "consenso", "20*.json")), reverse=True):
         with open(f, encoding="utf-8") as fh:
             fotos = json.load(fh)
         for foto in reversed(fotos):

@@ -72,7 +72,7 @@ def main(liga="champions"):
     os.makedirs(outdir, exist_ok=True)
     ahora = datetime.now(timezone.utc)
     # ¿hace falta consultar? (cada MIN_HORAS, o si hay un partido en menos de 3 h: foto de cierre)
-    ultimas = sorted(glob.glob(os.path.join(outdir, "*.json")))
+    ultimas = sorted(glob.glob(os.path.join(outdir, "20*.json")))   # solo fotos por fecha
     ultima = None
     if ultimas:
         with open(ultimas[-1], encoding="utf-8") as fh:

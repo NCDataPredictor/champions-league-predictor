@@ -6,7 +6,7 @@ una cuota real a los dos lados (Más/Menos). Betano solo se lee desde el PC; est
     python -m futbol.datos.oddsapi_props            # partidos de futbol/champions/partidos/ que no empezaron
 
 Costo: cada partido cuesta (mercados × regiones) créditos del plan de 500/mes compartido con la Serie A
-(aquí 3 mercados × 1 región = 3 por partido, ~54 por jornada de 18). Por eso se consulta como mucho una vez cada MIN_HORAS.
+(aquí hasta 3 mercados × 1 región = 3 por partido, ~54 por jornada de 18; un 422 no cobra). Por eso se consulta como mucho una vez cada MIN_HORAS.
 Escribe en cada partidos/<id>.json: "props": {"Jugador": {"remates_puerta": [[línea, más, menos], ...], ...}},
 con la mediana de las casas que dan los dos lados de esa línea. Nunca inventa una cuota.
 """
@@ -15,6 +15,7 @@ import json
 import os
 import statistics
 import sys
+import urllib.error
 import urllib.request
 from datetime import datetime, timedelta, timezone
 
@@ -28,7 +29,7 @@ REGIONES = "eu"
 # mercado de The Odds API → estadística del modelo
 MERCADOS = {"player_shots_on_target": "remates_puerta", "player_shots": "remates", "player_goalkeeper_saves": "atajadas"}
 MIN_HORAS = 5
-ESTADO = os.path.join(RAIZ, "futbol", "champions", "consenso", "props_estado.json")
+ESTADO = os.path.join(RAIZ, "futbol", "champions", "nube", "props_estado.json")   # fuera de consenso/: ese glob solo lee fotos
 
 
 def _get(url):
@@ -80,6 +81,7 @@ def main():
     print(f"{len(eventos)} eventos en The Odds API · créditos restantes {rest}")
     por_par = {(codigo(e["home_team"]), codigo(e["away_team"])): e for e in eventos}
     n_ok = 0
+    no_hay = set()
     for f in sorted(glob.glob(os.path.join(RAIZ, "futbol", "champions", "partidos", "*.json"))):
         with open(f, encoding="utf-8") as fh:
             p = json.load(fh)
@@ -90,11 +92,21 @@ def main():
         if not e:
             print(f"{p['id']}: no está en The Odds API")
             continue
-        try:
-            d, rest = _get(f"{BASE}/events/{e['id']}/odds?apiKey={key}&regions={REGIONES}&markets={','.join(MERCADOS)}&oddsFormat=decimal")
-        except Exception as ex:  # noqa: BLE001
-            print(f"{p['id']}: {ex}")
-            continue
+        # un mercado por consulta: si la API no ofrece uno para la Champions (422, no cobra), los demás siguen
+        d = {"bookmakers": []}
+        for mk in MERCADOS:
+            if mk in no_hay:
+                continue
+            try:
+                dm, rest = _get(f"{BASE}/events/{e['id']}/odds?apiKey={key}&regions={REGIONES}&markets={mk}&oddsFormat=decimal")
+                d["bookmakers"] += dm.get("bookmakers", [])
+            except urllib.error.HTTPError as ex:
+                cuerpo = ex.read().decode("utf-8", "replace")[:200]
+                print(f"{p['id']} {mk}: HTTP {ex.code} {cuerpo}")
+                if ex.code == 422:
+                    no_hay.add(mk)   # mercado no disponible en este deporte: no se vuelve a pedir
+            except Exception as ex:  # noqa: BLE001
+                print(f"{p['id']} {mk}: {ex}")
         pr = lineas(d)
         if pr:
             p["props"] = {**pr, **(p.get("props") or {})}   # si Kambi ya trajo ese jugador, gana Kambi
@@ -104,7 +116,7 @@ def main():
         print(f"{p['id']}: {len(pr)} jugadores con línea · créditos restantes {rest}")
     os.makedirs(os.path.dirname(ESTADO), exist_ok=True)
     with open(ESTADO, "w", encoding="utf-8") as fh:
-        json.dump({"ultima": ahora.isoformat(), "partidos_con_props": n_ok, "creditos_restantes": rest}, fh)
+        json.dump({"ultima": ahora.isoformat(), "partidos_con_props": n_ok, "creditos_restantes": rest, "mercados_sin_oferta": sorted(no_hay)}, fh)
 
 
 if __name__ == "__main__":
