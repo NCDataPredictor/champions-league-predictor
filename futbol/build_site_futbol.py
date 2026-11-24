@@ -203,10 +203,23 @@ def picks(res, partido, sim, eqs):
     for t_i, t in enumerate((L, V)):
         for j_i, x in enumerate(eqs[t].jug):
             idx[x["nombre"]] = (t_i, t, j_i)
+    import unicodedata
+    norm = lambda s: unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode().lower().replace("-", " ").strip()  # noqa: E731
+    idx_n = {norm(k): v for k, v in idx.items()}
+    idx_ap = {}   # "inicial + apellido" y solo apellido (las casas a veces abrevian), si no es ambiguo
+    for k, v in idx.items():
+        partes = norm(k).split()
+        if len(partes) >= 2:
+            for alias in (partes[-1], partes[0][0] + " " + partes[-1]):
+                idx_ap[alias] = None if alias in idx_ap else v
     for nombre, mk in (partido.get("props") or {}).items():
-        if nombre not in idx:
+        n = norm(nombre)
+        pz = n.split()
+        loc = idx.get(nombre) or idx_n.get(n) or (idx_ap.get(pz[0][0] + " " + pz[-1]) if len(pz) >= 2 else None) or idx_ap.get(pz[-1] if pz else "")
+        if not loc:
             continue
-        t_i, t, j_i = idx[nombre]
+        t_i, t, j_i = loc
+        nombre = eqs[t].jug[j_i]["nombre"]
         J = sim["jug"][t_i]
         entra, sale, repl, titular = sim["lineups"][t_i]
         juega = sim["minutos"][t_i][:, j_i] > 0

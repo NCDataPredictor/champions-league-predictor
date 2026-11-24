@@ -54,6 +54,12 @@ jobs:
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python -m futbol.datos.oddsapi
+      - name: Props de jugador (The Odds API)
+        id: props
+        continue-on-error: true
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python -m futbol.datos.oddsapi_props
       - name: Simular partidos por empezar
         id: sim
         continue-on-error: true
@@ -75,7 +81,7 @@ jobs:
           fi
           cat > futbol/champions/nube/estado.json <<JSON
           {"corrida": "$(date -u +%Y-%m-%dT%H:%MZ)", "fotmob_historico": "${{ steps.hist.outcome }}", "fotmob_proximos": "${{ steps.prox.outcome }}",
-           "kambi": "${{ steps.kambi.outcome }}", "consenso": "${{ steps.consenso.outcome }}", "simulacion": "${{ steps.sim.outcome }}", "run": "${{ github.run_id }}"}
+           "kambi": "${{ steps.kambi.outcome }}", "consenso": "${{ steps.consenso.outcome }}", "props": "${{ steps.props.outcome }}", "simulacion": "${{ steps.sim.outcome }}", "run": "${{ github.run_id }}"}
           JSON
           git add futbol/champions/nube/estado.json
           git commit -m "Jornada en la nube: datos, cuotas y simulación ($(date -u +%H:%M) UTC)"
