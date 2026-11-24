@@ -5,7 +5,7 @@
 <meta name="apple-mobile-web-app-title" content="NCData">
 <script>if ("serviceWorker" in navigator) addEventListener("load", () => navigator.serviceWorker.register("/OneSignalSDKWorker.js", {scope: "/"}).catch(() => {}));</script>
 
-<title>Serie A Predictor</title>
+<title>Champions Predictor</title>
 <meta name="theme-color" content="#1a1659">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" type="image/png" sizes="192x192" href="../icon.svg">
@@ -16,13 +16,13 @@
 try { const t = localStorage.getItem("ncdp-theme"); if (t === "light" || t === "dark") document.documentElement.dataset.theme = t; } catch (e) {}
 </script>
 <style>
-/* Serie A Predictor. Paleta de la identidad de la Serie A: azul noche #1A1659, azul #0032A0, azul claro #0578FF,
+/* Champions Predictor. Paleta: azul noche UEFA #0A1446, azul #1B2A7A, plata #C0C7D8 y estrellas en el banner;
    verde #00A346, rojo #DB052B y gris #E2E2E2. Misma estructura que la web NBA: banner, barra de partidos,
    inicio de la jornada y panel de cada partido (#id) con pestañas. */
 :root {
   --bg: #f1f3f9; --surface: #ffffff; --ink: #0e0d33; --muted: #5a5f7a; --line: #dfe2ec; --soft: #f6f7fb;
-  --accent: #0032a0; --accent-2: #0578ff; --accent-soft: #e3ebfb; --on-accent: #ffffff;
-  --banner: #1a1659; --banner-2: #0032a0; --banner-ink: #f5f6fc; --banner-muted: #b3b8e0; --ticker: #120f45;
+  --accent: #1b2a7a; --accent-2: #3557d6; --accent-soft: #e4e8f7; --on-accent: #ffffff;
+  --banner: #0a1446; --banner-2: #1b2a7a; --banner-ink: #f5f6fc; --banner-muted: #c0c7d8; --ticker: #070f36;
   --good: #00a346; --good-soft: #dcf3e5; --bad: #db052b; --bad-soft: #fbe2e6; --draw: #8a8fb0;
   --heat: 0, 50, 160;
   --display: "Oswald", "Arial Narrow", system-ui, sans-serif;
@@ -33,12 +33,12 @@ try { const t = localStorage.getItem("ncdp-theme"); if (t === "light" || t === "
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
   --bg: #07061c; --surface: #100e2e; --ink: #eef0fb; --muted: #9a9fc4; --line: #24214f; --soft: #151239;
   --accent: #5b8dff; --accent-2: #3d9bff; --accent-soft: #1a1f5c; --on-accent: #07061c;
-  --banner: #0b0930; --banner-2: #0a2a85; --ticker: #06051c;
+  --banner: #050b2e; --banner-2: #14206a; --ticker: #040824;
   --good: #2fd27a; --good-soft: #0d2f1f; --bad: #ff5470; --bad-soft: #3a0f1c; --draw: #8a8fb0; --heat: 91, 141, 255; color-scheme: dark } }
 :root[data-theme="dark"] {
   --bg: #07061c; --surface: #100e2e; --ink: #eef0fb; --muted: #9a9fc4; --line: #24214f; --soft: #151239;
   --accent: #5b8dff; --accent-2: #3d9bff; --accent-soft: #1a1f5c; --on-accent: #07061c;
-  --banner: #0b0930; --banner-2: #0a2a85; --ticker: #06051c;
+  --banner: #050b2e; --banner-2: #14206a; --ticker: #040824;
   --good: #2fd27a; --good-soft: #0d2f1f; --bad: #ff5470; --bad-soft: #3a0f1c; --draw: #8a8fb0; --heat: 91, 141, 255; color-scheme: dark }
 * { box-sizing: border-box }
 body { background: var(--bg); color: var(--ink); font: 15px/1.5 var(--body); margin: 0 }
@@ -55,7 +55,8 @@ button { font: inherit }
 
 /* banner */
 .banner { background: linear-gradient(115deg, var(--banner) 0%, var(--banner) 55%, var(--banner-2) 100%); color: var(--banner-ink); position: relative }
-.banner::after { content: ""; position: absolute; inset: auto 0 0 0; height: 4px; background: linear-gradient(90deg, var(--good) 0 33.3%, #fff 33.3% 66.6%, var(--bad) 66.6%) }
+.banner::after { content: ""; position: absolute; inset: auto 0 0 0; height: 4px; background: linear-gradient(90deg, #c0c7d8, #ffffff 50%, #c0c7d8) }
+.banner::before { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .18; background: radial-gradient(circle at 85% 30%, #fff 0 1.5px, transparent 2px), radial-gradient(circle at 78% 62%, #fff 0 1.5px, transparent 2px), radial-gradient(circle at 92% 70%, #fff 0 1.5px, transparent 2px), radial-gradient(circle at 70% 25%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 96% 40%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 88% 85%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 64% 75%, #fff 0 1px, transparent 1.5px), radial-gradient(circle at 75% 45%, #fff 0 1px, transparent 1.5px) }
 .banner .inner { padding-block: calc(18px + env(safe-area-inset-top, 0px)) 18px; display: flex; flex-wrap: wrap; gap: 10px 20px; align-items: center; justify-content: space-between }
 .brand { color: inherit; text-decoration: none; display: flex; align-items: center; gap: 14px; min-width: 0 }
 .logo { flex: none; width: 50px; height: 50px; border-radius: 12px; display: grid; place-items: center; background: var(--accent-2); box-shadow: inset 0 -3px 0 rgba(0,0,0,.25) }
@@ -594,7 +595,7 @@ main:focus { outline: none }
   <div class="inner">
     <button type="button" class="icon-btn back-btn" id="back-btn" aria-label="Volver" title="Volver"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
     <a class="brand" href="#"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none" stroke="#fff" stroke-width="2" stroke-linejoin="round"><circle cx="16" cy="16" r="13"/><path d="M16 9.5l5 3.6-1.9 5.9h-6.2L11 13.1z"/><path d="M16 9.5V3.5M21 13.1l5.7-1.9M19.1 19l3.5 5M12.9 19l-3.5 5M11 13.1l-5.7-1.9"/></svg></span>
-      <span class="brand-t"><span>Simulación minuto a minuto · Serie A</span><h1>Serie A Predictor</h1></span></a>
+      <span class="brand-t"><span>Simulación minuto a minuto · UEFA Champions League</span><h1>Champions Predictor</h1></span></a>
     <div class="side" role="navigation" aria-label="Secciones">
       <button type="button" class="home-link" id="avisos-btn" aria-haspopup="dialog" title="Avisos al celular"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16V11a6 6 0 0112 0v5l1.5 2h-15z"/><path d="M10 20.5a2.2 2.2 0 004 0"/></svg><span>Avisos</span></button>
       <a class="home-link" href="manual/" title="Manual"><svg class="hi" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 3H20v16H5.5A1.5 1.5 0 004 20.5v-16A1.5 1.5 0 015.5 3z"/><path d="M4 20.5A1.5 1.5 0 005.5 22H20v-3M8.5 7.5h7"/></svg><span>Manual</span></a>
@@ -611,7 +612,7 @@ main:focus { outline: none }
 </header>
 <div class="demo" id="demo" hidden><b>Datos de ejemplo</b> · jugadores, árbitros y estadísticas sintéticos para probar el modelo y la página. No son predicciones reales.</div>
 <dialog id="avisos-dlg" aria-labelledby="avisos-t">
-  <div class="dlg-head"><h2 id="avisos-t">Avisos de la Serie A</h2><button type="button" class="dlg-x" id="avisos-x" aria-label="Cerrar">✕</button></div>
+  <div class="dlg-head"><h2 id="avisos-t">Avisos de la Champions</h2><button type="button" class="dlg-x" id="avisos-x" aria-label="Cerrar">✕</button></div>
   <p class="note" style="margin-top:0">Te llega un aviso al celular o al computador cuando <b>el análisis de la jornada está listo</b> (picks y errores de cuota) y cuando <b>salen las alineaciones oficiales</b> de un partido (≈1 h antes), para que revises los picks antes de que empiece.</p>
   <div id="avisos-box"></div>
 </dialog>
@@ -684,19 +685,20 @@ const ZONA = {izq: "Izquierda", centro: "Centro", der: "Derecha"};
 const SIT = {jugada: "Jugada elaborada", contragolpe: "Contragolpe", balon_parado: "Balón parado", penalti: "Penalti"};
 // Colores de cada club (camiseta principal / texto)
 const TEAM = {
-  INT: ["Inter", "#0068a8", "#fff"], MIL: ["Milan", "#c8102e", "#fff"], JUV: ["Juventus", "#111111", "#fff"], NAP: ["Napoli", "#12a0d7", "#fff"],
-  ROM: ["Roma", "#8e1f2f", "#f0bc42"], LAZ: ["Lazio", "#87d8f7", "#0a2240"], ATA: ["Atalanta", "#1e71b8", "#111"], FIO: ["Fiorentina", "#482e92", "#fff"],
-  BOL: ["Bologna", "#1a2f48", "#d81e2a"], TOR: ["Torino", "#8a1e03", "#fff"], GEN: ["Genoa", "#a1162b", "#002f6c"], UDI: ["Udinese", "#222", "#fff"],
-  LEC: ["Lecce", "#f4dc00", "#d7141a"], CAG: ["Cagliari", "#002350", "#c8102e"], VER: ["Hellas Verona", "#00239c", "#ffcd00"], PAR: ["Parma", "#ffd200", "#1b3a8c"],
-  COM: ["Como", "#0a4595", "#fff"], SAS: ["Sassuolo", "#00a752", "#111"], PIS: ["Pisa", "#0a2240", "#fff"], CRE: ["Cremonese", "#9b1b30", "#a0a5aa"],
-  EMP: ["Empoli", "#005baa", "#fff"], MON: ["Monza", "#e4002b", "#fff"], VEN: ["Venezia", "#111", "#f58220"], SAM: ["Sampdoria", "#1b5faa", "#fff"],
-  SAL: ["Salernitana", "#7c1c2a", "#fff"], FRO: ["Frosinone", "#ffde00", "#00498f"], SPE: ["Spezia", "#111", "#fff"], PAL: ["Palermo", "#f5a7c4", "#111"]
+  ARS: ["Arsenal", "#db0007", "#fff"], BVB: ["Dortmund", "#fde100", "#111"], BOD: ["Bodø/Glimt", "#ffd700", "#111"], LAS: ["LASK", "#111", "#fff"],
+  COM: ["Como", "#0a4595", "#fff"], AEK: ["AEK Atenas", "#ffd700", "#111"], FEY: ["Feyenoord", "#e3001b", "#fff"], POR: ["Porto", "#00428c", "#fff"],
+  GAL: ["Galatasaray", "#a90432", "#fdb912"], AVL: ["Aston Villa", "#670e36", "#95bfe5"], MCI: ["Man. City", "#6cabdd", "#1c2c5b"], MUN: ["Man. United", "#da291c", "#fbe122"],
+  NAP: ["Napoli", "#12a0d7", "#fff"], RBL: ["Leipzig", "#dd0741", "#fff"], LEN: ["Lens", "#ffd700", "#e2001a"], RMA: ["Real Madrid", "#f5f5f5", "#00529f"],
+  PSV: ["PSV", "#ed1c24", "#fff"], SLO: ["Slovan", "#5aa6e0", "#fff"], BET: ["Betis", "#0bb363", "#fff"], SAB: ["Sabah", "#0f4c9c", "#fff"],
+  BAR: ["Barcelona", "#a50044", "#edbb00"], SLA: ["Slavia Praga", "#d00027", "#fff"], VIL: ["Villarreal", "#ffe667", "#005187"], ATM: ["Atlético", "#cb3524", "#fff"],
+  VIK: ["Viking", "#00305e", "#fff"], BRU: ["Brujas", "#0062ae", "#111"], LIV: ["Liverpool", "#c8102e", "#fff"], INT: ["Inter", "#0068a8", "#fff"],
+  VFB: ["Stuttgart", "#e32219", "#fff"], LIL: ["Lille", "#e01e13", "#20325f"], BAY: ["Bayern", "#dc052d", "#fff"], PSG: ["PSG", "#004170", "#fff"],
+  ROM: ["Roma", "#8e1f2f", "#f0bc42"], SHA: ["Shakhtar", "#f26522", "#111"], FEN: ["Fenerbahçe", "#163962", "#ffed00"], SCP: ["Sporting CP", "#008057", "#fff"]
 };
 const tname = c => (TEAM[c] || [c])[0];
 const badge = c => { const t = TEAM[c] || [c, "#0032a0", "#fff"]; return `<span class="badge" style="--tc:${t[1]};--tf:${t[2]}">${esc(c)}</span>`; };
 // Ids de FotMob para escudos y fotos (images.fotmob.com). Si una imagen no carga se ve el escudo de código / las iniciales.
-const FM = {ATA: 8524, BOL: 9857, CAG: 8529, COM: 10171, CRE: 7801, FIO: 8535, FRO: 9891, GEN: 10233, INT: 8636, JUV: 9885, LAZ: 8543, LEC: 9888,
-  MIL: 8564, MON: 6504, NAP: 9875, PAR: 10167, PIS: 6479, ROM: 8686, SAS: 7943, TOR: 9804, UDI: 8600, VEN: 7881, VER: 9876, EMP: 8534, SAM: 9882, SAL: 6480, SPE: 9881};
+const FM = {};  // se llena con data/equipos.json (ids de FotMob de los 36 equipos)
 const IMG = "https://images.fotmob.com/image_resources/";
 const tcol = c => (TEAM[c] || [c, "#0032a0", "#fff"]);
 const crest = (c, px = 28) => FM[c]
@@ -722,6 +724,7 @@ async function getJSON(u) { const r = await fetch(u, {cache: "no-cache"}); if (!
 async function partido(id) { return CACHE[id] || (CACHE[id] = await getJSON("data/" + encodeURIComponent(id) + ".json")); }
 
 async function init() {
+  try { Object.entries(await getJSON("data/equipos.json")).forEach(([c, x]) => { FM[c] = x.fm; }); } catch (e) {}
   try { IDX = await getJSON("data/index.json"); }
   catch (e) { $("#app").innerHTML = `<p class="empty">Todavía no hay jornada publicada.</p>`; return; }
   $("#demo").hidden = !IDX.ejemplo;
@@ -811,7 +814,7 @@ function contar(root) {
 function fecha(s) { const d = new Date(s + "T12:00:00"); return d.toLocaleDateString("es-CO", {weekday: "short", day: "numeric", month: "short"}); }
 
 /* ---------- panel de un partido ---------- */
-let TAB = store.get("sap-tab") || "resumen";
+let TAB = store.get("ucl-tab") || "resumen";
 async function verPartido(id) {
   $("#app").innerHTML = `<p class="empty">Cargando partido…</p>`;
   let d;
@@ -825,11 +828,11 @@ async function verPartido(id) {
       <div class="mid"><b>${esc(pa.marcadores[0][0])}</b>más probable<br>${pct(pa.marcadores[0][1], 1)}</div>
       <div class="tn">${crest(V, 72)}<div>${esc(tname(V))}</div></div>
     </div>
-    <div class="meta-row"><span>${esc(fecha(m.fecha))} · ${esc(m.hora_local)} Italia · <b>${esc(m.hora_bogota)} Bogotá</b></span><span>${esc(m.estadio || "")}</span><span>Árbitro: <b>${esc(d.arbitro.nombre || "por designar")}</b></span>${d.derbi ? `<span class="tag hot">${esc(d.derbi)}</span>` : ""}<span>Alineación ${esc(d.alineacion[L].estado)}</span></div>
+    <div class="meta-row"><span>${esc(fecha(m.fecha))} · ${esc(m.hora_local)} CET · <b>${esc(m.hora_bogota)} Bogotá</b></span><span>${esc(m.estadio || "")}</span><span>Árbitro: <b>${esc(d.arbitro.nombre || "por designar")}</b></span>${d.derbi ? `<span class="tag hot">${esc(d.derbi)}</span>` : ""}<span>Alineación ${esc(d.alineacion[L].estado)}</span></div>
   </div>
   <nav class="tabs" role="tablist">${tabs.map(([k, t]) => `<button role="tab" data-tab="${k}" aria-selected="${k === TAB}">${t}</button>`).join("")}</nav>
   <div id="tab"></div>`;
-  document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; store.set("sap-tab", TAB); document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", x === b)); pintar(d); });
+  document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; store.set("ucl-tab", TAB); document.querySelectorAll(".tabs button").forEach(x => x.setAttribute("aria-selected", x === b)); pintar(d); });
   pintar(d);
 }
 function pintar(d) {
@@ -870,7 +873,7 @@ function resumen(d, el) {
             <div class="split-l"><span>${esc(L)} ${pct(mq[0])}</span><span>${s === "goles" ? "empate" : "iguales"} ${pct(mq[1])}</span><span>${esc(V)} ${pct(mq[2])}</span></div>`; }
         return `<tr><td data-sort="${esc(STAT[s])}"><b>${lbl(s)}</b><span class="lg">Liga: ${f1(d.liga.medias[s])} por equipo</span></td><td class="n cl"><b>${f1(a.media)}</b><br><span class="sub">${a.p10}–${a.p90}</span></td><td class="n cv"><b>${f1(b.media)}</b><br><span class="sub">${b.p10}–${b.p90}</span></td><td class="n ct"><b>${f1(t.media)}</b><br><span class="sub">${t.p10}–${t.p90}</span></td><td class="cmp">${cmp}</td></tr>`; }).join("")}
     </table></div>
-    <p class="note">"Liga" es lo que hace un equipo promedio de la Serie A en un partido, para comparar. "¿Quién hace más?" es la probabilidad de que ese equipo termine con más que el rival en esa estadística.</p>
+    <p class="note">"Liga" es lo que hace un equipo promedio en nuestro histórico (últimos partidos de los equipos de la Champions) en un partido, para comparar. "¿Quién hace más?" es la probabilidad de que ese equipo termine con más que el rival en esa estadística.</p>
   </div>
   <div class="card" style="margin-top:14px">
     <div class="toolbar"><h3>Líneas de equipo</h3><select id="linea-st">${STATS_EQ.filter(s => s !== "goles").map(s => `<option value="${s}">${STAT[s]}</option>`).join("")}</select></div>
@@ -917,7 +920,7 @@ function contexto(d, el) {
     <div class="card"><h3>Árbitro · ${esc(a.nombre || "por designar")}</h3>
       ${(a.n || a.n_externo) ? `<div class="kv"><div><span>Amarillas/partido</span><b>${f2(a.media_amarillas)}</b></div><div><span>Últimos 5</span><b>${f2(a.media_amarillas_u5)}</b></div><div><span>Liga</span><b>${f2(a.liga_amarillas)}</b></div><div><span>Efecto</span><b>×${f2(a.mult_amarillas)}</b></div></div>
       <div class="scroll" style="margin-top:10px"><table><tr><th>Últimos 5 que pitó</th><th>Amar.</th><th>Rojas</th><th>Faltas</th></tr>${a.ultimos5.map(x => `<tr><td data-sort="${esc(x.fecha)}">${esc(x.fecha)} · ${esc(x.partido)}</td><td class="n">${x.amarillas}</td><td class="n">${x.rojas}</td><td class="n">${x.faltas}</td></tr>`).join("")}</table></div>
-      <p class="note">${a.n ? a.n + " partidos dirigidos en nuestro histórico" : a.n_externo + " partidos en la Serie A según FotMob"}. Su media (con más peso en los últimos 5) se encoge hacia la de la liga según cuántos partidos tiene; el efecto multiplica las amarillas esperadas de los dos equipos.</p>` : `<p class="note">Sin árbitro designado o sin historial: se usa la media de la liga.</p>`}
+      <p class="note">${a.n ? a.n + " partidos dirigidos en nuestro histórico" : a.n_externo + " partidos según FotMob"}. Su media (con más peso en los últimos 5) se encoge hacia la de la liga según cuántos partidos tiene; el efecto multiplica las amarillas esperadas de los dos equipos.</p>` : `<p class="note">Sin árbitro designado o sin historial: se usa la media de la liga.</p>`}
     </div>
     <div class="card"><h3>Cara a cara${d.derbi ? ` · ${esc(d.derbi)}` : ""}</h3>
       ${h.partidos.length ? `<div class="scroll"><table><tr><th>Partido</th><th>Res.</th><th>Rem.</th><th>Córn.</th><th>Amar.</th></tr>${h.partidos.slice().reverse().map(p => { const a1 = p.equipos[p.local], b1 = p.equipos[p.visitante]; return `<tr><td data-sort="${esc(p.fecha)}">${esc(p.fecha)} · ${esc(p.local)}–${esc(p.visitante)}</td><td class="n">${a1.goles}-${b1.goles}</td><td class="n">${a1.remates}-${b1.remates}</td><td class="n">${a1.corners}-${b1.corners}</td><td class="n">${a1.amarillas}-${b1.amarillas}</td></tr>`; }).join("")}</table></div>
@@ -1076,7 +1079,7 @@ function bajas(d, el) {
 }
 
 /* ---------- picks: tabla, Mis picks y Mi combinada ---------- */
-const MINE_K = "sap-mine";
+const MINE_K = "ucl-mine";
 const mine = {
   get() { try { return JSON.parse(store.get(MINE_K) || "[]"); } catch (e) { return []; } },
   set(v) { store.set(MINE_K, JSON.stringify(v)); actualizarMine(); }
@@ -1401,7 +1404,7 @@ function abrirJugador(d, t, j) {
 });
 
 /* ---------- Mi combinada: patas guardadas en este navegador; se arma desde cualquier partido ---------- */
-const COMBI_K = "sap-combi", COMBIS_K = "sap-combis";
+const COMBI_K = "ucl-combi", COMBIS_K = "ucl-combis";
 const jstore = k => ({get() { try { return JSON.parse(store.get(k) || "[]"); } catch (e) { return []; } }, set(v) { store.set(k, JSON.stringify(v)); }});
 const combi = jstore(COMBI_K), combis = jstore(COMBIS_K);
 const legKey = o => o.key || pickKey(o);
@@ -1522,10 +1525,10 @@ $("#back-btn").onclick = () => {
 };
 const MODELOS_NAV = [
   {n: "NBA", d: "Baloncesto", url: "../nba/", m1: "#0b1a3a", m2: "#1d428a"},
-  {n: "Serie A", d: "Fútbol · Italia", url: "./", m1: "#1a1659", m2: "#0032a0", cur: true},
+  {n: "Serie A", d: "Fútbol · Italia", url: "../serie-a/", m1: "#1a1659", m2: "#0032a0"},
   {n: "Premier League", d: "Fútbol · Inglaterra", m1: "#38003c", m2: "#5b0a63", pronto: true},
   {n: "LaLiga", d: "Fútbol · España", m1: "#1f1f1f", m2: "#3a3a3a", pronto: true},
-  {n: "Champions", d: "Fútbol · Europa", m1: "#0a1446", m2: "#1b2a7a", pronto: true},
+  {n: "Champions", d: "Fútbol · Europa", url: "./", m1: "#0a1446", m2: "#1b2a7a", cur: true},
   {n: "Europa League", d: "Fútbol · Europa", m1: "#2b1a00", m2: "#5a3600", pronto: true}];
 const dlg = $("#modelos-dlg");
 $("#modelos-grid").innerHTML = MODELOS_NAV.map(m => `<a class="dlg-m ${m.cur ? "cur" : ""} ${m.pronto ? "soon" : ""}" ${m.url ? `href="${m.url}"` : 'aria-disabled="true"'} style="--m1:${m.m1};--m2:${m.m2}"><small>${m.d}</small><b>${m.n}</b></a>`).join("");
@@ -1534,7 +1537,7 @@ $("#modelos-x").onclick = () => dlg.close();
 dlg.addEventListener("click", e => { if (e.target === dlg) dlg.close(); });
 dlg.querySelector(".dlg-m.cur").addEventListener("click", e => { e.preventDefault(); dlg.close(); location.hash = ""; });
 
-/* ---------- avisos al celular (OneSignal, worker único en la raíz del sitio; tema "serie_a") ---------- */
+/* ---------- avisos al celular (OneSignal, worker único en la raíz del sitio; tema "champions") ---------- */
 const AVS = {app: null, os: null, ready: null};
 function avsLoad() {
   if (AVS.ready) return AVS.ready;
@@ -1558,17 +1561,17 @@ async function avsDraw() {
   }
   if (!AVS.app) { box.innerHTML = `<div class="card callout">Avisos: muy pronto.</div>`; return; }
   let on = false;
-  try { const OS = await avsLoad(); on = !!OS.User.PushSubscription.optedIn && Notification.permission === "granted" && (await OS.User.getTags?.() || {}).serie_a === "1"; } catch (e) {
+  try { const OS = await avsLoad(); on = !!OS.User.PushSubscription.optedIn && Notification.permission === "granted" && (await OS.User.getTags?.() || {}).champions === "1"; } catch (e) {
     box.innerHTML = `<div class="card callout">No se pudo conectar con el servicio de avisos (${esc(e.message || e)}).</div>`; return; }
   box.innerHTML = on
-    ? `<p><span class="tag ok">Activados</span> Recibirás los avisos de la Serie A en este dispositivo.</p><button type="button" class="home-link" style="color:var(--ink);border-color:var(--line)" id="avs-off">Desactivar Serie A</button>`
+    ? `<p><span class="tag ok">Activados</span> Recibirás los avisos de la Champions en este dispositivo.</p><button type="button" class="home-link" style="color:var(--ink);border-color:var(--line)" id="avs-off">Desactivar Serie A</button>`
     : Notification.permission === "denied" ? `<div class="card callout">Bloqueaste los avisos para este sitio. Actívalos en los ajustes del navegador (candado junto a la dirección → Notificaciones → Permitir) y vuelve aquí.</div>`
-    : `<button type="button" class="addb on" style="width:auto;height:auto;padding:10px 16px;border-radius:999px;font:600 14px var(--display);letter-spacing:.06em;text-transform:uppercase" id="avs-on">Activar avisos de la Serie A</button>`;
+    : `<button type="button" class="addb on" style="width:auto;height:auto;padding:10px 16px;border-radius:999px;font:600 14px var(--display);letter-spacing:.06em;text-transform:uppercase" id="avs-on">Activar avisos de la Champions</button>`;
   const b1 = $("#avs-on"), b0 = $("#avs-off");
   if (b1) b1.onclick = async () => { b1.disabled = true; b1.textContent = "Activando…";
-    try { const OS = await avsLoad(); await OS.Notifications.requestPermission(); if (Notification.permission === "granted") { await OS.User.PushSubscription.optIn(); OS.User.addTag("serie_a", "1"); } } catch (e) {}
+    try { const OS = await avsLoad(); await OS.Notifications.requestPermission(); if (Notification.permission === "granted") { await OS.User.PushSubscription.optIn(); OS.User.addTag("champions", "1"); } } catch (e) {}
     setTimeout(avsDraw, 1500); };
-  if (b0) b0.onclick = async () => { try { (await avsLoad()).User.removeTag("serie_a"); } catch (e) {} setTimeout(avsDraw, 800); };
+  if (b0) b0.onclick = async () => { try { (await avsLoad()).User.removeTag("champions"); } catch (e) {} setTimeout(avsDraw, 800); };
 }
 const avDlg = $("#avisos-dlg");
 $("#avisos-btn").onclick = async () => {
@@ -1586,7 +1589,7 @@ avDlg.addEventListener("click", e => { if (e.target === avDlg) avDlg.close(); })
    Filtros: una barra .filtros[data-filtro=X] con chips data-fg/data-fv filtra la tabla table[data-filtro=X] por sus filas data-f-<grupo>. */
 const sess = {get(k) { try { return JSON.parse(sessionStorage.getItem(k) || "{}") || {}; } catch (e) { return {}; } },
   set(k, v) { try { sessionStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }};
-const ORD = sess.get("sap-orden"), FILT = sess.get("sap-filtros");
+const ORD = sess.get("ucl-orden"), FILT = sess.get("ucl-filtros");
 const REDUCE = () => matchMedia("(prefers-reduced-motion: reduce)").matches;
 const thTxt = th => th.textContent.replace(/\s+/g, " ").trim();
 const esFila = tr => [...tr.cells].some(c => c.tagName === "TD") && !tr.classList.contains("grp") && !tr.classList.contains("f-vacio");
@@ -1664,7 +1667,7 @@ function ordenar(tb, i, dir, porUsuario) {
   filasDe(tb).forEach(r => { if (esFila(r)) [...r.cells].forEach((c, k) => c.classList.toggle("ord-c", !!dir && k === i)); });
   if (porUsuario) {
     if (dir) ORD[tb._key] = {c: thTxt(th), d: dir}; else delete ORD[tb._key];
-    sess.set("sap-orden", ORD);
+    sess.set("ucl-orden", ORD);
     if (!REDUCE()) { body.classList.remove("ord-anim"); void body.offsetWidth; body.classList.add("ord-anim"); clearTimeout(body._t); body._t = setTimeout(() => body.classList.remove("ord-anim"), 400); }
   }
   if (tb.dataset.filtro) aplicarFiltros(tb.dataset.filtro);
@@ -1736,15 +1739,15 @@ document.addEventListener("click", e => {
   if (c && !c.disabled) {
     const sc = c.closest("[data-filtro]").dataset.filtro, st = filtroDe(sc), g = c.dataset.fg, v = c.dataset.fv;
     st[g] = String(st[g] ?? "all") === v && v !== "all" ? "all" : v;
-    sess.set("sap-filtros", FILT); aplicarFiltros(sc); return;
+    sess.set("ucl-filtros", FILT); aplicarFiltros(sc); return;
   }
   const r = e.target.closest("[data-freset]");
-  if (r) { e.preventDefault(); FILT[r.dataset.freset] = {}; sess.set("sap-filtros", FILT); aplicarFiltros(r.dataset.freset); }
+  if (r) { e.preventDefault(); FILT[r.dataset.freset] = {}; sess.set("ucl-filtros", FILT); aplicarFiltros(r.dataset.freset); }
 });
 document.addEventListener("input", e => {
   if (!e.target.matches(".fq")) return;
   const sc = e.target.closest("[data-filtro]").dataset.filtro;
-  filtroDe(sc).q = e.target.value; sess.set("sap-filtros", FILT); aplicarFiltros(sc);
+  filtroDe(sc).q = e.target.value; sess.set("ucl-filtros", FILT); aplicarFiltros(sc);
 });
 // Barra de chips: grupos [[clave, etiqueta-aria, [[valor, html, clase, deshabilitado]]]]
 const chipsBar = (scope, unidad, grupos, extra = "") => `<div class="filtros" data-filtro="${esc(scope)}" data-unidad="${esc(unidad)}">${grupos.map(([g, aria, ops]) =>
