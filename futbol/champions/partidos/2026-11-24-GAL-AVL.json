@@ -22,18 +22,18 @@
    "nombre": "Daniel Siebert"
   },
   "clima": {
-   "temperature": 6,
+   "temperature": 5,
    "windSpeed": 3,
    "windDirectionCardinal": "WNW",
-   "iconCode": 31,
-   "relativeHumidity": 67,
-   "precipChance": 2,
+   "iconCode": 33,
+   "relativeHumidity": 66,
+   "precipChance": 1,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 16,
-   "description": "Clear",
+   "cloudCover": 23,
+   "description": "Mostly Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T10:00:12Z",
+   "lastUpdated": "2026-11-24T12:00:26Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }

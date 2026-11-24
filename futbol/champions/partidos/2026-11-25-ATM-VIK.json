@@ -54,15 +54,15 @@
     "jugador": "ATM-789066",
     "nombre": "Cristian Romero",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
    },
    {
     "jugador": "ATM-1323897",
     "nombre": "Marc Pubill",
     "motivo": "lesion",
-    "regreso": "Early December 2026",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "ATM-690516",
