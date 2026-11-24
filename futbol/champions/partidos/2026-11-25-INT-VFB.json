@@ -26,14 +26,14 @@
    "windSpeed": 2,
    "windDirectionCardinal": "NNE",
    "iconCode": 12,
-   "relativeHumidity": 100,
-   "precipChance": 77,
-   "precipitation": 2.03,
+   "relativeHumidity": 99,
+   "precipChance": 97,
+   "precipitation": 2.78,
    "snow": 0,
    "cloudCover": 100,
    "description": "Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T08:00:32Z",
+   "lastUpdated": "2026-11-24T14:00:21Z",
    "localizedKey": "weather_condition_rain",
    "defaultTitle": "Rain"
   }
