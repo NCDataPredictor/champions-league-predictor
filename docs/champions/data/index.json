@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T13:12Z",
+ "actualizado": "2026-11-24T14:25Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -473,18 +473,18 @@
    "derbi": null,
    "arbitro": "Alejandro José Hernández Hernández",
    "1x2": [
-    0.193,
-    0.218,
-    0.589
+    0.192,
+    0.23,
+    0.578
    ],
-   "goles": 3.89,
-   "over25": 0.73,
-   "ambos": 0.722,
-   "corners": 10.89,
-   "amarillas": 4.46,
+   "goles": 3.83,
+   "over25": 0.726,
+   "ambos": 0.723,
+   "corners": 11.07,
+   "amarillas": 4.4,
    "marcador": [
     "1-2",
-    0.097
+    0.099
    ],
    "n_picks": 3,
    "ejemplo": false,
@@ -496,7 +496,7 @@
    },
    "bajas": {
     "BRU": 1,
-    "LIV": 1
+    "LIV": 2
    }
   },
   {
@@ -625,18 +625,18 @@
    "derbi": null,
    "arbitro": "Szymon Marciniak",
    "1x2": [
-    0.391,
-    0.27,
-    0.339
+    0.393,
+    0.269,
+    0.337
    ],
    "goles": 3.31,
-   "over25": 0.635,
-   "ambos": 0.685,
-   "corners": 8.45,
-   "amarillas": 3.76,
+   "over25": 0.632,
+   "ambos": 0.683,
+   "corners": 8.5,
+   "amarillas": 3.75,
    "marcador": [
     "1-1",
-    0.113
+    0.114
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -648,7 +648,7 @@
    },
    "bajas": {
     "SCP": 1,
-    "MUN": 4
+    "MUN": 5
    }
   },
   {
@@ -663,18 +663,18 @@
    "derbi": null,
    "arbitro": "Michael Oliver",
    "1x2": [
-    0.384,
-    0.296,
-    0.32
+    0.411,
+    0.291,
+    0.298
    ],
-   "goles": 2.73,
-   "over25": 0.511,
-   "ambos": 0.589,
-   "corners": 11.66,
-   "amarillas": 2.0,
+   "goles": 2.83,
+   "over25": 0.535,
+   "ambos": 0.604,
+   "corners": 11.71,
+   "amarillas": 2.02,
    "marcador": [
     "1-1",
-    0.137
+    0.13
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -685,7 +685,7 @@
     "FEN": "prevista (últimos 10)"
    },
    "bajas": {
-    "SHA": 2,
+    "SHA": 3,
     "FEN": 2
    }
   }
