@@ -282,7 +282,7 @@ def armar(db, fz_goles, partido):
             g *= P.DERBI_GOLES
         g *= h2h_mult.get("goles", 1.0) ** 0.5
         esp["goles"] = g
-        fac["goles"] = {"fuerza": round(gl if t == L else gv, 3), "estilo": round(cruce[t]["mult_remates"] ** 0.5, 3),
+        fac["goles"] = {"tasas": round(base(t, "goles"), 3), "fuerza": round(gl if t == L else gv, 3), "estilo": round(cruce[t]["mult_remates"] ** 0.5, 3),
                         **({"derbi": P.DERBI_GOLES} if derbi else {}), "h2h": round(h2h_mult.get("goles", 1.0) ** 0.5, 3)}
         esperado[t] = esp
         factores[t] = fac

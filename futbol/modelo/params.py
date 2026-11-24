@@ -86,5 +86,11 @@ MIN_P = 0.50
 # props de jugador con cuota de un solo lado (escaleras "N+" de Betano): margen que se le supone a la casa.
 # 0 = no se usan (regla original: solo cuota a dos lados).
 MARGEN_UN_LADO = 0.08
+# Champions: remates, córners y pases salen de partidos de liga local (rivales de otro nivel). Se anclan al mercado:
+# r = goles del mercado / goles que darían las tasas de liga local; la estadística se multiplica por r**β.
+ANCLA_MERCADO = {"remates": 0.6, "remates_puerta": 0.75, "corners": 0.5, "pases": 0.25}
+ANCLA_LIMITES = (0.4, 2.5)
+# Peso de cada partido en las tasas de equipo y jugador según la competición (el resto pesa 1).
+PESO_COMPETICION = {"Champions League": 2.5}
 MAX_PICKS_JORNADA = 12
 MAX_PICKS_JUGADOR = 2

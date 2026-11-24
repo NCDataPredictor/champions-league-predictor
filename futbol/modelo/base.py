@@ -151,6 +151,12 @@ def _liga(ps, temporada):
 
 
 # ---------------------------------------------------------------------------------------------- equipos
+def _peso_competicion(p):
+    """Peso del partido en las tasas: en la Champions los de la propia Champions (rivales de su nivel) pesan más que
+    los de liga local o copas (P.PESO_COMPETICION; 1 si no aplica, como en la Serie A)."""
+    return getattr(P, "PESO_COMPETICION", {}).get(p.get("competicion"), 1.0)
+
+
 def _equipos(ps, temporada, temporada_ant, liga):
     E = defaultdict(lambda: {
         "pj": 0, "pj_ant": 0,
@@ -170,16 +176,17 @@ def _equipos(ps, temporada, temporada_ant, liga):
             r = _rival(p, eq)
             e = E[eq]
             fav, con = p["equipos"][eq], p["equipos"][r]
+            wc = _peso_competicion(p)
             if actual:
-                e["pj"] += 1
+                e["pj"] += wc
                 for s in P.STATS_EQUIPO:
-                    e["favor"][s] += fav.get(s, 0)
-                    e["contra"][s] += con.get(s, 0)
+                    e["favor"][s] += wc * fav.get(s, 0)
+                    e["contra"][s] += wc * con.get(s, 0)
                 lado = e["local"] if eq == p["local"] else e["visit"]
-                lado["pj"] += 1
+                lado["pj"] += wc
                 for s in P.STATS_EQUIPO:
-                    lado["favor"][s] += fav.get(s, 0)
-                    lado["contra"][s] += con.get(s, 0)
+                    lado["favor"][s] += wc * fav.get(s, 0)
+                    lado["contra"][s] += wc * con.get(s, 0)
                 if fav.get("posesion") is not None:
                     e["posesion"].append(fav["posesion"])
             elif p["temporada"] == temporada_ant:
@@ -271,13 +278,13 @@ def _jugadores(ps, temporada, temporada_ant):
                 mins = max(0, j.get("min_sale", 90) - j.get("min_entra", 0)) if j.get("jugo", True) else 0
                 bucket = rec["act"] if actual else (rec["ant"] if p["temporada"] == temporada_ant else None)
                 if bucket is not None and mins > 0:
-                    _sumar(bucket, j, mins)
+                    _sumar(bucket, j, mins, _peso_competicion(p))
                 if p["id"] in ult10.get(eq, ()):
                     rec["convocado_u10"] += 1
                     if j.get("titular"):
                         rec["titular_u10"] += 1
                     if mins > 0:
-                        _sumar(rec["u10"], j, mins)
+                        _sumar(rec["u10"], j, mins, _peso_competicion(p))
                 if j.get("titular") and mins > 0:
                     rec["min_salida"].append(min(90, j.get("min_sale", 90)))
                 if not j.get("titular") and mins > 0:
@@ -316,12 +323,13 @@ def _acum():
     return {"min": 0, "pj": 0, **{s: 0.0 for s in P.STATS_JUGADOR}, "amarillas": 0}
 
 
-def _sumar(b, j, mins):
-    b["min"] += mins
+def _sumar(b, j, mins, w=1.0):
+    # w pondera minutos y estadísticas por igual: la tasa por 90' se inclina hacia los partidos de más peso
+    b["min"] += w * mins
     b["pj"] += 1
     for s in P.STATS_JUGADOR:
-        b[s] += j.get(s, 0)
-    b["amarillas"] += j.get("amarillas", 0)
+        b[s] += w * j.get(s, 0)
+    b["amarillas"] += w * j.get("amarillas", 0)
 
 
 # --------------------------------------------------------------------------------------------- árbitros

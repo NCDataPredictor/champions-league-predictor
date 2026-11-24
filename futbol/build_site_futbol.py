@@ -39,6 +39,26 @@ def cargar(patron):
     return out
 
 
+def _anclar_al_mercado(ctx, equipos):
+    """Lleva remates, remates a puerta, córners y pases al nivel del rival de la Champions.
+
+    Las tasas de cada equipo vienen de su liga local, donde Bodø, Viking o Sabah dominan y los grandes pocas veces
+    enfrentan a un rival de su nivel. El mercado sí sabe cuán superior es cada uno: si el mercado le da a un equipo
+    menos goles de los que darían sus tasas de liga local, también tendrá menos remates y córners (r**β)."""
+    lo, hi = P.ANCLA_LIMITES
+    for t in equipos:
+        tasas = ctx["factores"][t]["goles"].get("tasas") or 0
+        if tasas <= 0:
+            continue
+        r = min(hi, max(lo, ctx["esperado"][t]["goles"] / tasas))
+        ctx["factores"][t]["goles"]["mercado_vs_tasas"] = round(r, 3)
+        for s, b in P.ANCLA_MERCADO.items():
+            if s in ctx["esperado"][t]:
+                k = r ** b
+                ctx["esperado"][t][s] *= k
+                ctx["factores"][t].setdefault(s, {})["mercado"] = round(k, 3)
+
+
 def predecir(liga, partido, historico, sims):
     cfg = LIGAS[liga]
     m = partido["match"]
@@ -53,6 +73,8 @@ def predecir(liga, partido, historico, sims):
     # Champions: los goles esperados del partido salen del mercado (1X2 + total sin margen); fuerza.py solo para el resto
     goles_fn = lambda a, b, neutral: tuple(lam) if (lam and (a, b) == (L, V)) else fuerza.esperados(fz, a, b, neutral)  # noqa: E731
     ctx = contexto.armar(db, goles_fn, partido)
+    if lam:
+        _anclar_al_mercado(ctx, (L, V))
     prep = {t: jugadores.preparar_equipo(db, partido, t) for t in (L, V)}
     mult = {}
     bajas_det = {}
@@ -96,7 +118,7 @@ def predecir(liga, partido, historico, sims):
 # Últimos partidos jugados de cada jugador (para la ficha del jugador y los mini gráficos de sus líneas en la web).
 # Compacto: una fila por partido con las columnas de ULT_COLS (de más viejo a más reciente).
 ULT_COLS = ("fecha", "rival", "local", "min", "titular", "remates", "remates_puerta", "faltas_cometidas",
-            "faltas_recibidas", "pases", "amarillas")
+            "faltas_recibidas", "pases", "amarillas", "ucl")   # ucl: 1 si fue partido de Champions
 ULT_N = 10
 
 
@@ -115,7 +137,8 @@ def _recientes_jugadores(res, historico, fecha):
                     continue
                 mins = max(0, int(round((j.get("min_sale") or 0) - (j.get("min_entra") or 0))))
                 filas.setdefault(k, []).append([x["fecha"], rival, int(t == x["local"]), mins, int(bool(j.get("titular")))]
-                                               + [j.get(c) for c in ULT_COLS[5:]])
+                                               + [j.get(c) for c in ULT_COLS[5:-1]]
+                                               + [int(x.get("competicion") == "Champions League")])
     for t in res["jugadores"]:
         for j in res["jugadores"][t]:
             u = sorted(filas.get(num(j.get("id")), []), key=lambda r: r[0])
@@ -309,6 +332,13 @@ def main():
     a = ap.parse_args()
     cfg = LIGAS[a.liga]
     hist = cargar(os.path.join(RAIZ, "futbol", a.liga, "historico", "*.json"))
+    # FotMob no trae estadísticas de algunas ligas (Azerbaiyán, copas menores...): solo el marcador. Si entran, cuentan
+    # como 0 remates, 0 córners... y hunden las tasas del equipo y del rival (Barcelona esperaba 12 remates ante Sabah).
+    # Los goles ya salen del mercado, así que esos partidos se dejan fuera.
+    n0 = len(hist)
+    hist = [p for p in hist if all("remates" in e for e in p["equipos"].values())]
+    if len(hist) < n0:
+        print(f"{n0 - len(hist)} partidos sin estadísticas en FotMob: fuera del cálculo")
     partidos = cargar(os.path.join(RAIZ, "futbol", a.liga, "partidos", "*.json"))
     if a.fecha:
         partidos = [p for p in partidos if p["match"]["fecha"] == a.fecha]
