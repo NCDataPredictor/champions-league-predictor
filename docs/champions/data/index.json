@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T12:39Z",
+ "actualizado": "2026-11-24T12:49Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -419,7 +419,7 @@
     "VIL": "prevista (últimos 10)"
    },
    "bajas": {
-    "SLA": 0,
+    "SLA": 1,
     "VIL": 4
    }
   },
