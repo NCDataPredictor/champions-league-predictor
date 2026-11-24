@@ -26,14 +26,14 @@
    "windSpeed": 4,
    "windDirectionCardinal": "WSW",
    "iconCode": 26,
-   "relativeHumidity": 92,
-   "precipChance": 8,
+   "relativeHumidity": 93,
+   "precipChance": 9,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 84,
+   "cloudCover": 87,
    "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T10:00:12Z",
+   "lastUpdated": "2026-11-24T12:00:27Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
