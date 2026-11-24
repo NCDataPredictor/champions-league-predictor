@@ -26,20 +26,73 @@
    "windSpeed": 1,
    "windDirectionCardinal": "ENE",
    "iconCode": 11,
-   "relativeHumidity": 97,
-   "precipChance": 35,
-   "precipitation": 0.05,
+   "relativeHumidity": 91,
+   "precipChance": 52,
+   "precipitation": 0.09,
    "snow": 0,
-   "cloudCover": 96,
-   "description": "Light Rain",
+   "cloudCover": 83,
+   "description": "Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
+   "lastUpdated": "2026-11-24T19:00:20Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "COM": {
+   "titulares": [
+    "COM-789571",
+    "COM-1109171",
+    "COM-793907",
+    "COM-1413963",
+    "COM-1384881",
+    "COM-1336582",
+    "COM-638090",
+    "COM-1076647",
+    "COM-1347574",
+    "COM-1215064",
+    "COM-873270"
+   ],
+   "banco": [
+    "COM-560939",
+    "COM-2209768",
+    "COM-822789",
+    "COM-1353289",
+    "COM-1459564",
+    "COM-355356",
+    "COM-2209533",
+    "COM-1817857",
+    "COM-1593861",
+    "COM-941656"
+   ]
+  },
+  "AEK": {
+   "titulares": [
+    "AEK-403049",
+    "AEK-949866",
+    "AEK-637737",
+    "AEK-1285815",
+    "AEK-1015750",
+    "AEK-762721",
+    "AEK-1197823",
+    "AEK-574844",
+    "AEK-617396",
+    "AEK-463291",
+    "AEK-448859"
+   ],
+   "banco": [
+    "AEK-299879",
+    "AEK-1798250",
+    "AEK-395914",
+    "AEK-115180",
+    "AEK-547454",
+    "AEK-184639",
+    "AEK-796504",
+    "AEK-300916",
+    "AEK-1106943"
+   ]
+  }
  },
  "bajas": {
   "COM": [

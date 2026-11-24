@@ -22,24 +22,81 @@
    "nombre": "Ivan Kružliak"
   },
   "clima": {
-   "temperature": 0,
+   "temperature": -1,
    "windSpeed": 2,
    "windDirectionCardinal": "ESE",
-   "iconCode": 29,
-   "relativeHumidity": 79,
+   "iconCode": 31,
+   "relativeHumidity": 82,
    "precipChance": 2,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 32,
-   "description": "Partly Cloudy",
+   "cloudCover": 8,
+   "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
-   "localizedKey": "weather_condition_partly_cloudy",
-   "defaultTitle": "Partly Cloudy"
+   "lastUpdated": "2026-11-24T19:00:21Z",
+   "localizedKey": "weather_condition_clear",
+   "defaultTitle": "Clear"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "RBL": {
+   "titulares": [
+    "RBL-972200",
+    "RBL-883087",
+    "RBL-278856",
+    "RBL-1250443",
+    "RBL-806669",
+    "RBL-1174726",
+    "RBL-1274060",
+    "RBL-1430151",
+    "RBL-747718",
+    "RBL-1248482",
+    "RBL-1482733"
+   ],
+   "banco": [
+    "RBL-73409",
+    "RBL-681383",
+    "RBL-526657",
+    "RBL-1529161",
+    "RBL-1482209",
+    "RBL-1310001",
+    "RBL-1024672",
+    "RBL-1699555",
+    "RBL-704523",
+    "RBL-1203194",
+    "RBL-1314412"
+   ]
+  },
+  "LEN": {
+   "titulares": [
+    "LEN-1390336",
+    "LEN-1406645",
+    "LEN-1276626",
+    "LEN-955214",
+    "LEN-1002617",
+    "LEN-1288907",
+    "LEN-688830",
+    "LEN-660326",
+    "LEN-254308",
+    "LEN-1189856",
+    "LEN-612699"
+   ],
+   "banco": [
+    "LEN-186811",
+    "LEN-26427",
+    "LEN-513072",
+    "LEN-1685514",
+    "LEN-1727044",
+    "LEN-1634789",
+    "LEN-2372984",
+    "LEN-1980586",
+    "LEN-954190",
+    "LEN-1406419",
+    "LEN-1334534",
+    "LEN-264190"
+   ]
+  }
  },
  "bajas": {
   "RBL": [

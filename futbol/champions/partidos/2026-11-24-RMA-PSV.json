@@ -22,24 +22,81 @@
    "nombre": "Espen Eskås"
   },
   "clima": {
-   "temperature": 7,
-   "windSpeed": 4,
+   "temperature": 8,
+   "windSpeed": 6,
    "windDirectionCardinal": "WSW",
-   "iconCode": 27,
-   "relativeHumidity": 93,
+   "iconCode": 26,
+   "relativeHumidity": 92,
    "precipChance": 4,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 73,
-   "description": "Mostly Cloudy",
+   "cloudCover": 80,
+   "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
+   "lastUpdated": "2026-11-24T19:00:21Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "RMA": {
+   "titulares": [
+    "RMA-170323",
+    "RMA-743533",
+    "RMA-844415",
+    "RMA-276738",
+    "RMA-873289",
+    "RMA-488139",
+    "RMA-914458",
+    "RMA-1735453",
+    "RMA-1253890",
+    "RMA-846033",
+    "RMA-701154"
+   ],
+   "banco": [
+    "RMA-800882",
+    "RMA-1405014",
+    "RMA-1190025",
+    "RMA-1367619",
+    "RMA-593118",
+    "RMA-820140",
+    "RMA-760712",
+    "RMA-1015185",
+    "RMA-1077894",
+    "RMA-1796908",
+    "RMA-750027",
+    "RMA-1610744"
+   ]
+  },
+  "PSV": {
+   "titulares": [
+    "PSV-1077903",
+    "PSV-892816",
+    "PSV-881640",
+    "PSV-794244",
+    "PSV-281012",
+    "PSV-1337282",
+    "PSV-1327149",
+    "PSV-163670",
+    "PSV-1035643",
+    "PSV-1359970",
+    "PSV-774947"
+   ],
+   "banco": [
+    "PSV-583657",
+    "PSV-1402624",
+    "PSV-1124533",
+    "PSV-1386551",
+    "PSV-1506480",
+    "PSV-1678727",
+    "PSV-1699551",
+    "PSV-805767",
+    "PSV-1346860",
+    "PSV-1036401",
+    "PSV-665164"
+   ]
+  }
  },
  "bajas": {
   "RMA": [

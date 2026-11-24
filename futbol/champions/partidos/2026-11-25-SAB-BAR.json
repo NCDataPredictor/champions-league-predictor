@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 8,
-   "windSpeed": 5,
+   "windSpeed": 6,
    "windDirectionCardinal": "NNW",
    "iconCode": 26,
-   "relativeHumidity": 83,
-   "precipChance": 8,
+   "relativeHumidity": 82,
+   "precipChance": 11,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 91,
+   "cloudCover": 94,
    "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T12:00:27Z",
+   "lastUpdated": "2026-11-24T18:00:20Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }

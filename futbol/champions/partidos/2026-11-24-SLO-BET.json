@@ -26,20 +26,78 @@
    "windSpeed": 1,
    "windDirectionCardinal": "WNW",
    "iconCode": 31,
-   "relativeHumidity": 69,
+   "relativeHumidity": 71,
    "precipChance": 2,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 5,
+   "cloudCover": 3,
    "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
+   "lastUpdated": "2026-11-24T19:00:21Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "SLO": {
+   "titulares": [
+    "SLO-862024",
+    "SLO-888966",
+    "SLO-315814",
+    "SLO-922722",
+    "SLO-1045565",
+    "SLO-1023982",
+    "SLO-951951",
+    "SLO-1239580",
+    "SLO-552700",
+    "SLO-338136",
+    "SLO-1449716"
+   ],
+   "banco": [
+    "SLO-1072191",
+    "SLO-2481970",
+    "SLO-1699700",
+    "SLO-1513367",
+    "SLO-949877",
+    "SLO-727101",
+    "SLO-2093218",
+    "SLO-1620242",
+    "SLO-1174724",
+    "SLO-1614857",
+    "SLO-1557209",
+    "SLO-1338948"
+   ]
+  },
+  "BET": {
+   "titulares": [
+    "BET-999171",
+    "BET-1580522",
+    "BET-420568",
+    "BET-1338016",
+    "BET-750028",
+    "BET-191315",
+    "BET-1436133",
+    "BET-1315711",
+    "BET-967622",
+    "BET-852071",
+    "BET-1209399"
+   ],
+   "banco": [
+    "BET-1022354",
+    "BET-1674892",
+    "BET-676533",
+    "BET-427438",
+    "BET-743192",
+    "BET-195305",
+    "BET-1188375",
+    "BET-895954",
+    "BET-640220",
+    "BET-683450",
+    "BET-1072200",
+    "BET-942365"
+   ]
+  }
  },
  "bajas": {
   "SLO": [
@@ -56,13 +114,6 @@
     "motivo": "lesion",
     "regreso": "Mid December 2026",
     "p_juega": 0.0
-   },
-   {
-    "jugador": "SLO-1338948",
-    "nombre": "Roman Čerepkai",
-    "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
    },
    {
     "jugador": "SLO-1201843",

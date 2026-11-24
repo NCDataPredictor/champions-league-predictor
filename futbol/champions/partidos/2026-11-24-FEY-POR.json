@@ -31,31 +31,82 @@
    "temperature": 0,
    "windSpeed": 5,
    "windDirectionCardinal": "E",
-   "iconCode": 33,
-   "relativeHumidity": 83,
+   "iconCode": 31,
+   "relativeHumidity": 77,
    "precipChance": 2,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 20,
-   "description": "Mostly Clear",
+   "cloudCover": 9,
+   "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
+   "lastUpdated": "2026-11-24T19:00:21Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "FEY": {
+   "titulares": [
+    "FEY-1032824",
+    "FEY-1351133",
+    "FEY-1553376",
+    "FEY-1225450",
+    "FEY-1159181",
+    "FEY-1523822",
+    "FEY-952057",
+    "FEY-1228273",
+    "FEY-1576876",
+    "FEY-1553365",
+    "FEY-1256180"
+   ],
+   "banco": [
+    "FEY-445926",
+    "FEY-1336731",
+    "FEY-883503",
+    "FEY-630494",
+    "FEY-1023887",
+    "FEY-947898",
+    "FEY-1675966",
+    "FEY-1080520",
+    "FEY-1876640",
+    "FEY-1382019",
+    "FEY-748382",
+    "FEY-1692856"
+   ]
+  },
+  "POR": {
+   "titulares": [
+    "POR-795630",
+    "POR-1387439",
+    "POR-490868",
+    "POR-1021834",
+    "POR-1079056",
+    "POR-1116734",
+    "POR-664226",
+    "POR-1436856",
+    "POR-850356",
+    "POR-954092",
+    "POR-1647807"
+   ],
+   "banco": [
+    "POR-181433",
+    "POR-919374",
+    "POR-1404949",
+    "POR-902383",
+    "POR-1636513",
+    "POR-1186684",
+    "POR-623698",
+    "POR-602211",
+    "POR-388523",
+    "POR-1083204",
+    "POR-1414859",
+    "POR-1580427"
+   ]
+  }
  },
  "bajas": {
   "FEY": [
-   {
-    "jugador": "FEY-883503",
-    "nombre": "Gijs Smal",
-    "motivo": "lesion",
-    "regreso": "Day to day",
-    "p_juega": 0.0
-   },
    {
     "jugador": "FEY-680011",
     "nombre": "Bart Nieuwkoop",

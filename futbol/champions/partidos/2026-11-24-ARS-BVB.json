@@ -22,24 +22,81 @@
    "nombre": "Maurizio Mariani"
   },
   "clima": {
-   "temperature": 4,
+   "temperature": 5,
    "windSpeed": 3,
    "windDirectionCardinal": "ESE",
-   "iconCode": 27,
-   "relativeHumidity": 87,
+   "iconCode": 26,
+   "relativeHumidity": 81,
    "precipChance": 2,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 77,
-   "description": "Mostly Cloudy",
+   "cloudCover": 87,
+   "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T17:00:18Z",
+   "lastUpdated": "2026-11-24T19:00:20Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
  },
  "alineaciones": {
-  "estado": null
+  "estado": "oficial",
+  "ARS": {
+   "titulares": [
+    "ARS-317564",
+    "ARS-776151",
+    "ARS-710159",
+    "ARS-795179",
+    "ARS-1137667",
+    "ARS-1406436",
+    "ARS-654096",
+    "ARS-1084981",
+    "ARS-534670",
+    "ARS-1157237",
+    "ARS-664500"
+   ],
+   "banco": [
+    "ARS-952029",
+    "ARS-1680994",
+    "ARS-1298907",
+    "ARS-942381",
+    "ARS-1105912",
+    "ARS-955406",
+    "ARS-850354",
+    "ARS-818975",
+    "ARS-1635773",
+    "ARS-574645",
+    "ARS-749736"
+   ]
+  },
+  "BVB": {
+   "titulares": [
+    "BVB-764018",
+    "BVB-1479742",
+    "BVB-664970",
+    "BVB-1002058",
+    "BVB-659272",
+    "BVB-1287373",
+    "BVB-792429",
+    "BVB-966019",
+    "BVB-1209228",
+    "BVB-1047667",
+    "BVB-1050158"
+   ],
+   "banco": [
+    "BVB-743381",
+    "BVB-359203",
+    "BVB-1663094",
+    "BVB-1845173",
+    "BVB-559065",
+    "BVB-1089685",
+    "BVB-1729839",
+    "BVB-1254234",
+    "BVB-215151",
+    "BVB-1692797",
+    "BVB-1536436",
+    "BVB-448540"
+   ]
+  }
  },
  "bajas": {
   "ARS": [
