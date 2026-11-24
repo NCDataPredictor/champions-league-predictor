@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": -4,
-   "windSpeed": 5,
-   "windDirectionCardinal": "E",
+   "windSpeed": 4,
+   "windDirectionCardinal": "ESE",
    "iconCode": 33,
-   "relativeHumidity": 81,
+   "relativeHumidity": 82,
    "precipChance": 6,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 26,
+   "cloudCover": 29,
    "description": "Mostly Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T03:00:23Z",
+   "lastUpdated": "2026-11-24T10:00:12Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -63,8 +63,8 @@
     "jugador": "LAS-688449",
     "nombre": "Andrés Andrade",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "About a week",
+    "p_juega": 0.0
    },
    {
     "jugador": "LAS-953995",

@@ -1,0 +1,146 @@
+{
+ "ARS": {
+  "fm": 9825,
+  "nombre": "Arsenal"
+ },
+ "BVB": {
+  "fm": 9789,
+  "nombre": "Borussia Dortmund"
+ },
+ "BOD": {
+  "fm": 8402,
+  "nombre": "Bodø/Glimt"
+ },
+ "LAS": {
+  "fm": 9977,
+  "nombre": "LASK"
+ },
+ "COM": {
+  "fm": 10171,
+  "nombre": "Como"
+ },
+ "AEK": {
+  "fm": 8563,
+  "nombre": "AEK Athens"
+ },
+ "FEY": {
+  "fm": 10235,
+  "nombre": "Feyenoord"
+ },
+ "POR": {
+  "fm": 9773,
+  "nombre": "FC Porto"
+ },
+ "GAL": {
+  "fm": 8637,
+  "nombre": "Galatasaray"
+ },
+ "AVL": {
+  "fm": 10252,
+  "nombre": "Aston Villa"
+ },
+ "MCI": {
+  "fm": 8456,
+  "nombre": "Manchester City"
+ },
+ "NAP": {
+  "fm": 9875,
+  "nombre": "Napoli"
+ },
+ "RBL": {
+  "fm": 178475,
+  "nombre": "RB Leipzig"
+ },
+ "LEN": {
+  "fm": 8588,
+  "nombre": "Lens"
+ },
+ "RMA": {
+  "fm": 8633,
+  "nombre": "Real Madrid"
+ },
+ "PSV": {
+  "fm": 8640,
+  "nombre": "PSV Eindhoven"
+ },
+ "SLO": {
+  "fm": 6019,
+  "nombre": "Slovan Bratislava"
+ },
+ "BET": {
+  "fm": 8603,
+  "nombre": "Real Betis"
+ },
+ "ATM": {
+  "fm": 9906,
+  "nombre": "Atlético Madrid"
+ },
+ "VIK": {
+  "fm": 8478,
+  "nombre": "Viking"
+ },
+ "BRU": {
+  "fm": 8342,
+  "nombre": "Club Brugge"
+ },
+ "LIV": {
+  "fm": 8650,
+  "nombre": "Liverpool"
+ },
+ "INT": {
+  "fm": 8636,
+  "nombre": "Inter"
+ },
+ "VFB": {
+  "fm": 10269,
+  "nombre": "VfB Stuttgart"
+ },
+ "LIL": {
+  "fm": 8639,
+  "nombre": "Lille"
+ },
+ "BAY": {
+  "fm": 9823,
+  "nombre": "Bayern München"
+ },
+ "PSG": {
+  "fm": 9847,
+  "nombre": "Paris Saint-Germain"
+ },
+ "ROM": {
+  "fm": 8686,
+  "nombre": "Roma"
+ },
+ "SAB": {
+  "fm": 951893,
+  "nombre": "Sabah FK"
+ },
+ "BAR": {
+  "fm": 8634,
+  "nombre": "Barcelona"
+ },
+ "SCP": {
+  "fm": 9768,
+  "nombre": "Sporting CP"
+ },
+ "MUN": {
+  "fm": 10260,
+  "nombre": "Manchester United"
+ },
+ "SHA": {
+  "fm": 9728,
+  "nombre": "Shakhtar Donetsk"
+ },
+ "FEN": {
+  "fm": 8695,
+  "nombre": "Fenerbahçe"
+ },
+ "SLA": {
+  "fm": 7787,
+  "nombre": "Slavia Prague"
+ },
+ "VIL": {
+  "fm": 10205,
+  "nombre": "Villarreal"
+ }
+}

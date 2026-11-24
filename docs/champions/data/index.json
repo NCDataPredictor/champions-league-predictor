@@ -1,0 +1,693 @@
+{
+ "liga": "Champions",
+ "temporada": "2026-27",
+ "version": "futbol-0.1",
+ "actualizado": "2026-11-24T11:25Z",
+ "ejemplo": false,
+ "partidos": [
+  {
+   "id": "2026-11-24-BOD-LAS",
+   "fecha": "2026-11-24",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 5,
+   "local": "BOD",
+   "visitante": "LAS",
+   "estadio": "Aspmyra Stadion",
+   "derbi": null,
+   "arbitro": "Halil Umut Meler",
+   "1x2": [
+    0.602,
+    0.218,
+    0.18
+   ],
+   "goles": 3.88,
+   "over25": 0.729,
+   "ambos": 0.718,
+   "corners": 8.04,
+   "amarillas": 3.24,
+   "marcador": [
+    "2-1",
+    0.099
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 2,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "BOD": "prevista (últimos 10)",
+    "LAS": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BOD": 0,
+    "LAS": 2
+   }
+  },
+  {
+   "id": "2026-11-24-GAL-AVL",
+   "fecha": "2026-11-24",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 5,
+   "local": "GAL",
+   "visitante": "AVL",
+   "estadio": "RAMS Park",
+   "derbi": null,
+   "arbitro": "Daniel Siebert",
+   "1x2": [
+    0.317,
+    0.265,
+    0.418
+   ],
+   "goles": 3.36,
+   "over25": 0.646,
+   "ambos": 0.691,
+   "corners": 10.81,
+   "amarillas": 4.15,
+   "marcador": [
+    "1-1",
+    0.11
+   ],
+   "n_picks": 1,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "GAL": "prevista (últimos 10)",
+    "AVL": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "GAL": 4,
+    "AVL": 2
+   }
+  },
+  {
+   "id": "2026-11-24-ARS-BVB",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "ARS",
+   "visitante": "BVB",
+   "estadio": "Emirates Stadium",
+   "derbi": null,
+   "arbitro": "Maurizio Mariani",
+   "1x2": [
+    0.706,
+    0.196,
+    0.098
+   ],
+   "goles": 3.19,
+   "over25": 0.609,
+   "ambos": 0.544,
+   "corners": 9.72,
+   "amarillas": 3.75,
+   "marcador": [
+    "2-0",
+    0.109
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 2,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "ARS": "prevista (últimos 10)",
+    "BVB": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "ARS": 3,
+    "BVB": 1
+   }
+  },
+  {
+   "id": "2026-11-24-COM-AEK",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "COM",
+   "visitante": "AEK",
+   "estadio": "Stadio Giuseppe Sinigaglia",
+   "derbi": null,
+   "arbitro": "Javier Alberola Rojas",
+   "1x2": [
+    0.686,
+    0.203,
+    0.111
+   ],
+   "goles": 3.2,
+   "over25": 0.613,
+   "ambos": 0.562,
+   "corners": 10.28,
+   "amarillas": 3.2,
+   "marcador": [
+    "2-1",
+    0.106
+   ],
+   "n_picks": 6,
+   "ejemplo": false,
+   "n_errores": 4,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "COM": "prevista (últimos 10)",
+    "AEK": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "COM": 5,
+    "AEK": 2
+   }
+  },
+  {
+   "id": "2026-11-24-FEY-POR",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "FEY",
+   "visitante": "POR",
+   "estadio": "Stadion Feijenoord",
+   "derbi": null,
+   "arbitro": "Irfan Peljto",
+   "1x2": [
+    0.309,
+    0.282,
+    0.409
+   ],
+   "goles": 3.02,
+   "over25": 0.576,
+   "ambos": 0.643,
+   "corners": 7.4,
+   "amarillas": 3.29,
+   "marcador": [
+    "1-1",
+    0.128
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "FEY": "prevista (últimos 10)",
+    "POR": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "FEY": 3,
+    "POR": 2
+   }
+  },
+  {
+   "id": "2026-11-24-MCI-NAP",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "MCI",
+   "visitante": "NAP",
+   "estadio": "Etihad Stadium",
+   "derbi": null,
+   "arbitro": "István Kovács",
+   "1x2": [
+    0.741,
+    0.171,
+    0.088
+   ],
+   "goles": 3.56,
+   "over25": 0.686,
+   "ambos": 0.591,
+   "corners": 11.39,
+   "amarillas": 3.24,
+   "marcador": [
+    "2-1",
+    0.102
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 2,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "MCI": "prevista (últimos 10)",
+    "NAP": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "MCI": 2,
+    "NAP": 7
+   }
+  },
+  {
+   "id": "2026-11-24-RBL-LEN",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "RBL",
+   "visitante": "LEN",
+   "estadio": "Red Bull Arena",
+   "derbi": null,
+   "arbitro": "Ivan Kružliak",
+   "1x2": [
+    0.586,
+    0.237,
+    0.177
+   ],
+   "goles": 3.46,
+   "over25": 0.663,
+   "ambos": 0.671,
+   "corners": 10.54,
+   "amarillas": 2.53,
+   "marcador": [
+    "2-1",
+    0.107
+   ],
+   "n_picks": 6,
+   "ejemplo": false,
+   "n_errores": 1,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "RBL": "prevista (últimos 10)",
+    "LEN": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "RBL": 0,
+    "LEN": 2
+   }
+  },
+  {
+   "id": "2026-11-24-RMA-PSV",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "RMA",
+   "visitante": "PSV",
+   "estadio": "Estadio Bernabéu",
+   "derbi": null,
+   "arbitro": "Espen Eskås",
+   "1x2": [
+    0.78,
+    0.146,
+    0.074
+   ],
+   "goles": 3.96,
+   "over25": 0.746,
+   "ambos": 0.621,
+   "corners": 9.16,
+   "amarillas": 3.86,
+   "marcador": [
+    "2-1",
+    0.095
+   ],
+   "n_picks": 6,
+   "ejemplo": false,
+   "n_errores": 1,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "RMA": "prevista (últimos 10)",
+    "PSV": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "RMA": 2,
+    "PSV": 1
+   }
+  },
+  {
+   "id": "2026-11-24-SLO-BET",
+   "fecha": "2026-11-24",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "SLO",
+   "visitante": "BET",
+   "estadio": "Štadión Tehelné pole",
+   "derbi": null,
+   "arbitro": "Jérôme Brisard",
+   "1x2": [
+    0.117,
+    0.2,
+    0.683
+   ],
+   "goles": 3.4,
+   "over25": 0.649,
+   "ambos": 0.602,
+   "corners": 9.71,
+   "amarillas": 4.71,
+   "marcador": [
+    "1-2",
+    0.102
+   ],
+   "n_picks": 4,
+   "ejemplo": false,
+   "n_errores": 2,
+   "cuotas_capturadas": "2026-11-24T03:11Z",
+   "alineacion": {
+    "SLO": "prevista (últimos 10)",
+    "BET": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SLO": 5,
+    "BET": 2
+   }
+  },
+  {
+   "id": "2026-11-25-SAB-BAR",
+   "fecha": "2026-11-25",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 5,
+   "local": "SAB",
+   "visitante": "BAR",
+   "estadio": "Bakı Olimpiya Stadionu",
+   "derbi": null,
+   "arbitro": "Nick Walsh",
+   "1x2": [
+    0.051,
+    0.124,
+    0.824
+   ],
+   "goles": 3.95,
+   "over25": 0.748,
+   "ambos": 0.572,
+   "corners": 4.57,
+   "amarillas": 2.09,
+   "marcador": [
+    "0-2",
+    0.096
+   ],
+   "n_picks": 6,
+   "ejemplo": false,
+   "n_errores": 4,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "SAB": "prevista (últimos 10)",
+    "BAR": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SAB": 1,
+    "BAR": 4
+   }
+  },
+  {
+   "id": "2026-11-25-SLA-VIL",
+   "fecha": "2026-11-25",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 5,
+   "local": "SLA",
+   "visitante": "VIL",
+   "estadio": "Fortuna Arena",
+   "derbi": null,
+   "arbitro": "Rade Obrenović",
+   "1x2": [
+    0.375,
+    0.275,
+    0.349
+   ],
+   "goles": 3.2,
+   "over25": 0.62,
+   "ambos": 0.671,
+   "corners": 10.77,
+   "amarillas": 3.4,
+   "marcador": [
+    "1-1",
+    0.116
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 1,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "SLA": "prevista (últimos 10)",
+    "VIL": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SLA": 1,
+    "VIL": 4
+   }
+  },
+  {
+   "id": "2026-11-25-ATM-VIK",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "ATM",
+   "visitante": "VIK",
+   "estadio": "Riyadh Air Metropolitano",
+   "derbi": null,
+   "arbitro": "Erik Lambrechts",
+   "1x2": [
+    0.846,
+    0.115,
+    0.039
+   ],
+   "goles": 3.77,
+   "over25": 0.72,
+   "ambos": 0.497,
+   "corners": 11.28,
+   "amarillas": 2.93,
+   "marcador": [
+    "2-0",
+    0.11
+   ],
+   "n_picks": 4,
+   "ejemplo": false,
+   "n_errores": 4,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "ATM": "prevista (últimos 10)",
+    "VIK": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "ATM": 4,
+    "VIK": 0
+   }
+  },
+  {
+   "id": "2026-11-25-BRU-LIV",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "BRU",
+   "visitante": "LIV",
+   "estadio": "Jan Breydelstadion",
+   "derbi": null,
+   "arbitro": "Alejandro José Hernández Hernández",
+   "1x2": [
+    0.193,
+    0.218,
+    0.589
+   ],
+   "goles": 3.89,
+   "over25": 0.73,
+   "ambos": 0.722,
+   "corners": 10.89,
+   "amarillas": 4.46,
+   "marcador": [
+    "1-2",
+    0.097
+   ],
+   "n_picks": 3,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "BRU": "prevista (últimos 10)",
+    "LIV": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BRU": 1,
+    "LIV": 1
+   }
+  },
+  {
+   "id": "2026-11-25-INT-VFB",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "INT",
+   "visitante": "VFB",
+   "estadio": "Stadio Giuseppe Meazza",
+   "derbi": null,
+   "arbitro": "François Letexier",
+   "1x2": [
+    0.664,
+    0.197,
+    0.138
+   ],
+   "goles": 3.84,
+   "over25": 0.726,
+   "ambos": 0.685,
+   "corners": 9.21,
+   "amarillas": 3.1,
+   "marcador": [
+    "2-1",
+    0.1
+   ],
+   "n_picks": 4,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "INT": "prevista (últimos 10)",
+    "VFB": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "INT": 3,
+    "VFB": 3
+   }
+  },
+  {
+   "id": "2026-11-25-LIL-BAY",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "LIL",
+   "visitante": "BAY",
+   "estadio": "Decathlon Arena - Stade Pierre-Mauroy",
+   "derbi": null,
+   "arbitro": "Marco Guida",
+   "1x2": [
+    0.241,
+    0.267,
+    0.492
+   ],
+   "goles": 3.12,
+   "over25": 0.595,
+   "ambos": 0.639,
+   "corners": 9.76,
+   "amarillas": 2.89,
+   "marcador": [
+    "1-1",
+    0.117
+   ],
+   "n_picks": 4,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "LIL": "prevista (últimos 10)",
+    "BAY": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "LIL": 2,
+    "BAY": 7
+   }
+  },
+  {
+   "id": "2026-11-25-PSG-ROM",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "PSG",
+   "visitante": "ROM",
+   "estadio": "Parc des Princes",
+   "derbi": null,
+   "arbitro": "Glenn Nyberg",
+   "1x2": [
+    0.647,
+    0.211,
+    0.142
+   ],
+   "goles": 3.68,
+   "over25": 0.698,
+   "ambos": 0.669,
+   "corners": 9.23,
+   "amarillas": 2.58,
+   "marcador": [
+    "2-1",
+    0.102
+   ],
+   "n_picks": 5,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "PSG": "prevista (últimos 10)",
+    "ROM": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "PSG": 2,
+    "ROM": 3
+   }
+  },
+  {
+   "id": "2026-11-25-SCP-MUN",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "SCP",
+   "visitante": "MUN",
+   "estadio": "Estádio José Alvalade",
+   "derbi": null,
+   "arbitro": "Szymon Marciniak",
+   "1x2": [
+    0.391,
+    0.27,
+    0.339
+   ],
+   "goles": 3.31,
+   "over25": 0.635,
+   "ambos": 0.685,
+   "corners": 8.45,
+   "amarillas": 3.76,
+   "marcador": [
+    "1-1",
+    0.113
+   ],
+   "n_picks": 2,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "SCP": "prevista (últimos 10)",
+    "MUN": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SCP": 1,
+    "MUN": 4
+   }
+  },
+  {
+   "id": "2026-11-25-SHA-FEN",
+   "fecha": "2026-11-25",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 5,
+   "local": "SHA",
+   "visitante": "FEN",
+   "estadio": "Stamford Bridge",
+   "derbi": null,
+   "arbitro": "Michael Oliver",
+   "1x2": [
+    0.384,
+    0.296,
+    0.32
+   ],
+   "goles": 2.73,
+   "over25": 0.511,
+   "ambos": 0.589,
+   "corners": 11.66,
+   "amarillas": 2.0,
+   "marcador": [
+    "1-1",
+    0.137
+   ],
+   "n_picks": 6,
+   "ejemplo": false,
+   "n_errores": 2,
+   "cuotas_capturadas": "2026-11-24T03:12Z",
+   "alineacion": {
+    "SHA": "prevista (últimos 10)",
+    "FEN": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SHA": 2,
+    "FEN": 2
+   }
+  }
+ ]
+}

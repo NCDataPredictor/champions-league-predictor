@@ -22,20 +22,20 @@
    "nombre": "Marco Guida"
   },
   "clima": {
-   "temperature": 1,
+   "temperature": 2,
    "windSpeed": 5,
    "windDirectionCardinal": "NE",
-   "iconCode": 33,
-   "relativeHumidity": 84,
-   "precipChance": 10,
+   "iconCode": 29,
+   "relativeHumidity": 78,
+   "precipChance": 4,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 27,
-   "description": "Mostly Clear",
+   "cloudCover": 58,
+   "description": "Partly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T02:00:25Z",
-   "localizedKey": "weather_condition_clear",
-   "defaultTitle": "Clear"
+   "lastUpdated": "2026-11-24T08:00:32Z",
+   "localizedKey": "weather_condition_partly_cloudy",
+   "defaultTitle": "Partly Cloudy"
   }
  },
  "alineaciones": {
@@ -43,6 +43,13 @@
  },
  "bajas": {
   "LIL": [
+   {
+    "jugador": "LIL-1070617",
+    "nombre": "Tanguy Nianzou",
+    "motivo": "lesion",
+    "regreso": "About 1-2 weeks",
+    "p_juega": 0.0
+   },
    {
     "jugador": "LIL-1397857",
     "nombre": "Tiago Santos",
@@ -60,11 +67,18 @@
   ],
   "BAY": [
    {
-    "jugador": "BAY-751202",
-    "nombre": "Alphonso Davies",
+    "jugador": "BAY-1029063",
+    "nombre": "Michael Olise",
     "motivo": "lesion",
-    "regreso": "A few weeks",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
+   {
+    "jugador": "BAY-860914",
+    "nombre": "Luis Díaz",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "BAY-27299",
@@ -74,10 +88,10 @@
     "p_juega": 0.0
    },
    {
-    "jugador": "BAY-385437",
-    "nombre": "Serge Gnabry",
+    "jugador": "BAY-751202",
+    "nombre": "Alphonso Davies",
     "motivo": "lesion",
-    "regreso": "Early January 2027",
+    "regreso": "A few weeks",
     "p_juega": 0.0
    },
    {
@@ -88,11 +102,18 @@
     "p_juega": 0.0
    },
    {
-    "jugador": "BAY-860914",
-    "nombre": "Luis Díaz",
+    "jugador": "BAY-385437",
+    "nombre": "Serge Gnabry",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BAY-194165",
+    "nombre": "Harry Kane",
+    "motivo": "lesion",
+    "regreso": "Late January 2027",
+    "p_juega": 0.0
    }
   ]
  },

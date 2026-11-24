@@ -26,14 +26,14 @@
    "windSpeed": 2,
    "windDirectionCardinal": "ESE",
    "iconCode": 31,
-   "relativeHumidity": 84,
-   "precipChance": 7,
+   "relativeHumidity": 83,
+   "precipChance": 6,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 9,
+   "cloudCover": 11,
    "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T02:00:24Z",
+   "lastUpdated": "2026-11-24T10:00:12Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -43,13 +43,6 @@
  },
  "bajas": {
   "RBL": [
-   {
-    "jugador": "RBL-1253852",
-    "nombre": "Castello Lukeba",
-    "motivo": "lesion",
-    "regreso": "About 1-2 weeks",
-    "p_juega": 0.0
-   },
    {
     "jugador": "RBL-1412137",
     "nombre": "Marc Guiu",
@@ -66,6 +59,13 @@
    }
   ],
   "LEN": [
+   {
+    "jugador": "LEN-861445",
+    "nombre": "Michaël Cuisance",
+    "motivo": "lesion",
+    "regreso": "About a week",
+    "p_juega": 0.0
+   },
    {
     "jugador": "LEN-1053713",
     "nombre": "Maik Nawrocki",

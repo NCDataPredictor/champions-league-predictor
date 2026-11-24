@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 5,
-   "windSpeed": 4,
+   "windSpeed": 3,
    "windDirectionCardinal": "ESE",
-   "iconCode": 27,
-   "relativeHumidity": 87,
-   "precipChance": 7,
+   "iconCode": 26,
+   "relativeHumidity": 86,
+   "precipChance": 6,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 67,
-   "description": "Mostly Cloudy",
+   "cloudCover": 82,
+   "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T02:00:24Z",
+   "lastUpdated": "2026-11-24T10:00:12Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
@@ -43,6 +43,13 @@
  },
  "bajas": {
   "MCI": [
+   {
+    "jugador": "MCI-955529",
+    "nombre": "Matheus Nunes",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
    {
     "jugador": "MCI-933576",
     "nombre": "Antoine Semenyo",

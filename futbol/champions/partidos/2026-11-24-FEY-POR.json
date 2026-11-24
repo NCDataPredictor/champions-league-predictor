@@ -28,18 +28,18 @@
    "penaltis": 7
   },
   "clima": {
-   "temperature": -1,
+   "temperature": 0,
    "windSpeed": 5,
    "windDirectionCardinal": "E",
    "iconCode": 31,
-   "relativeHumidity": 84,
+   "relativeHumidity": 82,
    "precipChance": 5,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 5,
+   "cloudCover": 7,
    "description": "Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T02:00:24Z",
+   "lastUpdated": "2026-11-24T10:00:12Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -50,15 +50,15 @@
  "bajas": {
   "FEY": [
    {
-    "jugador": "FEY-680011",
-    "nombre": "Bart Nieuwkoop",
+    "jugador": "FEY-883503",
+    "nombre": "Gijs Smal",
     "motivo": "lesion",
     "regreso": "Day to day",
     "p_juega": 0.0
    },
    {
-    "jugador": "FEY-883503",
-    "nombre": "Gijs Smal",
+    "jugador": "FEY-680011",
+    "nombre": "Bart Nieuwkoop",
     "motivo": "lesion",
     "regreso": "Day to day",
     "p_juega": 0.0

@@ -30,10 +30,10 @@
    "precipChance": 6,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 90,
+   "cloudCover": 82,
    "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T02:00:24Z",
+   "lastUpdated": "2026-11-24T10:00:12Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
@@ -47,8 +47,8 @@
     "jugador": "ARS-562727",
     "nombre": "David Raya",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "About a week",
+    "p_juega": 0.0
    },
    {
     "jugador": "ARS-1031325",
