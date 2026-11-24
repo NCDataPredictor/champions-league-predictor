@@ -25,17 +25,17 @@
    "temperature": -1,
    "windSpeed": 3,
    "windDirectionCardinal": "ENE",
-   "iconCode": 27,
-   "relativeHumidity": 80,
-   "precipChance": 5,
+   "iconCode": 29,
+   "relativeHumidity": 81,
+   "precipChance": 4,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 77,
-   "description": "Mostly Cloudy",
+   "cloudCover": 37,
+   "description": "Partly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T06:00:26Z",
-   "localizedKey": "weather_condition_cloudy",
-   "defaultTitle": "Cloudy"
+   "lastUpdated": "2026-11-24T12:00:27Z",
+   "localizedKey": "weather_condition_partly_cloudy",
+   "defaultTitle": "Partly Cloudy"
   }
  },
  "alineaciones": {
@@ -43,13 +43,6 @@
  },
  "bajas": {
   "SLA": [
-   {
-    "jugador": "SLA-308841",
-    "nombre": "Ivan Schranz",
-    "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
-   },
    {
     "jugador": "SLA-928122",
     "nombre": "Igoh Ogbu",
