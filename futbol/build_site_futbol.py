@@ -26,6 +26,7 @@ from comun import mercado as MK  # noqa: E402
 from futbol.modelo import base, contexto, fuerza, fuerza_mercado, jugadores, mercados, simular  # noqa: E402
 from futbol.modelo import params as P  # noqa: E402
 from futbol.datos import betano_props  # noqa: E402
+from futbol import sonador  # noqa: E402
 
 LIGAS = {"champions": {"web": "champions", "nombre": "Champions", "temporada": "2026-27", "anterior": "2025-26"}}
 
@@ -175,7 +176,7 @@ def _historial_linea(res, s, ambito):
     return [val(x, "favor", s) for x in forma.get(t, [])] + [val(x, "contra", s) for x in forma.get(r, [])]
 
 
-def _candidato_equipo(out, base, p_over, media_mod, valores, c_over, c_under):
+def _candidato_equipo(out, base, p_over, media_mod, valores, c_over, c_under, todas=None):
     p_casa = MK.sin_margen([c_over, c_under]) if c_over and c_under else None
     if not p_casa:
         return
@@ -192,6 +193,8 @@ def _candidato_equipo(out, base, p_over, media_mod, valores, c_over, c_under):
         a_favor = p_mod >= 0.5 and (p_hist is None or p_hist >= 0.5)
         lejos = prom is not None and ((lado == "over" and prom >= linea * (1 + ERR_DIST)) or (lado == "under" and prom <= linea * (1 - ERR_DIST)))
         error = bool(n >= 6 and hits / n >= ERR_MIN_HIST and pc <= ERR_MAX_CASA and lejos and p_mod >= 0.5)
+        if todas is not None and a_favor:
+            todas.append({**base, "lado": lado, "cuota": cuota, "p_modelo": round(p_mod, 3), "p": round(p, 3), "ev": round(e, 3)})
         if error or (a_favor and p >= P.MIN_P and e >= P.VALUE_EV):
             out.append({**base, "lado": lado, "cuota": cuota, "p_modelo": round(p_mod, 3), "p_casa": round(pc, 3),
                         "p_hist": round(p_hist, 3) if p_hist is not None else None, "aciertos": hits, "n_hist": n,
@@ -199,7 +202,7 @@ def _candidato_equipo(out, base, p_over, media_mod, valores, c_over, c_under):
                         "p": round(p, 3), "ev": round(e, 3), "error_cuota": error, "puntaje": round(e * p + (0.05 if error else 0), 4)})
 
 
-def _candidato(out, base, p_over, c_over, c_under):
+def _candidato(out, base, p_over, c_over, c_under, todas=None):
     """Añade los lados que pasan los filtros: mezcla con la casa (MKT_W), p ≥ MIN_P, EV ≥ VALUE_EV."""
     p_casa = MK.sin_margen([c_over, c_under]) if c_over and c_under else None
     lados = (("over", p_over, c_over, p_casa[0]), ("under", 1 - p_over, c_under, p_casa[1])) if p_casa else ()
@@ -212,6 +215,8 @@ def _candidato(out, base, p_over, c_over, c_under):
     for lado, p_mod, cuota, pc in lados:
         p = MK.mezclar(p_mod, pc, P.MKT_W)
         e = MK.ev(p, cuota)
+        if todas is not None and p_mod >= 0.5:
+            todas.append({**base, "lado": lado, "cuota": cuota, "p_modelo": round(p_mod, 3), "p": round(p, 3), "ev": round(e, 3)})
         if p >= P.MIN_P and e >= P.VALUE_EV:
             out.append({**base, "lado": lado, "cuota": cuota, "p_modelo": round(p_mod, 3), "p_casa": round(pc, 3),
                         "p": round(p, 3), "ev": round(e, 3)})
@@ -229,6 +234,7 @@ def picks(res, partido, sim, eqs):
     m = res["match"]
     L, V = m["local"], m["visitante"]
     out = []
+    todas = []   # todas las líneas con cuota de la casa y el modelo a favor (sin filtro de EV): para el soñador
     # ---- jugadores
     idx = {}
     for t_i, t in enumerate((L, V)):
@@ -271,7 +277,7 @@ def picks(res, partido, sim, eqs):
                 if v.size == 0:
                     continue
                 _candidato(out, {"tipo": "jugador", "jugador": nombre, "equipo": t, "stat": stat, "linea": linea,
-                                 "suplente_oro": oro}, float((v > linea).mean()), c_over, c_under)
+                                 "suplente_oro": oro}, float((v > linea).mean()), c_over, c_under, todas)
     # ---- equipo y partido: modelo + cumplimiento histórico + cuota (picks de valor y errores de cuota)
     eq_out = []
     for c in (partido.get("cuotas") or {}).get("equipo") or []:
@@ -288,7 +294,7 @@ def picks(res, partido, sim, eqs):
         valores = _historial_linea(res, s, ambito)
         _candidato_equipo(eq_out, {"tipo": "equipo", "jugador": quien, "equipo": quien, "stat": s, "linea": c["linea"],
                                    "casa": c.get("casa"), "suplente_oro": False},
-                          float((x > c["linea"]).mean()), float(x.mean()), valores, c.get("over"), c.get("under"))
+                          float((x > c["linea"]).mean()), float(x.mean()), valores, c.get("over"), c.get("under"), todas)
     # un solo lado/línea por mercado: el de mayor puntaje (evita recomendar 4 líneas del mismo mercado)
     mejor = {}
     for x in eq_out:
@@ -296,6 +302,8 @@ def picks(res, partido, sim, eqs):
         if k not in mejor or x["puntaje"] > mejor[k]["puntaje"]:
             mejor[k] = x
     out.extend(mejor.values())
+    res["lineas_casa"] = sorted((x for x in todas if x["p"] >= sonador.P_MIN and sonador.CUOTA[0] <= x["cuota"] <= sonador.CUOTA[1]),
+                                key=lambda x: -x["p"])[:60]
     out.sort(key=lambda x: -(x.get("puntaje") or x["ev"] * x["p"]))
     por_j = {}
     final = []
@@ -381,9 +389,10 @@ def main():
         viejos[res["id"]] = resumen(res)
         print(f'{res["id"]}: 1X2 {res["partido"]["1x2"]}  goles {res["partido"]["total_goles"]["dist"]["media"]}  picks {len(res["picks"])}')
     lista = sorted(viejos.values(), key=lambda x: (x["fecha"], x.get("hora_local") or "", x["id"]))
+    sonadores = sonador.armar_jornada(outdir, lista, idx.get("sonador") or {})
     idx = {"liga": cfg["nombre"], "temporada": cfg["temporada"], "version": P.MODEL_VERSION,
            "actualizado": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
-           "ejemplo": any(x.get("ejemplo") for x in lista), "partidos": lista}
+           "ejemplo": any(x.get("ejemplo") for x in lista), "partidos": lista, "sonador": sonadores}
     with open(idx_path, "w", encoding="utf-8") as fh:
         json.dump(idx, fh, ensure_ascii=False, indent=1)
     # Resultados reales de los partidos ya jugados (para liquidar "Mis picks" en la web): stats por equipo.

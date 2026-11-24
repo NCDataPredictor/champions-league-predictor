@@ -525,6 +525,29 @@ dialog.sheet::backdrop { background: rgba(5, 6, 25, .55); backdrop-filter: blur(
 .cb-note { margin: 0; font-size: 12px; color: var(--muted) } .cb-note.warn { color: var(--ink); background: var(--accent-soft); border-radius: 8px; padding: 7px 9px }
 .cb-empty { padding: 14px 0; font-size: 14px; color: var(--muted) } .cb-empty ol { margin: 8px 0 0; padding-left: 20px } .cb-empty li { margin: 4px 0 }
 main { padding-bottom: 96px }
+/* secciones que se comprimen (picks, errores, soñadora); el estado queda en este navegador */
+.plg > summary { list-style: none; cursor: pointer; align-items: center } .plg > summary::-webkit-details-marker { display: none }
+.plg > summary .cv { font: 500 12px var(--mono); color: var(--accent); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; white-space: nowrap }
+.plg > summary .cv::before { content: "▾ Comprimir" } .plg:not([open]) > summary .cv::before { content: "▸ Ver" }
+.plg > summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 8px }
+.plg > summary .sl { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 16px }
+/* soñadora */
+.sn-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)) }
+.sn-card { padding: 14px 16px; border-top: 3px solid var(--ucl-star, #c9a227) }
+.sn-card h3 { margin: 0 0 4px; font-size: 18px }
+.sn-card .tiles { grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 10px 0 }
+.sn-legs { list-style: none; margin: 0; padding: 0; font-size: 13.5px }
+.sn-legs li { display: grid; grid-template-columns: minmax(0, 1fr) auto auto; gap: 2px 10px; align-items: center; padding: 7px 0; border-bottom: 1px solid var(--line) }
+.sn-legs li:last-child { border-bottom: 0 } .sn-legs .sub { display: block } .sn-legs .q { font: 600 13px var(--mono); text-align: right }
+/* Crea tu pick (dentro de Mi combinada) */
+.mk { display: grid; gap: 10px; padding: 8px 0 }
+.mk label { display: grid; gap: 4px; font-size: 12px; color: var(--muted) }
+.mk select, .mk input { font: 500 14px var(--body); padding: 7px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); min-width: 0 }
+.mk .row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px }
+.mk .res { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px }
+.mk .res div { background: var(--accent-soft); border-radius: 8px; padding: 7px 9px; font-size: 12px; color: var(--muted) } .mk .res b { display: block; font: 600 16px var(--mono); color: var(--ink) }
+.mk .res b.pos { color: var(--good) } .mk .res b.neg { color: var(--bad) }
+.jmk { font: 500 12px var(--mono); color: var(--accent); background: none; border: 1px solid var(--line); border-radius: 999px; padding: 3px 10px; cursor: pointer; margin-left: 6px }
 @media (max-width: 640px) {
   .combo { left: 12px; bottom: calc(12px + env(safe-area-inset-bottom, 0px)) }
   .combo.open { left: 8px; right: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px)) }
@@ -653,7 +676,7 @@ main:focus { outline: none }
 <div class="combo" id="combo">
   <button type="button" class="combo-pill empty" id="combo-pill" aria-expanded="false" aria-controls="combo-panel"><span class="cp-plus" aria-hidden="true">+</span><span class="t">Mi combinada</span><span class="n" id="cp-n">0</span><span class="d" id="cp-d"></span></button>
   <section class="combo-panel" id="combo-panel" hidden aria-labelledby="cb-t">
-    <div class="cb-head"><h2 id="cb-t">Mi combinada</h2><button type="button" class="cb-min" id="cb-min">Ocultar</button></div>
+    <div class="cb-head"><h2 id="cb-t">Mi combinada</h2><button type="button" class="cb-min" id="cb-mk">+ Crear pick</button><button type="button" class="cb-min" id="cb-min">Ocultar</button></div>
     <p class="cb-msg" id="cb-msg" role="status" hidden></p>
     <div class="cb-body" id="cb-body"></div>
     <div class="cb-foot" id="cb-foot"></div>
@@ -800,11 +823,12 @@ function inicio() {
       </div>
       <div class="mc-foot"><span>${ic("arbitro")}Árbitro <b>${esc(p.arbitro || "por designar")}</b> · Bajas ${esc(L)} <b>${p.bajas[L] || 0}</b> · ${esc(V)} <b>${p.bajas[V] || 0}</b></span><span class="mc-go">Ver partido <span>→</span></span></div>
     </a>`; }).join("")}</div>
-  <div class="section" style="margin-top:28px"><h2>${ic("over")}Picks de la jornada</h2><span class="eyebrow">${picks} picks · cuotas de Betano</span></div>
+  ${plegable("picks", `<h2>${ic("over")}Picks de la jornada</h2><span class="eyebrow">${picks} picks · cuotas de Betano</span>`, `
   ${picks ? "" : `<div class="card callout">Todavía no hay cuotas cargadas, así que no hay picks: el modelo nunca supone una cuota. Mientras tanto, en cada partido están sus probabilidades y la cuota justa (1 / probabilidad) para compararla con la de tu casa.</div>`}
-  <div id="picks"></div>
-  <div class="section" style="margin-top:28px"><h2>${ic("tarjetas")}Errores de cuota</h2><span class="eyebrow">línea de la casa lejos de lo que pasa en la cancha</span></div>
-  <div id="errores"></div>`;
+  <div id="picks"></div>`)}
+  ${plegable("errores", `<h2>${ic("tarjetas")}Errores de cuota</h2><span class="eyebrow">línea de la casa lejos de lo que pasa en la cancha</span>`, `<div id="errores"></div>`)}
+  ${sonadoraHTML()}`;
+  bindPlegables($("#app"));
   contar($("#app"));
   const errVacio = `<div class="card callout">Ningún error de cuota en esta jornada. Aparece uno cuando la casa da ≤ 45% a algo que se cumplió en ≥ 70% de los partidos recientes de los dos equipos, con el promedio al menos un 20% lejos de la línea y el modelo del mismo lado.</div>`;
   if (!picks) { $("#errores").innerHTML = errVacio; return; }
@@ -1408,14 +1432,15 @@ function abrirJugador(d, t, j) {
         const hn = ser ? contarHits(ser, l, "over") : null;
         const gi = ser ? reg(() => ({eyebrow: `${d.match.local} – ${d.match.visitante} · línea del modelo`, titulo: `${j.nombre} · más de ${linTxt(l)} ${STAT[s].toLowerCase()}`, linea: l, lado: "over", grupos: ser, modelo: pp, media_modelo: st.media})) : null;
         return `<tr><td>Más de ${linTxt(l)}</td><td class="p ${pp >= .55 ? "hi" : ""}">${pct(pp)}</td>${st.oro_over ? `<td class="p oro">${pct(st.oro_over[k][1])}</td>` : ""}<td class="n jz">${fair(pp)}</td>
-          <td>${hn ? hitBtn(hn, gi) : "–"}</td><td>${addLinea(d, {tipo: "jugador", jugador: j.nombre, equipo: t, stat: s, linea: l, p_over: pp})}</td></tr>`; }).join("")}</table></div></div>`; }).join("");
+          <td>${hn ? hitBtn(hn, gi) : "–"}</td><td style="white-space:nowrap">${addLinea(d, {tipo: "jugador", jugador: j.nombre, equipo: t, stat: s, linea: l, p_over: pp})} ${takeLinea(d, {tipo: "jugador", jugador: j.nombre, equipo: t, stat: s, linea: l, p_over: pp})}</td></tr>`; }).join("")}</table></div>
+      <button type="button" class="jmk" data-jmk="${reg({id: d.id, g: "ju:" + t, quien: j.nombre, stat: s})}">Con la cuota de tu casa →</button></div>`; }).join("");
   const oro = j.suplentes_oro && j.suplentes_oro.length ? `<p class="note">Si sale (${pct(j.p_sustituido)} de las veces; completa el partido ${pct(j.p_completa)}), suele entrar: ${j.suplentes_oro.map(([n, p]) => `${esc(n)} (${pct(p)})`).join(", ")}.</p>` : "";
   $("#jug-b").innerHTML = `
     <div class="jkpi"><div><span>Titular</span><b>${pct(j.p_titular)}</b></div><div><span>Juega</span><b>${pct(j.p_juega)}</b></div><div><span>Minutos esperados</span><b>${f1(j.min_medio)}'</b></div><div><span>Amarilla</span><b>${pct(j.p_amarilla)}</b></div></div>
     ${j.hereda_de ? `<p class="note"><span class="tag ok">titular por baja</span> Hereda el puesto de ${esc(j.hereda_de)}.</p>` : ""}
     <h3>Últimos partidos</h3>${ult}${u.length ? `<p class="note" style="margin-top:4px">Min. minutos · Rem. remates · Pta. a puerta · F. com./F. rec. faltas cometidas/recibidas · Amar. amarillas · (s) entró de suplente.</p>` : ""}
     <h3>Sus líneas en este partido</h3>
-    ${lin ? `<div class="jlin">${lin}</div><p class="note">Modelo: probabilidad de superar la línea si juega. "Últimos": cuántas veces la superó en sus partidos recientes (tócalo para ver el gráfico). <b>+</b> la suma a Mi combinada con la cuota justa; cámbiala por la de tu casa.</p>${oro}`
+    ${lin ? `<div class="jlin">${lin}</div><p class="note">Modelo: probabilidad de superar la línea si juega. "Últimos": cuántas veces la superó en sus partidos recientes (tócalo para ver el gráfico). <b>+</b> la suma a Mi combinada y <b>Lo tomo</b> la guarda en Mis picks, con la cuota justa; con <b>Con la cuota de tu casa</b> escribes tu cuota y ves el EV.</p>${oro}`
       : `<p class="note">El modelo no le da minutos suficientes para calcular líneas.</p>`}`;
   $("#jug-b").scrollTop = 0;
   abrirDlg(jugDlg);
@@ -1439,6 +1464,12 @@ function addLinea(d, x) {
   const o = {...x, id: d.id, game: d.match.local + "–" + d.match.visitante, fecha: d.match.fecha, lado: "over", p: x.p_over, cuota: +(1 / x.p_over).toFixed(2), sin_cuota: true};
   o.key = pickKey({...o, lado: "linea"});
   return `<button type="button" class="addc" data-cmb="${reg(o)}" aria-pressed="false" aria-label="Añadir a Mi combinada" title="Añadir a Mi combinada">+</button>`;
+}
+function takeLinea(d, x) {   // "Lo tomo" en una línea del modelo: se guarda al "Más de" con la cuota justa
+  if (!(x.p_over > .01 && x.p_over < .99)) return "";
+  const o = {...x, id: d.id, game: d.match.local + "–" + d.match.visitante, fecha: d.match.fecha, lado: "over", p: x.p_over, cuota: +(1 / x.p_over).toFixed(2), sin_cuota: true};
+  o.key = pickKey({...o, lado: "linea"});
+  return btnTake(reg(o));
 }
 const btnCmb = i => `<button type="button" class="cmb" data-cmb="${i}" aria-pressed="false" title="Sumar a Mi combinada"><span class="pl" aria-hidden="true">+</span><span class="t">Combinada</span></button>`;
 const btnTake = i => `<button type="button" class="take" data-take="${i}" aria-pressed="false" title="Guardar en Mis picks"><span class="bx" aria-hidden="true"></span><span class="t">Lo tomo</span></button>`;
@@ -1494,7 +1525,9 @@ function pintarCombi() {
   $("#cp-n").textContent = n;
   $("#cp-d").textContent = n ? "@" + cuotaComb(v).toFixed(2) : "";
   pill.setAttribute("aria-label", n ? `Mi combinada: ${n} ${n === 1 ? "pata" : "patas"}, cuota ${cuotaComb(v).toFixed(2)}` : "Mi combinada: vacía");
+  syncMkBtn();
   if ($("#combo-panel").hidden) return;
+  if (MK_OPEN) { pintarMk(); return; }
   $("#cb-body").innerHTML = n ? `<ul class="cb-legs">${v.map(k => `<li>
       <div class="cb-l"><span class="lg">${ic(k.stat)}${esc(pickTxt(k))}</span><span class="sub">${esc(k.game)} · ${esc(fecha(k.fecha))}${k.sin_cuota ? " · línea del modelo: cuota justa, pon la de tu casa" : k.error_cuota ? " · error de cuota" : " · pick del modelo"}</span>
         ${k.sin_cuota ? `<span class="seg sm" style="margin-top:4px"><button type="button" data-lado="over" data-k="${esc(k.key)}" aria-pressed="${k.lado === "over"}">Más de</button><button type="button" data-lado="under" data-k="${esc(k.key)}" aria-pressed="${k.lado === "under"}">Menos de</button></span>` : ""}</div>
@@ -1503,6 +1536,7 @@ function pintarCombi() {
     : `<div class="cb-empty"><b style="color:var(--ink)">Tu combinada está vacía.</b><ol>
         <li>En <b>Picks de la jornada</b> o en la pestaña <b>Picks</b> de un partido toca <span class="cmb demo"><span class="pl">+</span>Combinada</span>.</li>
         <li>En un jugador (Alineaciones o Jugadores) o en las <b>Líneas de equipo</b> toca <span class="addc demo" style="cursor:default">+</span> en la línea que quieras.</li>
+        <li>O toca <b>+ Crear pick</b> arriba: eliges partido, mercado, línea y la cuota de tu casa.</li>
         <li>Aquí ves la cuota combinada, la probabilidad y el EV. Puedes mezclar partidos.</li></ol></div>`;
   $("#cb-body").querySelectorAll(".cb-q").forEach(inp => inp.oninput = () => { const q = parseFloat(inp.value.replace(",", ".")); if (!(q > 1)) return;
     combi.set(combi.get().map(x => x.key === inp.dataset.k ? {...x, cuota: q} : x)); pieCombi(); $("#cp-d").textContent = "@" + cuotaComb(combi.get()).toFixed(2); });
@@ -1519,11 +1553,114 @@ function abrirCombi(abrir) {
 }
 $("#combo-pill").onclick = () => abrirCombi(true);
 $("#cb-min").onclick = () => abrirCombi(false);
+$("#cb-mk").onclick = () => { MK_OPEN = !MK_OPEN; pintarCombi(); };
 document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("#combo-panel").hidden && !document.querySelector("dialog[open]")) abrirCombi(false); });
 addEventListener("storage", e => { if (e.key === COMBI_K || e.key === MINE_K) { pintarCombi(); syncBotones(); actualizarMine(); } });
 
+
+/* ---------- secciones comprimibles del inicio (pedido de Nicolas, 24-nov) ---------- */
+const PLG_K = k => "ucl-plg-" + k;
+const plegable = (k, cab, cuerpo) => `<details class="plg" data-plg="${k}" style="margin-top:28px"${store.get(PLG_K(k)) === "0" ? "" : " open"}>
+  <summary class="section"><span class="sl">${cab}</span><span class="cv" aria-hidden="true"></span></summary>${cuerpo}</details>`;
+function bindPlegables(root) { root.querySelectorAll("details.plg").forEach(d => d.addEventListener("toggle", () => store.set(PLG_K(d.dataset.plg), d.open ? "1" : "0"))); }
+
+/* ---------- Parlay soñador: una combinada larga por día (build: futbol/sonador.py) ---------- */
+function sonadoraHTML() {
+  const S = IDX.sonador || {}, dias = Object.keys(S).sort();
+  const reglas = `Una combinada larga por día de partidos, para soñar: cuota total entre 50 y 200 con las líneas más probables que tienen cuota real de Betano (equipo, total del partido y props de jugador). Como mucho 2 patas por partido, una por jugador y la mitad al "Menos de". Se arma con la última corrida antes del primer partido del día y ahí queda congelada.`;
+  const cuerpo = dias.length ? `<p class="note" style="margin-top:-6px">${reglas}</p><div class="sn-grid">${dias.map(f => { const s = S[f];
+      const legs = s.patas.map(k => ({...k, key: pickKey(k)}));
+      return `<div class="card sn-card"><h3>${esc(fecha(f))}${s.congelado ? ' <span class="tag">congelada</span>' : ""}</h3>
+        <span class="sub">${s.n} patas · armada ${esc((s.armado || "").replace("T", " "))} UTC</span>
+        <div class="tiles"><div class="tile"><span>Cuota</span><b>${s.cuota.toFixed(2)}</b></div><div class="tile"><span>Probabilidad</span><b>${pct(s.p, 2)}</b></div>
+          <div class="tile"><span>Cuota justa</span><b>${fair(s.p)}</b></div><div class="tile"><span>EV</span><b class="${s.ev > 0 ? "pos" : "neg"}">${s.ev > 0 ? "+" : ""}${(s.ev * 100).toFixed(0)}%</b></div></div>
+        <ul class="sn-legs">${legs.map(k => `<li><span>${ic(k.stat)}${esc(pickTxt(k))}<span class="sub"><a href="#${esc(k.id)}">${esc(k.game)}</a> · ${esc(k.hora || "")} · prob. ${pct(k.p)}${k.un_lado ? " · escalera Betano" : ""}</span></span>
+          <span class="q">${(+k.cuota).toFixed(2)}</span>${btnCmb(reg(k))}</li>`).join("")}</ul>
+        <div class="cb-act" style="margin-top:10px"><button type="button" class="btn" data-sn="${esc(f)}">Pasarla a Mi combinada</button></div></div>`; }).join("")}</div>
+      <p class="note">Probabilidad = producto de las patas (de partidos distintos son independientes; dos del mismo partido pueden no serlo). Confirma cada cuota en tu casa antes de apostar: la de Betano pudo moverse.</p>`
+    : `<div class="card callout">Todavía no hay soñadora: sale cuando hay suficientes líneas con cuota de Betano y probabilidad ≥ 60% para llegar a cuota 50 antes de que empiece el primer partido del día.</div>`;
+  return plegable("sonadora", `<h2>${ic("over")}Parlay soñador</h2><span class="eyebrow">${dias.length ? dias.length + (dias.length === 1 ? " día" : " días") : "por día"} · props de jugador incluidas</span>`, cuerpo);
+}
+document.addEventListener("click", e => { const b = e.target.closest("[data-sn]"); if (!b) return;
+  const s = (IDX.sonador || {})[b.dataset.sn]; if (!s) return;
+  MK_OPEN = false; combi.set(s.patas.map(k => legDe({...k, key: pickKey(k)}))); syncBotones(); abrirCombi(true);
+  const m = $("#cb-msg"); m.textContent = `Soñadora de ${fecha(b.dataset.sn)} en Mi combinada: cambia las cuotas por las de tu casa si se movieron.`; m.hidden = false; });
+
+/* ---------- Crea tu pick: dentro de Mi combinada (cualquier partido por jugarse) y desde la ficha del jugador ---------- */
+let MK_OPEN = false, MK = {};
+const porJugar = () => IDX.partidos.filter(p => new Date(`${p.fecha}T${p.hora_bogota || "23:59"}:00-05:00`) > new Date());
+function mkOver(d) {   // [línea, prob. de "más de"] del mercado elegido
+  if (!d) return [];
+  if (MK.quien === "partido") return ((d.partido.totales || {})[MK.stat] || {}).over || [];
+  if (MK.tipo === "equipo") return ((d.equipos[MK.quien] || {})[MK.stat] || {}).over || [];
+  const j = (d.jugadores[MK.equipo] || []).find(x => x.nombre === MK.quien); const st = j && j.stats[MK.stat];
+  return st ? (st.titular_over || st.over) : [];
+}
+async function pintarMk() {
+  const body = $("#cb-body"), ps = porJugar();
+  $("#cb-foot").hidden = true;
+  if (!ps.length) { body.innerHTML = `<p class="cb-note" style="padding:12px 0">No quedan partidos por jugarse en esta jornada.</p>`; return; }
+  if (!ps.some(p => p.id === MK.id)) MK = {id: ps[0].id};
+  const d = await partido(MK.id); if (!MK_OPEN) return;
+  const L = d.match.local, V = d.match.visitante;
+  const grupos = [["eq:" + L, tname(L)], ["eq:" + V, tname(V)], ["eq:partido", "Total del partido"], ["ju:" + L, "Jugador de " + tname(L)], ["ju:" + V, "Jugador de " + tname(V)]];
+  if (!MK.g) MK.g = "eq:" + L;
+  const [tg, cod] = MK.g.split(":");
+  MK.tipo = tg === "eq" ? "equipo" : "jugador";
+  let jugs = [];
+  if (MK.tipo === "jugador") { MK.equipo = cod; jugs = (d.jugadores[cod] || []).filter(j => STATS_J.some(s => j.stats[s])).sort((a, b) => b.p_juega - a.p_juega);
+    if (!jugs.some(j => j.nombre === MK.quien)) MK.quien = jugs.length ? jugs[0].nombre : null; }
+  else { MK.quien = cod; MK.equipo = cod; }
+  const stats = MK.tipo === "jugador" ? STATS_J.filter(s => { const j = jugs.find(x => x.nombre === MK.quien); return j && j.stats[s]; })
+    : STATS_EQ.filter(s => (cod === "partido" ? (d.partido.totales || {})[s] : (d.equipos[cod] || {})[s]));
+  if (!stats.includes(MK.stat)) MK.stat = stats[0];
+  const ov = mkOver(d);
+  if (!ov.some(o => o[0] === MK.linea)) MK.linea = ov.length ? ov.reduce((b, o) => Math.abs(o[1] - .5) < Math.abs(b[1] - .5) ? o : b)[0] : null;   // la más pareja
+  MK.lado = MK.lado || "over";
+  const opt = (v, t, sel) => `<option value="${esc(v)}"${String(v) === String(sel) ? " selected" : ""}>${esc(t)}</option>`;
+  body.innerHTML = `<div class="mk">
+    <p class="cb-note">Elige el partido, el mercado, la línea y la cuota que te da tu casa: el modelo te da la probabilidad y el EV, y lo sumas a tu combinada o a Mis picks.</p>
+    <label>Partido<select id="mk-p">${ps.map(p => opt(p.id, `${tname(p.local)} – ${tname(p.visitante)} · ${fecha(p.fecha)} ${p.hora_bogota || ""}`, MK.id)).join("")}</select></label>
+    <label>Mercado<select id="mk-g">${grupos.map(([v, t]) => opt(v, t, MK.g)).join("")}</select></label>
+    ${MK.tipo === "jugador" ? `<label>Jugador<select id="mk-j">${jugs.map(j => opt(j.nombre, `${j.nombre} · ${j.pos} · juega ${pct(j.p_juega)}`, MK.quien)).join("")}</select></label>` : ""}
+    <div class="row2"><label>Estadística<select id="mk-s">${stats.map(s => opt(s, STAT[s], MK.stat)).join("")}</select></label>
+      <label>Línea<select id="mk-l">${ov.map(o => opt(o[0], linTxt(o[0]), MK.linea)).join("")}</select></label></div>
+    <div class="row2"><span class="seg" role="group" aria-label="Lado"><button type="button" data-mkl="over" aria-pressed="${MK.lado === "over"}">Más de</button><button type="button" data-mkl="under" aria-pressed="${MK.lado === "under"}">Menos de</button></span>
+      <label>Cuota de tu casa<input id="mk-q" type="text" inputmode="decimal" placeholder="ej. 1,85" value="${MK.q || ""}"></label></div>
+    <div class="res" id="mk-r"></div>
+    <div class="cb-act" id="mk-a"></div></div>`;
+  const set = (k, v, reset) => { MK[k] = v; reset.forEach(x => delete MK[x]); pintarMk(); };
+  $("#mk-p").onchange = e => set("id", e.target.value, ["g", "quien", "stat", "linea"]);
+  $("#mk-g").onchange = e => set("g", e.target.value, ["quien", "stat", "linea"]);
+  if ($("#mk-j")) $("#mk-j").onchange = e => set("quien", e.target.value, ["linea"]);
+  $("#mk-s").onchange = e => set("stat", e.target.value, ["linea"]);
+  $("#mk-l").onchange = e => { MK.linea = +e.target.value; calc(); };
+  body.querySelectorAll("[data-mkl]").forEach(b => b.onclick = () => { MK.lado = b.dataset.mkl; body.querySelectorAll("[data-mkl]").forEach(x => x.setAttribute("aria-pressed", x === b)); calc(); });
+  $("#mk-q").oninput = e => { MK.q = e.target.value; calc(); };
+  function calc() {
+    const r = ov.find(o => o[0] === MK.linea), po = r ? r[1] : null, p = po == null ? null : MK.lado === "over" ? po : 1 - po;
+    const q = parseFloat(String(MK.q || "").replace(",", ".")), ev = p != null && q > 1 ? p * q - 1 : null;
+    $("#mk-r").innerHTML = `<div>Modelo<b>${pct(p)}</b></div><div>Cuota justa<b>${p ? fair(p) : "–"}</b></div><div>EV<b class="${ev == null ? "" : ev > 0 ? "pos" : "neg"}">${ev == null ? "–" : (ev > 0 ? "+" : "") + (ev * 100).toFixed(1) + "%"}</b></div>`;
+    if (p == null || !(p > .01 && p < .99)) { $("#mk-a").innerHTML = `<span class="cb-note">El modelo no tiene esa línea.</span>`; return; }
+    const k = {id: d.id, game: L + "–" + V, fecha: d.match.fecha, tipo: MK.tipo, jugador: MK.quien, equipo: MK.equipo, stat: MK.stat, linea: MK.linea, lado: MK.lado,
+      cuota: q > 1 ? q : +(1 / p).toFixed(2), p, creado: true};
+    if (!(q > 1)) { k.sin_cuota = true; k.p_over = po; }
+    k.key = pickKey(k);
+    $("#mk-a").innerHTML = `${btnCmb(reg(k))}${btnTake(reg(k))}${q > 1 ? "" : '<span class="cb-note">Sin tu cuota entra con la cuota justa.</span>'}`;
+    syncBotones();
+  }
+  calc();
+}
+function abrirMk(pre) {
+  MK_OPEN = true; if (pre) MK = pre;
+  if ($("#combo-panel").hidden) abrirCombi(true); else pintarCombi();
+}
+function syncMkBtn() { const b = $("#cb-mk"); if (b) b.textContent = MK_OPEN ? `← Combinada (${combi.get().length})` : "+ Crear pick"; }
+
 /* ---------- clics delegados: + Combinada, Lo tomo, gráficos y jugadores (toque, mouse y teclado) ---------- */
 document.addEventListener("click", e => {
+  const jm = e.target.closest("[data-jmk]");
+  if (jm) { e.preventDefault(); jugDlg.close(); abrirMk({...REG[+jm.dataset.jmk], lado: "over"}); return; }
   const b = e.target.closest("[data-cmb],[data-take],[data-graf],[data-jug]");
   if (!b) return;
   if (b.dataset.jug != null && b.tagName === "TR" && e.target.closest("button, a, input")) return;
@@ -1586,7 +1723,7 @@ async function avsDraw() {
   try { const OS = await avsLoad(); on = !!OS.User.PushSubscription.optedIn && Notification.permission === "granted" && (await OS.User.getTags?.() || {}).champions === "1"; } catch (e) {
     box.innerHTML = `<div class="card callout">No se pudo conectar con el servicio de avisos (${esc(e.message || e)}).</div>`; return; }
   box.innerHTML = on
-    ? `<p><span class="tag ok">Activados</span> Recibirás los avisos de la Champions en este dispositivo.</p><button type="button" class="home-link" style="color:var(--ink);border-color:var(--line)" id="avs-off">Desactivar Serie A</button>`
+    ? `<p><span class="tag ok">Activados</span> Recibirás los avisos de la Champions en este dispositivo.</p><button type="button" class="home-link" style="color:var(--ink);border-color:var(--line)" id="avs-off">Desactivar avisos</button>`
     : Notification.permission === "denied" ? `<div class="card callout">Bloqueaste los avisos para este sitio. Actívalos en los ajustes del navegador (candado junto a la dirección → Notificaciones → Permitir) y vuelve aquí.</div>`
     : `<button type="button" class="addb on" style="width:auto;height:auto;padding:10px 16px;border-radius:999px;font:600 14px var(--display);letter-spacing:.06em;text-transform:uppercase" id="avs-on">Activar avisos de la Champions</button>`;
   const b1 = $("#avs-on"), b0 = $("#avs-off");
