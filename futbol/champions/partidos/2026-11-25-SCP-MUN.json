@@ -1,5 +1,5 @@
 {
- "id": "2026-11-25-SPO-MAN",
+ "id": "2026-11-25-SCP-MUN",
  "fuente": "fotmob",
  "fuente_id": "6106279",
  "match": {
@@ -10,8 +10,8 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-25T20:00:00Z",
-  "local": "SPO",
-  "visitante": "MAN",
+  "local": "SCP",
+  "visitante": "MUN",
   "estadio": "Estádio José Alvalade",
   "neutral": false,
   "competicion": "liga"
@@ -42,53 +42,53 @@
   "estado": null
  },
  "bajas": {
-  "SPO": [
+  "SCP": [
    {
-    "jugador": "SPO-1232172",
+    "jugador": "SCP-1232172",
     "nombre": "Zeno Debast",
     "motivo": "lesion",
     "regreso": "Day to day",
     "p_juega": 0.0
    },
    {
-    "jugador": "SPO-554283",
+    "jugador": "SCP-554283",
     "nombre": "Nuno Santos",
     "motivo": "lesion",
     "regreso": "Day to day",
     "p_juega": 0.0
    }
   ],
-  "MAN": [
+  "MUN": [
    {
-    "jugador": "MAN-1352713",
+    "jugador": "MUN-1352713",
     "nombre": "Carlos Baleba",
     "motivo": "lesion",
     "regreso": "Late November 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "MAN-696365",
+    "jugador": "MUN-696365",
     "nombre": "Marcus Rashford",
     "motivo": "lesion",
     "regreso": "Doubtful",
     "p_juega": 0.5
    },
    {
-    "jugador": "MAN-362694",
+    "jugador": "MUN-362694",
     "nombre": "Luke Shaw",
     "motivo": "lesion",
     "regreso": "Doubtful",
     "p_juega": 0.5
    },
    {
-    "jugador": "MAN-1073977",
+    "jugador": "MUN-1073977",
     "nombre": "Benjamin Šeško",
     "motivo": "lesion",
     "regreso": "Early January 2027",
     "p_juega": 0.0
    },
    {
-    "jugador": "MAN-1035614",
+    "jugador": "MUN-1035614",
     "nombre": "Manuel Ugarte",
     "motivo": "lesion",
     "regreso": "Early April 2027",

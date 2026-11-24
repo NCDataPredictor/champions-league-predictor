@@ -1,5 +1,5 @@
 {
- "id": "2026-11-25-CLU-LIV",
+ "id": "2026-11-25-BRU-LIV",
  "fuente": "fotmob",
  "fuente_id": "6106294",
  "match": {
@@ -10,7 +10,7 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-25T20:00:00Z",
-  "local": "CLU",
+  "local": "BRU",
   "visitante": "LIV",
   "estadio": "Jan Breydelstadion",
   "neutral": false,
@@ -42,9 +42,9 @@
   "estado": null
  },
  "bajas": {
-  "CLU": [
+  "BRU": [
    {
-    "jugador": "CLU-1354085",
+    "jugador": "BRU-1354085",
     "nombre": "Joel Ordóñez",
     "motivo": "lesion",
     "regreso": "Day to day",

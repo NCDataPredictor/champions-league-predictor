@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-REA-PSV",
+ "id": "2026-11-24-RMA-PSV",
  "fuente": "fotmob",
  "fuente_id": "6106243",
  "match": {
@@ -10,7 +10,7 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-24T20:00:00.000Z",
-  "local": "REA",
+  "local": "RMA",
   "visitante": "PSV",
   "estadio": "Estadio Bernabéu",
   "neutral": false,
@@ -42,30 +42,30 @@
   "estado": null
  },
  "bajas": {
-  "REA": [
+  "RMA": [
    {
-    "jugador": "REA-623537",
+    "jugador": "RMA-623537",
     "nombre": "Ferland Mendy",
     "motivo": "lesion",
     "regreso": "Back in training",
     "p_juega": 0.0
    },
    {
-    "jugador": "REA-1580528",
+    "jugador": "RMA-1580528",
     "nombre": "Raúl Asencio",
     "motivo": "lesion",
     "regreso": "Back in training",
     "p_juega": 0.0
    },
    {
-    "jugador": "REA-895362",
+    "jugador": "RMA-895362",
     "nombre": "Rodrygo",
     "motivo": "lesion",
     "regreso": "Early January 2027",
     "p_juega": 0.0
    },
    {
-    "jugador": "REA-1406729",
+    "jugador": "RMA-1406729",
     "nombre": "Endrick",
     "motivo": "lesion",
     "regreso": "About 1-2 weeks",

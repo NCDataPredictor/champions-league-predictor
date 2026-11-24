@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-ARS-BOR",
+ "id": "2026-11-24-ARS-BVB",
  "fuente": "fotmob",
  "fuente_id": "6106259",
  "match": {
@@ -11,7 +11,7 @@
   "hora_bogota": "15:00",
   "utc": "2026-11-24T20:00:00.000Z",
   "local": "ARS",
-  "visitante": "BOR",
+  "visitante": "BVB",
   "estadio": "Emirates Stadium",
   "neutral": false,
   "competicion": "liga"
@@ -65,30 +65,30 @@
     "p_juega": 0.0
    }
   ],
-  "BOR": [
+  "BVB": [
    {
-    "jugador": "BOR-307021",
+    "jugador": "BVB-307021",
     "nombre": "Emre Can",
     "motivo": "lesion",
     "regreso": "Early January 2027",
     "p_juega": 0.0
    },
    {
-    "jugador": "BOR-1215014",
+    "jugador": "BVB-1215014",
     "nombre": "Giannis Konstantelias",
     "motivo": "lesion",
     "regreso": "Late May 2027",
     "p_juega": 0.0
    },
    {
-    "jugador": "BOR-1636870",
+    "jugador": "BVB-1636870",
     "nombre": "Justin Lerma",
     "motivo": "lesion",
     "regreso": "About 1-2 weeks",
     "p_juega": 0.0
    },
    {
-    "jugador": "BOR-1761151",
+    "jugador": "BVB-1761151",
     "nombre": "Samuele Inácio",
     "motivo": "lesion",
     "regreso": "Early January 2027",

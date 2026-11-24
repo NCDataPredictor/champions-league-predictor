@@ -1,5 +1,5 @@
 {
- "id": "2026-11-25-PAR-ROM",
+ "id": "2026-11-25-PSG-ROM",
  "fuente": "fotmob",
  "fuente_id": "6106235",
  "match": {
@@ -10,7 +10,7 @@
   "hora_local": "21:00",
   "hora_bogota": "15:00",
   "utc": "2026-11-25T20:00:00Z",
-  "local": "PAR",
+  "local": "PSG",
   "visitante": "ROM",
   "estadio": "Parc des Princes",
   "neutral": false,
@@ -42,16 +42,16 @@
   "estado": null
  },
  "bajas": {
-  "PAR": [
+  "PSG": [
    {
-    "jugador": "PAR-1339208",
+    "jugador": "PSG-1339208",
     "nombre": "Désiré Doué",
     "motivo": "lesion",
     "regreso": "Out for season",
     "p_juega": 0.0
    },
    {
-    "jugador": "PAR-900433",
+    "jugador": "PSG-900433",
     "nombre": "Khvicha Kvaratskhelia",
     "motivo": "lesion",
     "regreso": "Out for season",

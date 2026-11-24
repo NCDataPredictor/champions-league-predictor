@@ -13,14 +13,8 @@ por línea con cuota a los dos lados. Nunca se inventa una cuota: si falta un la
 """
 
 # Nombre en Betano → código del equipo (el mismo que usa el histórico).
-NOMBRES = {
-    "Atalanta": "ATA", "Bologna FC": "BOL", "Bologna": "BOL", "Cagliari Calcio": "CAG", "Cagliari": "CAG", "Como 1907": "COM", "Como": "COM",
-    "US Cremonese": "CRE", "Cremonese": "CRE", "AC Fiorentina": "FIO", "Fiorentina": "FIO", "Frosinone": "FRO", "Genoa CFC": "GEN", "Genoa": "GEN",
-    "Inter de Milán": "INT", "Inter": "INT", "Juventus FC": "JUV", "Juventus": "JUV", "SS Lazio": "LAZ", "Lazio": "LAZ", "US Lecce": "LEC", "Lecce": "LEC",
-    "AC Milan": "MIL", "Milan": "MIL", "AC Monza": "MON", "Monza": "MON", "SSC Napoli": "NAP", "Napoli": "NAP", "Parma Calcio 1913": "PAR", "Parma": "PAR",
-    "Pisa SC": "PIS", "Pisa": "PIS", "AS Roma": "ROM", "Roma": "ROM", "US Sassuolo Calcio": "SAS", "Sassuolo": "SAS", "Torino FC": "TOR", "Torino": "TOR",
-    "Udinese Calcio": "UDI", "Udinese": "UDI", "Venezia FC": "VEN", "Venezia": "VEN", "Hellas Verona": "VER", "Verona": "VER",
-}
+from futbol.datos.equipos_ucl import Nombres  # noqa: E402
+NOMBRES = Nombres()   # cualquier alias de los 36 equipos de la Champions → código
 
 # Mercado de Betano → estadística del modelo
 STAT = {

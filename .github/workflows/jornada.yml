@@ -36,14 +36,14 @@ jobs:
           path: futbol/champions/raw
           key: fotmob-raw-${{ github.run_id }}
           restore-keys: fotmob-raw-
-      - name: FotMob histórico
-        id: hist
-        continue-on-error: true
-        run: python -m futbol.datos.fotmob historico
       - name: FotMob próxima jornada
         id: prox
         continue-on-error: true
         run: python -m futbol.datos.fotmob proximos
+      - name: FotMob últimos partidos de cada equipo (todas las competiciones)
+        id: hist
+        continue-on-error: true
+        run: python -m futbol.datos.fotmob equipos
       - name: Cuotas de Kambi
         id: kambi
         continue-on-error: true

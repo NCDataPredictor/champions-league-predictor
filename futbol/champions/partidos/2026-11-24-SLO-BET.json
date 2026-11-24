@@ -1,5 +1,5 @@
 {
- "id": "2026-11-24-SLO-REA",
+ "id": "2026-11-24-SLO-BET",
  "fuente": "fotmob",
  "fuente_id": "6106394",
  "match": {
@@ -11,7 +11,7 @@
   "hora_bogota": "15:00",
   "utc": "2026-11-24T20:00:00.000Z",
   "local": "SLO",
-  "visitante": "REA",
+  "visitante": "BET",
   "estadio": "Štadión Tehelné pole",
   "neutral": false,
   "competicion": "liga"
@@ -65,16 +65,16 @@
     "p_juega": 0.5
    }
   ],
-  "REA": [
+  "BET": [
    {
-    "jugador": "REA-531629",
+    "jugador": "BET-531629",
     "nombre": "Dani Ceballos",
     "motivo": "lesion",
     "regreso": "Early December 2026",
     "p_juega": 0.0
    },
    {
-    "jugador": "REA-1793845",
+    "jugador": "BET-1793845",
     "nombre": "José Antonio Morante",
     "motivo": "lesion",
     "regreso": "Early December 2026",
