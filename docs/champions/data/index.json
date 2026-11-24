@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T14:25Z",
+ "actualizado": "2026-11-24T14:33Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -17,22 +17,22 @@
    "derbi": null,
    "arbitro": "Halil Umut Meler",
    "1x2": [
-    0.602,
-    0.218,
-    0.18
+    0.601,
+    0.222,
+    0.177
    ],
-   "goles": 3.88,
-   "over25": 0.729,
-   "ambos": 0.718,
-   "corners": 8.04,
-   "amarillas": 3.24,
+   "goles": 3.77,
+   "over25": 0.719,
+   "ambos": 0.705,
+   "corners": 8.84,
+   "amarillas": 3.25,
    "marcador": [
     "2-1",
-    0.099
+    0.1
    ],
    "n_picks": 5,
    "ejemplo": false,
-   "n_errores": 2,
+   "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:11Z",
    "alineacion": {
     "BOD": "prevista (últimos 10)",
@@ -55,20 +55,20 @@
    "derbi": null,
    "arbitro": "Daniel Siebert",
    "1x2": [
-    0.317,
-    0.265,
-    0.418
+    0.338,
+    0.267,
+    0.395
    ],
-   "goles": 3.36,
-   "over25": 0.646,
-   "ambos": 0.691,
-   "corners": 10.81,
-   "amarillas": 4.15,
+   "goles": 3.37,
+   "over25": 0.644,
+   "ambos": 0.695,
+   "corners": 9.91,
+   "amarillas": 3.95,
    "marcador": [
     "1-1",
-    0.11
+    0.112
    ],
-   "n_picks": 1,
+   "n_picks": 0,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -93,20 +93,20 @@
    "derbi": null,
    "arbitro": "Maurizio Mariani",
    "1x2": [
-    0.706,
-    0.196,
-    0.098
+    0.703,
+    0.193,
+    0.103
    ],
-   "goles": 3.19,
-   "over25": 0.609,
-   "ambos": 0.544,
-   "corners": 9.72,
-   "amarillas": 3.75,
+   "goles": 3.15,
+   "over25": 0.605,
+   "ambos": 0.542,
+   "corners": 10.56,
+   "amarillas": 3.45,
    "marcador": [
     "2-0",
-    0.109
+    0.11
    ],
-   "n_picks": 5,
+   "n_picks": 4,
    "ejemplo": false,
    "n_errores": 2,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -131,22 +131,22 @@
    "derbi": null,
    "arbitro": "Javier Alberola Rojas",
    "1x2": [
-    0.686,
+    0.688,
     0.203,
-    0.111
+    0.109
    ],
-   "goles": 3.2,
-   "over25": 0.613,
-   "ambos": 0.562,
-   "corners": 10.28,
-   "amarillas": 3.2,
+   "goles": 3.18,
+   "over25": 0.609,
+   "ambos": 0.553,
+   "corners": 8.35,
+   "amarillas": 2.99,
    "marcador": [
-    "2-1",
-    0.106
+    "2-0",
+    0.108
    ],
    "n_picks": 6,
    "ejemplo": false,
-   "n_errores": 4,
+   "n_errores": 3,
    "cuotas_capturadas": "2026-11-24T03:11Z",
    "alineacion": {
     "COM": "prevista (últimos 10)",
@@ -169,20 +169,20 @@
    "derbi": null,
    "arbitro": "Irfan Peljto",
    "1x2": [
-    0.309,
-    0.282,
-    0.409
+    0.316,
+    0.28,
+    0.404
    ],
-   "goles": 3.02,
-   "over25": 0.576,
-   "ambos": 0.643,
-   "corners": 7.4,
-   "amarillas": 3.29,
+   "goles": 2.99,
+   "over25": 0.569,
+   "ambos": 0.635,
+   "corners": 7.3,
+   "amarillas": 3.7,
    "marcador": [
     "1-1",
-    0.128
+    0.125
    ],
-   "n_picks": 5,
+   "n_picks": 4,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -207,22 +207,22 @@
    "derbi": null,
    "arbitro": "István Kovács",
    "1x2": [
-    0.741,
-    0.171,
-    0.088
+    0.735,
+    0.178,
+    0.087
    ],
-   "goles": 3.56,
-   "over25": 0.686,
-   "ambos": 0.591,
-   "corners": 11.39,
-   "amarillas": 3.24,
+   "goles": 3.52,
+   "over25": 0.675,
+   "ambos": 0.593,
+   "corners": 9.86,
+   "amarillas": 3.11,
    "marcador": [
     "2-1",
-    0.102
+    0.108
    ],
-   "n_picks": 6,
+   "n_picks": 3,
    "ejemplo": false,
-   "n_errores": 2,
+   "n_errores": 1,
    "cuotas_capturadas": "2026-11-24T03:11Z",
    "alineacion": {
     "MCI": "prevista (últimos 10)",
@@ -245,22 +245,22 @@
    "derbi": null,
    "arbitro": "Ivan Kružliak",
    "1x2": [
-    0.586,
-    0.237,
-    0.177
+    0.612,
+    0.227,
+    0.161
    ],
-   "goles": 3.46,
+   "goles": 3.45,
    "over25": 0.663,
-   "ambos": 0.671,
-   "corners": 10.54,
-   "amarillas": 2.53,
+   "ambos": 0.657,
+   "corners": 9.97,
+   "amarillas": 2.5,
    "marcador": [
     "2-1",
-    0.107
+    0.106
    ],
    "n_picks": 7,
    "ejemplo": false,
-   "n_errores": 1,
+   "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:11Z",
    "alineacion": {
     "RBL": "prevista (últimos 10)",
@@ -283,20 +283,20 @@
    "derbi": null,
    "arbitro": "Espen Eskås",
    "1x2": [
-    0.78,
-    0.146,
-    0.074
+    0.775,
+    0.151,
+    0.075
    ],
-   "goles": 3.96,
-   "over25": 0.746,
-   "ambos": 0.621,
-   "corners": 9.16,
-   "amarillas": 3.86,
+   "goles": 3.98,
+   "over25": 0.749,
+   "ambos": 0.628,
+   "corners": 9.86,
+   "amarillas": 3.53,
    "marcador": [
     "2-1",
-    0.095
+    0.091
    ],
-   "n_picks": 6,
+   "n_picks": 3,
    "ejemplo": false,
    "n_errores": 1,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -321,20 +321,20 @@
    "derbi": null,
    "arbitro": "Jérôme Brisard",
    "1x2": [
-    0.117,
-    0.2,
-    0.683
+    0.098,
+    0.184,
+    0.718
    ],
-   "goles": 3.4,
-   "over25": 0.649,
-   "ambos": 0.602,
-   "corners": 9.71,
-   "amarillas": 4.71,
+   "goles": 3.34,
+   "over25": 0.641,
+   "ambos": 0.569,
+   "corners": 9.16,
+   "amarillas": 4.42,
    "marcador": [
     "1-2",
-    0.102
+    0.106
    ],
-   "n_picks": 6,
+   "n_picks": 7,
    "ejemplo": false,
    "n_errores": 2,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -359,22 +359,22 @@
    "derbi": null,
    "arbitro": "Nick Walsh",
    "1x2": [
-    0.051,
-    0.124,
-    0.824
+    0.044,
+    0.111,
+    0.845
    ],
-   "goles": 3.95,
-   "over25": 0.748,
-   "ambos": 0.572,
-   "corners": 4.57,
-   "amarillas": 2.09,
+   "goles": 3.81,
+   "over25": 0.724,
+   "ambos": 0.516,
+   "corners": 8.52,
+   "amarillas": 3.28,
    "marcador": [
     "0-2",
-    0.096
+    0.109
    ],
    "n_picks": 6,
    "ejemplo": false,
-   "n_errores": 4,
+   "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
    "alineacion": {
     "SAB": "prevista (últimos 10)",
@@ -397,22 +397,22 @@
    "derbi": null,
    "arbitro": "Rade Obrenović",
    "1x2": [
-    0.346,
-    0.278,
-    0.376
+    0.321,
+    0.289,
+    0.391
    ],
-   "goles": 3.07,
-   "over25": 0.588,
-   "ambos": 0.645,
-   "corners": 10.03,
-   "amarillas": 3.43,
+   "goles": 2.85,
+   "over25": 0.536,
+   "ambos": 0.611,
+   "corners": 10.66,
+   "amarillas": 3.74,
    "marcador": [
     "1-1",
-    0.122
+    0.134
    ],
-   "n_picks": 5,
+   "n_picks": 6,
    "ejemplo": false,
-   "n_errores": 1,
+   "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
    "alineacion": {
     "SLA": "prevista (últimos 10)",
@@ -435,22 +435,22 @@
    "derbi": null,
    "arbitro": "Erik Lambrechts",
    "1x2": [
-    0.843,
-    0.114,
-    0.043
+    0.846,
+    0.115,
+    0.04
    ],
-   "goles": 3.72,
-   "over25": 0.711,
-   "ambos": 0.498,
-   "corners": 11.19,
-   "amarillas": 2.97,
+   "goles": 3.71,
+   "over25": 0.708,
+   "ambos": 0.492,
+   "corners": 12.38,
+   "amarillas": 2.6,
    "marcador": [
     "2-0",
-    0.114
+    0.118
    ],
-   "n_picks": 5,
+   "n_picks": 4,
    "ejemplo": false,
-   "n_errores": 4,
+   "n_errores": 1,
    "cuotas_capturadas": "2026-11-24T03:12Z",
    "alineacion": {
     "ATM": "prevista (últimos 10)",
@@ -473,18 +473,18 @@
    "derbi": null,
    "arbitro": "Alejandro José Hernández Hernández",
    "1x2": [
-    0.192,
+    0.215,
     0.23,
-    0.578
+    0.555
    ],
-   "goles": 3.83,
-   "over25": 0.726,
-   "ambos": 0.723,
-   "corners": 11.07,
-   "amarillas": 4.4,
+   "goles": 3.84,
+   "over25": 0.729,
+   "ambos": 0.729,
+   "corners": 10.74,
+   "amarillas": 4.29,
    "marcador": [
     "1-2",
-    0.099
+    0.096
    ],
    "n_picks": 3,
    "ejemplo": false,
@@ -511,20 +511,20 @@
    "derbi": null,
    "arbitro": "François Letexier",
    "1x2": [
-    0.664,
-    0.197,
-    0.138
+    0.671,
+    0.196,
+    0.133
    ],
-   "goles": 3.84,
-   "over25": 0.726,
-   "ambos": 0.685,
-   "corners": 9.21,
-   "amarillas": 3.1,
+   "goles": 3.74,
+   "over25": 0.712,
+   "ambos": 0.667,
+   "corners": 11.36,
+   "amarillas": 3.16,
    "marcador": [
     "2-1",
-    0.1
+    0.101
    ],
-   "n_picks": 4,
+   "n_picks": 2,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
@@ -549,20 +549,20 @@
    "derbi": null,
    "arbitro": "Marco Guida",
    "1x2": [
-    0.241,
-    0.267,
-    0.492
+    0.242,
+    0.264,
+    0.495
    ],
-   "goles": 3.12,
-   "over25": 0.595,
-   "ambos": 0.639,
-   "corners": 9.76,
-   "amarillas": 2.89,
+   "goles": 3.01,
+   "over25": 0.578,
+   "ambos": 0.621,
+   "corners": 9.36,
+   "amarillas": 2.67,
    "marcador": [
     "1-1",
-    0.117
+    0.116
    ],
-   "n_picks": 6,
+   "n_picks": 5,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
@@ -587,20 +587,20 @@
    "derbi": null,
    "arbitro": "Glenn Nyberg",
    "1x2": [
-    0.647,
-    0.211,
-    0.142
+    0.653,
+    0.206,
+    0.141
    ],
-   "goles": 3.68,
-   "over25": 0.698,
-   "ambos": 0.669,
-   "corners": 9.23,
-   "amarillas": 2.58,
+   "goles": 3.65,
+   "over25": 0.695,
+   "ambos": 0.666,
+   "corners": 7.64,
+   "amarillas": 2.54,
    "marcador": [
     "2-1",
     0.102
    ],
-   "n_picks": 6,
+   "n_picks": 5,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
@@ -625,18 +625,18 @@
    "derbi": null,
    "arbitro": "Szymon Marciniak",
    "1x2": [
-    0.393,
-    0.269,
-    0.337
+    0.422,
+    0.265,
+    0.313
    ],
-   "goles": 3.31,
-   "over25": 0.632,
-   "ambos": 0.683,
-   "corners": 8.5,
-   "amarillas": 3.75,
+   "goles": 3.37,
+   "over25": 0.644,
+   "ambos": 0.694,
+   "corners": 9.11,
+   "amarillas": 4.07,
    "marcador": [
     "1-1",
-    0.114
+    0.112
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -663,18 +663,18 @@
    "derbi": null,
    "arbitro": "Michael Oliver",
    "1x2": [
-    0.411,
-    0.291,
-    0.298
+    0.418,
+    0.288,
+    0.293
    ],
-   "goles": 2.83,
-   "over25": 0.535,
-   "ambos": 0.604,
-   "corners": 11.71,
-   "amarillas": 2.02,
+   "goles": 2.87,
+   "over25": 0.537,
+   "ambos": 0.609,
+   "corners": 12.73,
+   "amarillas": 2.24,
    "marcador": [
     "1-1",
-    0.13
+    0.131
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -685,7 +685,7 @@
     "FEN": "prevista (últimos 10)"
    },
    "bajas": {
-    "SHA": 3,
+    "SHA": 4,
     "FEN": 2
    }
   }
