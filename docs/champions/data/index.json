@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T12:49Z",
+ "actualizado": "2026-11-24T13:12Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -220,7 +220,7 @@
     "2-1",
     0.102
    ],
-   "n_picks": 5,
+   "n_picks": 6,
    "ejemplo": false,
    "n_errores": 2,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -258,7 +258,7 @@
     "2-1",
     0.107
    ],
-   "n_picks": 6,
+   "n_picks": 7,
    "ejemplo": false,
    "n_errores": 1,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -334,7 +334,7 @@
     "1-2",
     0.102
    ],
-   "n_picks": 4,
+   "n_picks": 6,
    "ejemplo": false,
    "n_errores": 2,
    "cuotas_capturadas": "2026-11-24T03:11Z",
@@ -397,18 +397,18 @@
    "derbi": null,
    "arbitro": "Rade Obrenović",
    "1x2": [
-    0.375,
-    0.275,
-    0.349
+    0.346,
+    0.278,
+    0.376
    ],
-   "goles": 3.2,
-   "over25": 0.62,
-   "ambos": 0.671,
-   "corners": 10.77,
-   "amarillas": 3.4,
+   "goles": 3.07,
+   "over25": 0.588,
+   "ambos": 0.645,
+   "corners": 10.03,
+   "amarillas": 3.43,
    "marcador": [
     "1-1",
-    0.116
+    0.122
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -419,7 +419,7 @@
     "VIL": "prevista (últimos 10)"
    },
    "bajas": {
-    "SLA": 1,
+    "SLA": 3,
     "VIL": 4
    }
   },
@@ -448,7 +448,7 @@
     "2-0",
     0.114
    ],
-   "n_picks": 4,
+   "n_picks": 5,
    "ejemplo": false,
    "n_errores": 4,
    "cuotas_capturadas": "2026-11-24T03:12Z",
@@ -562,7 +562,7 @@
     "1-1",
     0.117
    ],
-   "n_picks": 4,
+   "n_picks": 6,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
@@ -600,7 +600,7 @@
     "2-1",
     0.102
    ],
-   "n_picks": 5,
+   "n_picks": 6,
    "ejemplo": false,
    "n_errores": 0,
    "cuotas_capturadas": "2026-11-24T03:12Z",
