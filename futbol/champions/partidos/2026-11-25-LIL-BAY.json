@@ -1,0 +1,103 @@
+{
+ "id": "2026-11-25-LIL-BAY",
+ "fuente": "fotmob",
+ "fuente_id": "6106310",
+ "match": {
+  "liga": "champions",
+  "temporada": "2026-27",
+  "jornada": 5,
+  "fecha": "2026-11-25",
+  "hora_local": "21:00",
+  "hora_bogota": "15:00",
+  "utc": "2026-11-25T20:00:00Z",
+  "local": "LIL",
+  "visitante": "BAY",
+  "estadio": "Decathlon Arena - Stade Pierre-Mauroy",
+  "neutral": false,
+  "competicion": "liga"
+ },
+ "contexto": {
+  "arbitro": "Marco Guida",
+  "arbitro_fotmob": {
+   "nombre": "Marco Guida"
+  },
+  "clima": {
+   "temperature": 1,
+   "windSpeed": 5,
+   "windDirectionCardinal": "NE",
+   "iconCode": 33,
+   "relativeHumidity": 84,
+   "precipChance": 10,
+   "precipitation": 0,
+   "snow": 0,
+   "cloudCover": 27,
+   "description": "Mostly Clear",
+   "apiUsed": "forecast",
+   "lastUpdated": "2026-11-24T02:00:25Z",
+   "localizedKey": "weather_condition_clear",
+   "defaultTitle": "Clear"
+  }
+ },
+ "alineaciones": {
+  "estado": null
+ },
+ "bajas": {
+  "LIL": [
+   {
+    "jugador": "LIL-1397857",
+    "nombre": "Tiago Santos",
+    "motivo": "lesion",
+    "regreso": "Late June 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "LIL-1421275",
+    "nombre": "Hamza Igamane",
+    "motivo": "lesion",
+    "regreso": "Late November 2026",
+    "p_juega": 0.0
+   }
+  ],
+  "BAY": [
+   {
+    "jugador": "BAY-751202",
+    "nombre": "Alphonso Davies",
+    "motivo": "lesion",
+    "regreso": "A few weeks",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BAY-27299",
+    "nombre": "Manuel Neuer",
+    "motivo": "lesion",
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BAY-385437",
+    "nombre": "Serge Gnabry",
+    "motivo": "lesion",
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BAY-1180288",
+    "nombre": "Ismael Saibari",
+    "motivo": "lesion",
+    "regreso": "Early February 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BAY-860914",
+    "nombre": "Luis Díaz",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   }
+  ]
+ },
+ "cuotas": {
+  "casas": []
+ },
+ "props": {}
+}

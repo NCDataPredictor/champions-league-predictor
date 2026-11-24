@@ -1,0 +1,117 @@
+{
+ "id": "2026-11-24-COM-AEK",
+ "fuente": "fotmob",
+ "fuente_id": "6106412",
+ "match": {
+  "liga": "champions",
+  "temporada": "2026-27",
+  "jornada": 5,
+  "fecha": "2026-11-24",
+  "hora_local": "21:00",
+  "hora_bogota": "15:00",
+  "utc": "2026-11-24T20:00:00.000Z",
+  "local": "COM",
+  "visitante": "AEK",
+  "estadio": "Stadio Giuseppe Sinigaglia",
+  "neutral": false,
+  "competicion": "liga"
+ },
+ "contexto": {
+  "arbitro": "Javier Alberola Rojas",
+  "arbitro_fotmob": {
+   "nombre": "Javier Alberola Rojas"
+  },
+  "clima": {
+   "temperature": 6,
+   "windSpeed": 1,
+   "windDirectionCardinal": "ENE",
+   "iconCode": 12,
+   "relativeHumidity": 96,
+   "precipChance": 79,
+   "precipitation": 0.8,
+   "snow": 0,
+   "cloudCover": 100,
+   "description": "Rain",
+   "apiUsed": "forecast",
+   "lastUpdated": "2026-11-24T02:00:24Z",
+   "localizedKey": "weather_condition_rain",
+   "defaultTitle": "Rain"
+  }
+ },
+ "alineaciones": {
+  "estado": null
+ },
+ "bajas": {
+  "COM": [
+   {
+    "jugador": "COM-1988949",
+    "nombre": "Riccardo Cassano",
+    "motivo": "internationalDuty",
+    "regreso": "Mid December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "COM-846000",
+    "nombre": "Maxence Caqueret",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
+   {
+    "jugador": "COM-1434889",
+    "nombre": "Assane Diao",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "COM-1347241",
+    "nombre": "Jayden Addai",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "COM-1624039",
+    "nombre": "Jesús Rodríguez",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "COM-747926",
+    "nombre": "Moise Kean",
+    "motivo": "lesion",
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   }
+  ],
+  "AEK": [
+   {
+    "jugador": "AEK-839750",
+    "nombre": "Kervin Arriaga",
+    "motivo": "lesion",
+    "regreso": "Early February 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "AEK-655636",
+    "nombre": "Oleksandr Zubkov",
+    "motivo": "lesion",
+    "regreso": "Late December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "AEK-1106943",
+    "nombre": "Zine",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   }
+  ]
+ },
+ "cuotas": {
+  "casas": []
+ },
+ "props": {}
+}
