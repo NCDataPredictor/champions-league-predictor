@@ -97,7 +97,7 @@ def main():
             continue
         pr = lineas(d)
         if pr:
-            p["props"] = pr
+            p["props"] = {**pr, **(p.get("props") or {})}   # si Kambi ya trajo ese jugador, gana Kambi
             with open(f, "w", encoding="utf-8") as fh:
                 json.dump(p, fh, ensure_ascii=False, indent=1)
             n_ok += 1
