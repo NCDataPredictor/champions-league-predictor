@@ -30,10 +30,10 @@
    "precipChance": 3,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 22,
+   "cloudCover": 20,
    "description": "Mostly Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-25T02:00:21Z",
+   "lastUpdated": "2026-11-25T12:00:15Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }

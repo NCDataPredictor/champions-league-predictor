@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-25T02:33Z",
+ "actualizado": "2026-11-25T12:58Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -360,17 +360,17 @@
    "arbitro": "Nick Walsh",
    "1x2": [
     0.04,
-    0.109,
-    0.851
+    0.107,
+    0.853
    ],
-   "goles": 3.94,
-   "over25": 0.745,
-   "ambos": 0.525,
-   "corners": 8.92,
+   "goles": 3.96,
+   "over25": 0.75,
+   "ambos": 0.526,
+   "corners": 8.93,
    "amarillas": 3.27,
    "marcador": [
     "0-3",
-    0.104
+    0.101
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -397,18 +397,18 @@
    "derbi": null,
    "arbitro": "Rade Obrenović",
    "1x2": [
-    0.24,
-    0.253,
-    0.507
+    0.242,
+    0.256,
+    0.503
    ],
-   "goles": 3.37,
-   "over25": 0.645,
-   "ambos": 0.677,
+   "goles": 3.35,
+   "over25": 0.643,
+   "ambos": 0.675,
    "corners": 10.51,
-   "amarillas": 3.83,
+   "amarillas": 3.82,
    "marcador": [
     "1-1",
-    0.106
+    0.107
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -435,18 +435,18 @@
    "derbi": null,
    "arbitro": "Erik Lambrechts",
    "1x2": [
-    0.848,
-    0.112,
-    0.04
+    0.846,
+    0.113,
+    0.041
    ],
-   "goles": 3.73,
-   "over25": 0.712,
-   "ambos": 0.493,
-   "corners": 12.23,
+   "goles": 3.72,
+   "over25": 0.711,
+   "ambos": 0.495,
+   "corners": 12.19,
    "amarillas": 2.51,
    "marcador": [
     "2-0",
-    0.111
+    0.11
    ],
    "n_picks": 4,
    "ejemplo": false,
@@ -473,18 +473,18 @@
    "derbi": null,
    "arbitro": "Alejandro José Hernández Hernández",
    "1x2": [
-    0.209,
-    0.233,
-    0.558
+    0.215,
+    0.234,
+    0.551
    ],
    "goles": 3.72,
-   "over25": 0.707,
-   "ambos": 0.711,
-   "corners": 10.87,
-   "amarillas": 4.16,
+   "over25": 0.71,
+   "ambos": 0.715,
+   "corners": 10.84,
+   "amarillas": 4.15,
    "marcador": [
     "1-2",
-    0.098
+    0.102
    ],
    "n_picks": 3,
    "ejemplo": false,
@@ -511,18 +511,18 @@
    "derbi": null,
    "arbitro": "François Letexier",
    "1x2": [
-    0.683,
-    0.189,
-    0.128
+    0.682,
+    0.193,
+    0.126
    ],
-   "goles": 3.95,
-   "over25": 0.744,
-   "ambos": 0.687,
-   "corners": 11.08,
-   "amarillas": 3.44,
+   "goles": 3.94,
+   "over25": 0.746,
+   "ambos": 0.69,
+   "corners": 11.05,
+   "amarillas": 3.46,
    "marcador": [
     "2-1",
-    0.097
+    0.099
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -549,18 +549,18 @@
    "derbi": null,
    "arbitro": "Marco Guida",
    "1x2": [
-    0.25,
-    0.269,
-    0.481
+    0.246,
+    0.27,
+    0.484
    ],
-   "goles": 2.97,
-   "over25": 0.558,
-   "ambos": 0.611,
-   "corners": 9.34,
+   "goles": 2.99,
+   "over25": 0.569,
+   "ambos": 0.618,
+   "corners": 9.35,
    "amarillas": 2.63,
    "marcador": [
     "1-1",
-    0.122
+    0.12
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -587,18 +587,18 @@
    "derbi": null,
    "arbitro": "Glenn Nyberg",
    "1x2": [
-    0.652,
-    0.206,
-    0.142
+    0.65,
+    0.207,
+    0.143
    ],
-   "goles": 3.68,
-   "over25": 0.7,
-   "ambos": 0.669,
+   "goles": 3.67,
+   "over25": 0.698,
+   "ambos": 0.668,
    "corners": 7.71,
    "amarillas": 2.39,
    "marcador": [
     "2-1",
-    0.104
+    0.103
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -625,18 +625,18 @@
    "derbi": null,
    "arbitro": "Szymon Marciniak",
    "1x2": [
-    0.415,
-    0.27,
-    0.314
+    0.42,
+    0.265,
+    0.315
    ],
    "goles": 3.37,
-   "over25": 0.645,
-   "ambos": 0.694,
+   "over25": 0.642,
+   "ambos": 0.686,
    "corners": 9.14,
-   "amarillas": 4.07,
+   "amarillas": 4.1,
    "marcador": [
     "1-1",
-    0.113
+    0.112
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -663,18 +663,18 @@
    "derbi": null,
    "arbitro": "Michael Oliver",
    "1x2": [
-    0.419,
-    0.287,
-    0.294
+    0.418,
+    0.286,
+    0.295
    ],
-   "goles": 2.85,
-   "over25": 0.535,
-   "ambos": 0.605,
-   "corners": 12.98,
-   "amarillas": 2.06,
+   "goles": 2.84,
+   "over25": 0.532,
+   "ambos": 0.603,
+   "corners": 12.93,
+   "amarillas": 2.05,
    "marcador": [
     "1-1",
-    0.129
+    0.13
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -937,8 +937,8 @@
   },
   "2026-11-25": {
    "cuota": 59.01,
-   "p": 0.03003,
-   "ev": 0.772,
+   "p": 0.02998,
+   "ev": 0.769,
    "n": 8,
    "patas": [
     {
@@ -951,9 +951,9 @@
      "suplente_oro": false,
      "lado": "over",
      "cuota": 1.75,
-     "p_modelo": 0.826,
-     "p": 0.64,
-     "ev": 0.12,
+     "p_modelo": 0.822,
+     "p": 0.639,
+     "ev": 0.119,
      "id": "2026-11-25-SAB-BAR",
      "game": "SAB–BAR",
      "fecha": "2026-11-25",
@@ -969,9 +969,9 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.62,
-     "p_modelo": 0.851,
-     "p": 0.658,
-     "ev": 0.066,
+     "p_modelo": 0.854,
+     "p": 0.659,
+     "ev": 0.067,
      "id": "2026-11-25-SLA-VIL",
      "game": "SLA–VIL",
      "fecha": "2026-11-25",
@@ -987,8 +987,8 @@
      "suplente_oro": false,
      "lado": "over",
      "cuota": 1.53,
-     "p_modelo": 0.731,
-     "p": 0.689,
+     "p_modelo": 0.73,
+     "p": 0.688,
      "ev": 0.053,
      "id": "2026-11-25-ATM-VIK",
      "game": "ATM–VIK",
@@ -1005,9 +1005,9 @@
      "suplente_oro": false,
      "lado": "over",
      "cuota": 1.8,
-     "p_modelo": 0.75,
-     "p": 0.608,
-     "ev": 0.095,
+     "p_modelo": 0.744,
+     "p": 0.607,
+     "ev": 0.093,
      "id": "2026-11-25-BRU-LIV",
      "game": "BRU–LIV",
      "fecha": "2026-11-25",
@@ -1023,7 +1023,7 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.72,
-     "p_modelo": 0.851,
+     "p_modelo": 0.85,
      "p": 0.613,
      "ev": 0.054,
      "id": "2026-11-25-LIL-BAY",
@@ -1041,9 +1041,9 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.75,
-     "p_modelo": 0.868,
+     "p_modelo": 0.871,
      "p": 0.631,
-     "ev": 0.104,
+     "ev": 0.105,
      "id": "2026-11-25-PSG-ROM",
      "game": "PSG–ROM",
      "fecha": "2026-11-25",
@@ -1059,9 +1059,9 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.55,
-     "p_modelo": 0.883,
-     "p": 0.674,
-     "ev": 0.045,
+     "p_modelo": 0.884,
+     "p": 0.675,
+     "ev": 0.046,
      "id": "2026-11-25-SCP-MUN",
      "game": "SCP–MUN",
      "fecha": "2026-11-25",
@@ -1086,7 +1086,7 @@
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-25T02:33Z"
+   "armado": "2026-11-25T12:58Z"
   }
  }
 }

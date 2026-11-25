@@ -22,20 +22,20 @@
    "nombre": "Glenn Nyberg"
   },
   "clima": {
-   "temperature": 6,
-   "windSpeed": 3,
-   "windDirectionCardinal": "NE",
-   "iconCode": 26,
-   "relativeHumidity": 94,
-   "precipChance": 24,
-   "precipitation": 0,
+   "temperature": 7,
+   "windSpeed": 2,
+   "windDirectionCardinal": "NNE",
+   "iconCode": 11,
+   "relativeHumidity": 97,
+   "precipChance": 45,
+   "precipitation": 0.2,
    "snow": 0,
-   "cloudCover": 99,
-   "description": "Cloudy",
+   "cloudCover": 100,
+   "description": "Light Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-25T02:00:21Z",
-   "localizedKey": "weather_condition_cloudy",
-   "defaultTitle": "Cloudy"
+   "lastUpdated": "2026-11-25T12:00:15Z",
+   "localizedKey": "weather_condition_light_rain",
+   "defaultTitle": "Light Rain"
   }
  },
  "alineaciones": {

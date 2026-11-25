@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 8,
-   "windSpeed": 1,
+   "windSpeed": 2,
    "windDirectionCardinal": "N",
    "iconCode": 12,
-   "relativeHumidity": 99,
-   "precipChance": 70,
-   "precipitation": 1.2,
+   "relativeHumidity": 98,
+   "precipChance": 77,
+   "precipitation": 1.04,
    "snow": 0,
    "cloudCover": 100,
    "description": "Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-25T02:00:21Z",
+   "lastUpdated": "2026-11-25T12:00:15Z",
    "localizedKey": "weather_condition_rain",
    "defaultTitle": "Rain"
   }
