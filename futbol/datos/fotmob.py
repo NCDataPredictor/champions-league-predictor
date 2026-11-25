@@ -52,7 +52,8 @@ STAT_EQ = {"BallPossesion": "posesion", "total_shots": "remates", "ShotsOnTarget
            "expected_goals": "xg"}
 # Por jugador: título de FotMob → nuestra estadística
 STAT_JUG = {"Minutes played": "minutos", "Total shots": "remates", "Shots on target": "remates_puerta",
-            "Fouls committed": "faltas_cometidas", "Was fouled": "faltas_recibidas", "Accurate passes": "pases"}
+            "Fouls committed": "faltas_cometidas", "Was fouled": "faltas_recibidas", "Accurate passes": "pases",
+            "Saves": "atajadas"}
 SITUACION = {"RegularPlay": "jugada", "FastBreak": "contragolpe", "FromCorner": "balon_parado", "SetPiece": "balon_parado",
              "FreeKick": "balon_parado", "ThrowInSetPiece": "balon_parado", "IndirectFreeKick": "balon_parado",
              "Penalty": "penalti"}
@@ -271,7 +272,8 @@ def normalizar(d, temporada):
                              "min_entra": e0, "min_sale": e1, "jugo": jugo,
                              "remates": vals.get("remates", 0), "remates_puerta": vals.get("remates_puerta", 0),
                              "faltas_cometidas": vals.get("faltas_cometidas", 0), "faltas_recibidas": vals.get("faltas_recibidas", 0),
-                             "pases": vals.get("pases", 0), "amarillas": am})
+                             "pases": vals.get("pases", 0), "amarillas": am,
+                             **({"atajadas": vals["atajadas"]} if "atajadas" in vals else {})})
     ref = ((c.get("matchFacts") or {}).get("infoBox") or {}).get("Referee") or {}
     eventos.sort(key=lambda e: e["min"])
     return {"id": f"{fecha}-{L}-{V}", "fuente": "fotmob", "fuente_id": str(g.get("matchId")), "liga": "champions",

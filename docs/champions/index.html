@@ -295,7 +295,7 @@ footer { font-size: 12px; color: var(--muted); padding: 30px 0 }
 .addb.del { background: none; border-color: var(--line); color: var(--muted); font-size: 13px }
 .tpicks tr.err td { background: color-mix(in srgb, var(--bad) 7%, transparent) }
 .tpicks td:first-child { white-space: normal; min-width: 220px }
-td.pos, b.pos { color: var(--good) }
+td.pos, b.pos { color: var(--good) } b.neg { color: var(--bad) }
 .mine-n { display: inline-grid; place-items: center; min-width: 20px; height: 20px; padding: 0 5px; margin-left: 4px; border-radius: 999px; background: var(--good); color: #fff; font: 700 11px var(--mono) }
 .mine-n[hidden] { display: none }
 h2 .ico { vertical-align: -0.12em }
@@ -764,11 +764,16 @@ $("#theme-btn").onclick = () => {
 /* ---------- datos ---------- */
 let IDX = null;
 const CACHE = {};
+// Recuento (picks liquidados con el resultado real, lo escribe futbol/recuento.py cada noche): para marcar ganados/perdidos
+let RC = null, RCK = {};
+const rcKey = k => [k.id, k.tipo, k.jugador, k.stat, k.linea, k.lado].join("|");
+const empezo = p => new Date(`${p.fecha}T${p.hora_bogota || "00:00"}:00-05:00`) <= new Date();
 async function getJSON(u) { const r = await fetch(u, {cache: "no-cache"}); if (!r.ok) throw new Error(u + " " + r.status); return r.json(); }
 async function partido(id) { return CACHE[id] || (CACHE[id] = await getJSON("data/" + encodeURIComponent(id) + ".json")); }
 
 async function init() {
   try { Object.entries(await getJSON("data/equipos.json")).forEach(([c, x]) => { FM[c] = x.fm; }); } catch (e) {}
+  try { RC = await getJSON("data/recuento.json"); (RC.picks || []).forEach(k => { RCK[rcKey(k)] = k; }); } catch (e) { RC = null; }
   try { IDX = await getJSON("data/index.json"); }
   catch (e) { $("#app").innerHTML = `<p class="empty">Todavía no hay jornada publicada.</p>`; return; }
   $("#demo").hidden = !IDX.ejemplo;
@@ -795,11 +800,13 @@ function bar3(p, L, V, i = 0) {
     <div class="bar3-l"><span>1 · ${esc(L)}</span><span>X · empate</span><span>2 · ${esc(V)}</span></div>`;
 }
 function inicio() {
-  const ps = IDX.partidos;
-  const j = ps.length ? ps[0].jornada : "";
+  const todos = IDX.partidos, jugados = todos.filter(empezo);
+  // pedido de Nicolas (25-nov): en el inicio solo lo que falta por jugar; lo jugado va a "Resultados"
+  const ps = jugados.length < todos.length ? todos.filter(p => !empezo(p)) : todos;
+  const j = todos.length ? todos[0].jornada : "";
   const picks = ps.reduce((a, p) => a + (p.n_picks || 0), 0);
   $("#app").innerHTML = `
-  <div class="section"><h2>Jornada ${esc(j)}</h2><span class="eyebrow">${ps.length} partidos · ${esc(IDX.temporada)}</span></div>
+  <div class="section"><h2>Jornada ${esc(j)}</h2><span class="eyebrow">${ps === todos ? todos.length + " partidos" : `${ps.length} por jugar · ${jugados.length} ya jugados`} · ${esc(IDX.temporada)}</span></div>
   <div class="grid">${ps.map((p, i) => { const L = p.local, V = p.visitante, x = p["1x2"], fav = x[0] >= x[2] ? 0 : 2;
     const meter = (v, hi) => `<div class="meter"><i class="${v >= hi ? "hi" : ""}" style="width:${Math.round(v * 100)}%"></i></div>`;
     const al = p.alineacion[L] === p.alineacion[V] ? p.alineacion[L] : `${p.alineacion[L]} / ${p.alineacion[V]}`;
@@ -823,11 +830,12 @@ function inicio() {
       </div>
       <div class="mc-foot"><span>${ic("arbitro")}Árbitro <b>${esc(p.arbitro || "por designar")}</b> · Bajas ${esc(L)} <b>${p.bajas[L] || 0}</b> · ${esc(V)} <b>${p.bajas[V] || 0}</b></span><span class="mc-go">Ver partido <span>→</span></span></div>
     </a>`; }).join("")}</div>
-  ${plegable("picks", `<h2>${ic("over")}Picks de la jornada</h2><span class="eyebrow">${picks} picks · cuotas de Betano</span>`, `
+  ${plegable("picks", `<h2>${ic("over")}Picks ${ps === todos ? "de la jornada" : "por jugar"}</h2><span class="eyebrow">${picks} picks · cuotas de Betano</span>`, `
   ${picks ? "" : `<div class="card callout">Todavía no hay cuotas cargadas, así que no hay picks: el modelo nunca supone una cuota. Mientras tanto, en cada partido están sus probabilidades y la cuota justa (1 / probabilidad) para compararla con la de tu casa.</div>`}
   <div id="picks"></div>`)}
   ${plegable("errores", `<h2>${ic("tarjetas")}Errores de cuota</h2><span class="eyebrow">línea de la casa lejos de lo que pasa en la cancha</span>`, `<div id="errores"></div>`)}
-  ${sonadoraHTML()}`;
+  ${sonadoraHTML()}
+  ${resultadosHTML(jugados)}`;
   bindPlegables($("#app"));
   contar($("#app"));
   const errVacio = `<div class="card callout">Ningún error de cuota en esta jornada. Aparece uno cuando la casa da ≤ 45% a algo que se cumplió en ≥ 70% de los partidos recientes de los dos equipos, con el promedio al menos un 20% lejos de la línea y el modelo del mismo lado.</div>`;
@@ -1135,6 +1143,7 @@ const quienTxt = k => k.tipo === "equipo" ? (k.jugador === "partido" ? "Total de
 const pickTxt = k => `${quienTxt(k)} · ${k.lado === "over" ? "Más de" : "Menos de"} ${String(k.linea).replace(".", ",")} ${STAT[k.stat].toLowerCase()}`;
 const quienBadge = k => k.tipo === "equipo" && k.jugador !== "partido" ? crest(k.jugador, 18) : k.tipo === "equipo" ? ic("over") : "";
 
+const resTag = r => !r ? "" : `<span class="tag ${r.estado === "ganado" ? "ok" : r.estado === "perdido" ? "hot" : ""}" style="margin-left:4px">${r.estado === "ganado" ? "✓ ganado" : r.estado === "perdido" ? "✗ perdido" : "nulo"}${r.real != null ? ` · real ${r.real}` : ""}</span>`;
 function tablaPicks(rows, conPartido, scope = "picks") {
   const cuenta = f => rows.reduce((a, k) => (a[f(k)] = (a[f(k)] || 0) + 1, a), {});
   const nst = cuenta(k => k.stat), ntp = cuenta(k => k.tipo === "equipo" ? "equipo" : "jugador");
@@ -1146,6 +1155,7 @@ function tablaPicks(rows, conPartido, scope = "picks") {
     <tr><th>Pick</th>${conPartido ? "<th>Partido</th>" : ""}<th title="Veces que se cumplió en los partidos recientes; tócalo para verlos">Se cumplió</th><th>Cuota</th><th title="Probabilidad según la simulación">Modelo</th><th title="Probabilidad que da la casa, sin su margen">Casa</th><th title="Mezcla de casa, modelo e histórico: la que se usa para el EV">Prob.</th><th title="Ganancia esperada por unidad apostada">EV</th></tr>
     ${rows.map(k => { const ki = reg(k), hn = hitPick(k);
       return `<tr class="${k.error_cuota ? "err" : ""}" data-f-stat="${esc(k.stat)}" data-f-tipo="${k.tipo === "equipo" ? "equipo" : "jugador"}"><td data-sort="${esc(pickTxt(k))}"><span class="who" style="gap:6px;align-items:flex-start">${quienBadge(k)}<span>${ic(k.stat)}${esc(pickTxt(k))}${k.error_cuota ? ' <span class="tag hot">error de cuota</span>' : ""}${k.suplente_oro ? ' <span class="oro">★ oro</span>' : ""}
+          ${resTag(RCK[rcKey(k)])}
           ${k.prom_hist != null ? `<span class="sub" style="display:block">promedio reciente ${f1(k.prom_hist)} · modelo espera ${f1(k.media_modelo)}</span>` : ""}</span></span>
           <div class="pk-act">${btnTake(ki)}${btnCmb(ki)}</div></td>
         ${conPartido ? `<td data-sort="${esc(k.fecha + " " + (k.hora || ""))}"><a href="#${esc(k.id)}">${esc(k.game)}</a><span class="sub" style="display:block">${esc(k.hora || "")}</span></td>` : ""}
@@ -1564,9 +1574,40 @@ const plegable = (k, cab, cuerpo) => `<details class="plg" data-plg="${k}" style
   <summary class="section"><span class="sl">${cab}</span><span class="cv" aria-hidden="true"></span></summary>${cuerpo}</details>`;
 function bindPlegables(root) { root.querySelectorAll("details.plg").forEach(d => d.addEventListener("toggle", () => store.set(PLG_K(d.dataset.plg), d.open ? "1" : "0"))); }
 
+
+/* ---------- Resultados: picks ya liquidados (ganados / perdidos) de la última fecha jugada ---------- */
+function resultadosHTML(jugados) {
+  const sg = u => (u >= 0 ? "+" : "") + (+u).toFixed(2);
+  const P = (RC && RC.picks) || [], fechas = [...new Set(P.map(k => k.fecha))].sort();
+  const f = fechas[fechas.length - 1];
+  const pend = jugados.filter(p => !P.some(k => k.id === p.id) && !((RC && RC.partidos) || []).some(x => x.fecha === p.fecha && x.local === p.local));
+  const nota = pend.length ? `<p class="note">${pend.length} ${pend.length === 1 ? "partido ya empezó" : "partidos ya empezaron"} (${pend.map(p => esc(p.local + "–" + p.visitante)).join(", ")}): sus picks se liquidan esa noche con los resultados de FotMob.</p>` : "";
+  if (!f) return plegable("resultados", `<h2>${ic("over")}Resultados</h2><span class="eyebrow">ganados y perdidos</span>`, nota || `<div class="card callout">Todavía no hay picks liquidados.</div>`);
+  const xs = P.filter(k => k.fecha === f), r = RC.por_fecha[f] || {};
+  const parts = (RC.partidos || []).filter(p => p.fecha === f);
+  const sn = ((RC.sonador) || []).find(x => x.fecha === f);
+  const tile = (t, v, cls = "") => `<div class="tile"><span>${t}</span><b class="${cls}">${v}</b></div>`;
+  const snHTML = sn ? `<div class="card sn-card" style="margin-top:14px"><h3>Soñadora del ${esc(fecha(f))} <span class="tag ${sn.estado === "ganada" ? "ok" : sn.estado === "perdida" ? "hot" : ""}">${sn.estado}</span></h3>
+      <span class="sub">${sn.ganadas} de ${sn.n} patas acertadas · cuota ${(+sn.cuota_final).toFixed(2)}${sn.u != null ? ` · ${sg(sn.u)} u` : ""}</span>
+      <ul class="sn-legs" style="margin-top:8px">${sn.patas.map(k => `<li><span>${ic(k.stat)}${esc(pickTxt(k))}<span class="sub">${esc(k.game)} · cuota ${(+k.cuota).toFixed(2)}</span></span>
+        <span class="q">${k.real ?? "–"}</span>${resTag(k)}</li>`).join("")}</ul></div>` : "";
+  const cuerpo = `${nota}
+    <div class="tiles reveal" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))">${tile("Ganados", `${r.ganados}/${r.n}`)}${tile("Acierto", pct(r.acierto))}
+      ${tile("Unidades", sg(r.unidades), r.unidades >= 0 ? "pos" : "neg")}${tile("ROI", r.roi != null ? (r.roi * 100).toFixed(1) + "%" : "–")}</div>
+    ${parts.length ? `<p class="sub" style="margin:10px 0">${parts.map(p => `${esc(tname(p.local))} <b>${esc(p.marcador)}</b> ${esc(tname(p.visitante))}`).join(" · ")}</p>` : ""}
+    <div class="card scroll" style="padding:6px 10px"><table data-sort-key="resultados">
+      <tr><th style="text-align:left">Pick</th><th>Real</th><th>Unid.</th><th>Cuota</th><th>Partido</th></tr>
+      ${xs.map(k => `<tr><td style="text-align:left;white-space:normal;min-width:170px" data-sort="${esc(pickTxt(k))}">${ic(k.stat)}${esc(pickTxt(k))}${k.error_cuota ? ' <span class="tag hot">error</span>' : ""}<br>${resTag({...k, real: null})}</td>
+        <td class="n"><b>${k.real ?? "–"}</b></td><td class="n ${k.u > 0 ? "pos" : ""}" style="${k.u < 0 ? "color:var(--bad)" : ""}">${sg(k.u)}</td><td class="n">${f2(k.cuota)}</td>
+        <td><a href="#${esc(k.id)}">${esc(k.local)}–${esc(k.visitante)}</a></td></tr>`).join("")}</table></div>
+    ${snHTML}
+    <p class="note">Liquidados con la cuota publicada antes del partido, 1 unidad por pick. El acumulado de todas las fechas está en <a href="#rendimiento">Rendimiento</a>.</p>`;
+  return plegable("resultados", `<h2>${ic("over")}Resultados del ${esc(fecha(f))}</h2><span class="eyebrow">${r.ganados} ganados · ${r.perdidos} perdidos · ${sg(r.unidades)} u</span>`, cuerpo);
+}
+
 /* ---------- Parlay soñador: una combinada larga por día (build: futbol/sonador.py) ---------- */
 function sonadoraHTML() {
-  const S = IDX.sonador || {}, dias = Object.keys(S).sort();
+  const S = IDX.sonador || {}, hechas = new Set(((RC && RC.sonador) || []).map(x => x.fecha)), dias = Object.keys(S).filter(f => !hechas.has(f)).sort();
   const reglas = `Una combinada larga por día de partidos, para soñar: cuota total entre 50 y 200 con las líneas más probables que tienen cuota real de Betano (equipo, total del partido y props de jugador). Como mucho 2 patas por partido, una por jugador y la mitad al "Menos de". Se arma con la última corrida antes del primer partido del día y ahí queda congelada.`;
   const cuerpo = dias.length ? `<p class="note" style="margin-top:-6px">${reglas}</p><div class="sn-grid">${dias.map(f => { const s = S[f];
       const legs = s.patas.map(k => ({...k, key: pickKey(k)}));
