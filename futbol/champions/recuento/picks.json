@@ -850,6 +850,29 @@
    "estado": "ganado",
    "real": 5,
    "u": 1.02
+  },
+  "2026-11-24-RBL-LEN|jugador|Maarten Vandevoordt|atajadas|2.5|over": {
+   "id": "2026-11-24-RBL-LEN",
+   "fecha": "2026-11-24",
+   "local": "RBL",
+   "visitante": "LEN",
+   "tipo": "jugador",
+   "jugador": "Maarten Vandevoordt",
+   "equipo": "RBL",
+   "stat": "atajadas",
+   "linea": 2.5,
+   "lado": "over",
+   "cuota": 1.8,
+   "casa": null,
+   "p": 0.576,
+   "p_modelo": 0.824,
+   "p_casa": 0.514,
+   "ev": 0.037,
+   "error_cuota": null,
+   "suplente_oro": false,
+   "estado": "perdido",
+   "real": 2,
+   "u": -1.0
   }
  },
  "partidos": {
