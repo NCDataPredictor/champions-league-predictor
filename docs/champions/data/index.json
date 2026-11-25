@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-25T16:53Z",
+ "actualizado": "2026-11-25T23:46Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -688,6 +688,690 @@
     "SHA": 4,
     "FEN": 2
    }
+  },
+  {
+   "id": "2026-12-08-VIK-FEY",
+   "fecha": "2026-12-08",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 6,
+   "local": "VIK",
+   "visitante": "FEY",
+   "estadio": "Lyse Arena",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.405,
+    0.254,
+    0.342
+   ],
+   "goles": 3.78,
+   "over25": 0.721,
+   "ambos": 0.743,
+   "corners": 11.33,
+   "amarillas": 2.96,
+   "marcador": [
+    "1-1",
+    0.09
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "VIK": "prevista (últimos 10)",
+    "FEY": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "VIK": 1,
+    "FEY": 3
+   }
+  },
+  {
+   "id": "2026-12-08-VIL-SAB",
+   "fecha": "2026-12-08",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 6,
+   "local": "VIL",
+   "visitante": "SAB",
+   "estadio": "Estadio de la Cerámica",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.664,
+    0.21,
+    0.126
+   ],
+   "goles": 3.17,
+   "over25": 0.605,
+   "ambos": 0.573,
+   "corners": 11.91,
+   "amarillas": 3.51,
+   "marcador": [
+    "2-1",
+    0.106
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "VIL": "prevista (últimos 10)",
+    "SAB": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "VIL": 4,
+    "SAB": 1
+   }
+  },
+  {
+   "id": "2026-12-08-AEK-GAL",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "AEK",
+   "visitante": "GAL",
+   "estadio": "ALLWYN Arena",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.447,
+    0.266,
+    0.287
+   ],
+   "goles": 3.26,
+   "over25": 0.624,
+   "ambos": 0.67,
+   "corners": 8.96,
+   "amarillas": 3.82,
+   "marcador": [
+    "1-1",
+    0.113
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "AEK": "prevista (últimos 10)",
+    "GAL": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "AEK": 2,
+    "GAL": 5
+   }
+  },
+  {
+   "id": "2026-12-08-AVL-PSG",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "AVL",
+   "visitante": "PSG",
+   "estadio": "Villa Park",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.227,
+    0.246,
+    0.527
+   ],
+   "goles": 3.69,
+   "over25": 0.702,
+   "ambos": 0.718,
+   "corners": 9.16,
+   "amarillas": 2.66,
+   "marcador": [
+    "1-2",
+    0.099
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "AVL": "prevista (últimos 10)",
+    "PSG": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "AVL": 2,
+    "PSG": 2
+   }
+  },
+  {
+   "id": "2026-12-08-BAR-MCI",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "BAR",
+   "visitante": "MCI",
+   "estadio": "Spotify Camp Nou",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.584,
+    0.218,
+    0.198
+   ],
+   "goles": 4.16,
+   "over25": 0.769,
+   "ambos": 0.756,
+   "corners": 8.58,
+   "amarillas": 3.06,
+   "marcador": [
+    "2-1",
+    0.09
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "BAR": "prevista (últimos 10)",
+    "MCI": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BAR": 5,
+    "MCI": 1
+   }
+  },
+  {
+   "id": "2026-12-08-BAY-SLA",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "BAY",
+   "visitante": "SLA",
+   "estadio": "Allianz Arena",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.419,
+    0.281,
+    0.3
+   ],
+   "goles": 2.95,
+   "over25": 0.555,
+   "ambos": 0.621,
+   "corners": 9.31,
+   "amarillas": 2.65,
+   "marcador": [
+    "1-1",
+    0.13
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "BAY": "prevista (últimos 10)",
+    "SLA": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BAY": 6,
+    "SLA": 4
+   }
+  },
+  {
+   "id": "2026-12-08-MUN-RBL",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "MUN",
+   "visitante": "RBL",
+   "estadio": "Old Trafford",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.205,
+    0.216,
+    0.579
+   ],
+   "goles": 4.49,
+   "over25": 0.813,
+   "ambos": 0.799,
+   "corners": 10.07,
+   "amarillas": 3.71,
+   "marcador": [
+    "1-2",
+    0.081
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "MUN": "prevista (últimos 10)",
+    "RBL": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "MUN": 5,
+    "RBL": 1
+   }
+  },
+  {
+   "id": "2026-12-08-NAP-BRU",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "NAP",
+   "visitante": "BRU",
+   "estadio": "Stadio Diego Armando Maradona",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.31,
+    0.242,
+    0.449
+   ],
+   "goles": 4.08,
+   "over25": 0.762,
+   "ambos": 0.779,
+   "corners": 11.07,
+   "amarillas": 3.53,
+   "marcador": [
+    "1-2",
+    0.086
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "NAP": "prevista (últimos 10)",
+    "BRU": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "NAP": 6,
+    "BRU": 0
+   }
+  },
+  {
+   "id": "2026-12-08-ROM-SCP",
+   "fecha": "2026-12-08",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "ROM",
+   "visitante": "SCP",
+   "estadio": "Stadio Olimpico",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.426,
+    0.254,
+    0.321
+   ],
+   "goles": 3.79,
+   "over25": 0.715,
+   "ambos": 0.744,
+   "corners": 8.79,
+   "amarillas": 3.08,
+   "marcador": [
+    "1-1",
+    0.091
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "ROM": "prevista (últimos 10)",
+    "SCP": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "ROM": 2,
+    "SCP": 1
+   }
+  },
+  {
+   "id": "2026-12-09-BET-COM",
+   "fecha": "2026-12-09",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 6,
+   "local": "BET",
+   "visitante": "COM",
+   "estadio": "Estadio La Cartuja de Sevilla",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.257,
+    0.281,
+    0.462
+   ],
+   "goles": 2.77,
+   "over25": 0.521,
+   "ambos": 0.585,
+   "corners": 7.88,
+   "amarillas": 4.53,
+   "marcador": [
+    "1-1",
+    0.131
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "BET": "prevista (últimos 10)",
+    "COM": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BET": 2,
+    "COM": 5
+   }
+  },
+  {
+   "id": "2026-12-09-SLO-SHA",
+   "fecha": "2026-12-09",
+   "hora_local": "18:45",
+   "hora_bogota": "12:45",
+   "jornada": 6,
+   "local": "SLO",
+   "visitante": "SHA",
+   "estadio": "Štadión Tehelné pole",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.21,
+    0.311,
+    0.48
+   ],
+   "goles": 2.14,
+   "over25": 0.359,
+   "ambos": 0.436,
+   "corners": 9.15,
+   "amarillas": 1.92,
+   "marcador": [
+    "0-1",
+    0.163
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "SLO": "prevista (últimos 10)",
+    "SHA": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "SLO": 4,
+    "SHA": 4
+   }
+  },
+  {
+   "id": "2026-12-09-ARS-RMA",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "ARS",
+   "visitante": "RMA",
+   "estadio": "Emirates Stadium",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.32,
+    0.276,
+    0.404
+   ],
+   "goles": 3.11,
+   "over25": 0.597,
+   "ambos": 0.655,
+   "corners": 7.98,
+   "amarillas": 3.22,
+   "marcador": [
+    "1-1",
+    0.118
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "ARS": "prevista (últimos 10)",
+    "RMA": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "ARS": 3,
+    "RMA": 1
+   }
+  },
+  {
+   "id": "2026-12-09-BVB-INT",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "BVB",
+   "visitante": "INT",
+   "estadio": "SIGNAL IDUNA PARK",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.232,
+    0.263,
+    0.505
+   ],
+   "goles": 3.15,
+   "over25": 0.601,
+   "ambos": 0.64,
+   "corners": 10.73,
+   "amarillas": 3.24,
+   "marcador": [
+    "1-1",
+    0.114
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "BVB": "prevista (últimos 10)",
+    "INT": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "BVB": 1,
+    "INT": 4
+   }
+  },
+  {
+   "id": "2026-12-09-LAS-FEN",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "LAS",
+   "visitante": "FEN",
+   "estadio": "Raiffeisen Arena",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.438,
+    0.249,
+    0.313
+   ],
+   "goles": 4.19,
+   "over25": 0.777,
+   "ambos": 0.795,
+   "corners": 10.38,
+   "amarillas": 3.36,
+   "marcador": [
+    "2-2",
+    0.087
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "LAS": "prevista (últimos 10)",
+    "FEN": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "LAS": 2,
+    "FEN": 2
+   }
+  },
+  {
+   "id": "2026-12-09-LEN-BOD",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "LEN",
+   "visitante": "BOD",
+   "estadio": "Stade Bollaert-Delelis",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.15,
+    0.228,
+    0.623
+   ],
+   "goles": 3.13,
+   "over25": 0.6,
+   "ambos": 0.589,
+   "corners": 8.47,
+   "amarillas": 2.54,
+   "marcador": [
+    "1-2",
+    0.108
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "LEN": "prevista (últimos 10)",
+    "BOD": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "LEN": 3,
+    "BOD": 0
+   }
+  },
+  {
+   "id": "2026-12-09-LIV-POR",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "LIV",
+   "visitante": "POR",
+   "estadio": "Anfield",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.38,
+    0.289,
+    0.331
+   ],
+   "goles": 2.83,
+   "over25": 0.53,
+   "ambos": 0.605,
+   "corners": 10.58,
+   "amarillas": 3.11,
+   "marcador": [
+    "1-1",
+    0.133
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "LIV": "prevista (últimos 10)",
+    "POR": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "LIV": 2,
+    "POR": 2
+   }
+  },
+  {
+   "id": "2026-12-09-PSV-ATM",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "PSV",
+   "visitante": "ATM",
+   "estadio": "Philips Stadion",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.273,
+    0.291,
+    0.437
+   ],
+   "goles": 2.75,
+   "over25": 0.515,
+   "ambos": 0.581,
+   "corners": 8.52,
+   "amarillas": 2.84,
+   "marcador": [
+    "1-1",
+    0.13
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "PSV": "prevista (últimos 10)",
+    "ATM": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "PSV": 1,
+    "ATM": 3
+   }
+  },
+  {
+   "id": "2026-12-09-VFB-LIL",
+   "fecha": "2026-12-09",
+   "hora_local": "21:00",
+   "hora_bogota": "15:00",
+   "jornada": 6,
+   "local": "VFB",
+   "visitante": "LIL",
+   "estadio": "MHPArena",
+   "derbi": null,
+   "arbitro": "",
+   "1x2": [
+    0.364,
+    0.299,
+    0.337
+   ],
+   "goles": 2.6,
+   "over25": 0.478,
+   "ambos": 0.559,
+   "corners": 10.09,
+   "amarillas": 3.22,
+   "marcador": [
+    "1-1",
+    0.14
+   ],
+   "n_picks": 0,
+   "ejemplo": false,
+   "n_errores": 0,
+   "cuotas_capturadas": null,
+   "alineacion": {
+    "VFB": "prevista (últimos 10)",
+    "LIL": "prevista (últimos 10)"
+   },
+   "bajas": {
+    "VFB": 1,
+    "LIL": 2
+   }
   }
  ],
  "sonador": {
@@ -1104,7 +1788,8 @@
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-25T16:53Z"
+   "armado": "2026-11-25T16:53Z",
+   "congelado": true
   }
  }
 }

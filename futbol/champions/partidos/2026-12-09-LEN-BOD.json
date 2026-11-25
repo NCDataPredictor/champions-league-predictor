@@ -1,0 +1,96 @@
+{
+ "id": "2026-12-09-LEN-BOD",
+ "fuente": "fotmob",
+ "fuente_id": "6106415",
+ "match": {
+  "liga": "champions",
+  "temporada": "2026-27",
+  "jornada": 6,
+  "fecha": "2026-12-09",
+  "hora_local": "21:00",
+  "hora_bogota": "15:00",
+  "utc": "2026-12-09T20:00:00Z",
+  "local": "LEN",
+  "visitante": "BOD",
+  "estadio": "Stade Bollaert-Delelis",
+  "neutral": false,
+  "competicion": "liga"
+ },
+ "contexto": {
+  "arbitro": "",
+  "arbitro_fotmob": {
+   "nombre": ""
+  },
+  "clima": {
+   "temperature": 2,
+   "windSpeed": 4,
+   "windDirectionCardinal": "N",
+   "iconCode": 27,
+   "relativeHumidity": 92,
+   "precipChance": 24,
+   "precipitation": 0,
+   "snow": 0,
+   "cloudCover": 66,
+   "description": "Mostly Cloudy",
+   "apiUsed": "forecast",
+   "lastUpdated": "2026-11-25T20:00:31Z",
+   "localizedKey": "weather_condition_cloudy",
+   "defaultTitle": "Cloudy"
+  }
+ },
+ "alineaciones": {
+  "estado": null
+ },
+ "bajas": {
+  "LEN": [
+   {
+    "jugador": "LEN-861445",
+    "nombre": "Michaël Cuisance",
+    "motivo": "lesion",
+    "regreso": "About a week",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "LEN-561046",
+    "nombre": "Ruben Aguilar",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "LEN-637746",
+    "nombre": "Odsonne Édouard",
+    "motivo": "lesion",
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "LEN-1053713",
+    "nombre": "Maik Nawrocki",
+    "motivo": "lesion",
+    "regreso": "Mid May 2027",
+    "p_juega": 0.0
+   }
+  ],
+  "BOD": [
+   {
+    "jugador": "BOD-632870",
+    "nombre": "Håkon Evjen",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "BOD-954167",
+    "nombre": "August Mikkelsen",
+    "motivo": "lesion",
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
+   }
+  ]
+ },
+ "cuotas": {
+  "casas": []
+ },
+ "props": {}
+}
