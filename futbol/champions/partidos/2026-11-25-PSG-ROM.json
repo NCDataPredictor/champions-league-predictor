@@ -9,7 +9,7 @@
   "fecha": "2026-11-25",
   "hora_local": "21:00",
   "hora_bogota": "15:00",
-  "utc": "2026-11-25T20:00:00Z",
+  "utc": "2026-11-25T20:00:00.000Z",
   "local": "PSG",
   "visitante": "ROM",
   "estadio": "Parc des Princes",
@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 6,
-   "windSpeed": 2,
+   "windSpeed": 3,
    "windDirectionCardinal": "NE",
    "iconCode": 26,
-   "relativeHumidity": 96,
+   "relativeHumidity": 95,
    "precipChance": 20,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 100,
+   "cloudCover": 99,
    "description": "Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T14:00:22Z",
+   "lastUpdated": "2026-11-24T23:00:14Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }
@@ -59,13 +59,6 @@
    }
   ],
   "ROM": [
-   {
-    "jugador": "ROM-958464",
-    "nombre": "Leonardo Balerdi",
-    "motivo": "lesion",
-    "regreso": "About 1-2 weeks",
-    "p_juega": 0.0
-   },
    {
     "jugador": "ROM-1180321",
     "nombre": "Devyne Rensch",

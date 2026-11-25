@@ -9,7 +9,7 @@
   "fecha": "2026-11-25",
   "hora_local": "21:00",
   "hora_bogota": "15:00",
-  "utc": "2026-11-25T20:00:00Z",
+  "utc": "2026-11-25T20:00:00.000Z",
   "local": "INT",
   "visitante": "VFB",
   "estadio": "Stadio Giuseppe Meazza",
@@ -24,16 +24,16 @@
   "clima": {
    "temperature": 8,
    "windSpeed": 2,
-   "windDirectionCardinal": "NNE",
+   "windDirectionCardinal": "N",
    "iconCode": 12,
-   "relativeHumidity": 99,
-   "precipChance": 97,
-   "precipitation": 2.78,
+   "relativeHumidity": 100,
+   "precipChance": 75,
+   "precipitation": 1.8,
    "snow": 0,
    "cloudCover": 100,
    "description": "Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T14:00:21Z",
+   "lastUpdated": "2026-11-24T23:00:13Z",
    "localizedKey": "weather_condition_rain",
    "defaultTitle": "Rain"
   }
@@ -67,25 +67,11 @@
   ],
   "VFB": [
    {
-    "jugador": "VFB-1270002",
-    "nombre": "Luca Jaquez",
-    "motivo": "lesion",
-    "regreso": "About 1-2 weeks",
-    "p_juega": 0.0
-   },
-   {
     "jugador": "VFB-1425998",
     "nombre": "Leo Sauer",
     "motivo": "lesion",
     "regreso": "About 1-2 weeks",
     "p_juega": 0.0
-   },
-   {
-    "jugador": "VFB-1071186",
-    "nombre": "Angelo Stiller",
-    "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
    },
    {
     "jugador": "VFB-1434478",

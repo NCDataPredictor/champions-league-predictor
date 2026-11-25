@@ -9,7 +9,7 @@
   "fecha": "2026-11-25",
   "hora_local": "21:00",
   "hora_bogota": "15:00",
-  "utc": "2026-11-25T20:00:00Z",
+  "utc": "2026-11-25T20:00:00.000Z",
   "local": "SHA",
   "visitante": "FEN",
   "estadio": "Stamford Bridge",
@@ -30,10 +30,10 @@
    "precipChance": 5,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 77,
+   "cloudCover": 68,
    "description": "Mostly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T14:00:22Z",
+   "lastUpdated": "2026-11-24T23:00:15Z",
    "localizedKey": "weather_condition_cloudy",
    "defaultTitle": "Cloudy"
   }

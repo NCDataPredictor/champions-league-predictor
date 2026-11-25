@@ -9,7 +9,7 @@
   "fecha": "2026-11-25",
   "hora_local": "21:00",
   "hora_bogota": "15:00",
-  "utc": "2026-11-25T20:00:00Z",
+  "utc": "2026-11-25T20:00:00.000Z",
   "local": "LIL",
   "visitante": "BAY",
   "estadio": "Decathlon Arena - Stade Pierre-Mauroy",
@@ -23,19 +23,19 @@
   },
   "clima": {
    "temperature": 2,
-   "windSpeed": 5,
+   "windSpeed": 4,
    "windDirectionCardinal": "NE",
-   "iconCode": 27,
-   "relativeHumidity": 79,
+   "iconCode": 29,
+   "relativeHumidity": 76,
    "precipChance": 3,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 76,
-   "description": "Mostly Cloudy",
+   "cloudCover": 46,
+   "description": "Partly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T14:00:22Z",
-   "localizedKey": "weather_condition_cloudy",
-   "defaultTitle": "Cloudy"
+   "lastUpdated": "2026-11-24T23:00:13Z",
+   "localizedKey": "weather_condition_partly_cloudy",
+   "defaultTitle": "Partly Cloudy"
   }
  },
  "alineaciones": {
@@ -72,13 +72,6 @@
     "motivo": "lesion",
     "regreso": "About a week",
     "p_juega": 0.0
-   },
-   {
-    "jugador": "BAY-860914",
-    "nombre": "Luis Díaz",
-    "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
    },
    {
     "jugador": "BAY-27299",

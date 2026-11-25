@@ -9,7 +9,7 @@
   "fecha": "2026-11-25",
   "hora_local": "18:45",
   "hora_bogota": "12:45",
-  "utc": "2026-11-25T17:45:00Z",
+  "utc": "2026-11-25T17:45:00.000Z",
   "local": "SLA",
   "visitante": "VIL",
   "estadio": "Fortuna Arena",
@@ -22,18 +22,18 @@
    "nombre": "Rade Obrenović"
   },
   "clima": {
-   "temperature": -1,
+   "temperature": 0,
    "windSpeed": 3,
    "windDirectionCardinal": "ENE",
    "iconCode": 29,
-   "relativeHumidity": 83,
+   "relativeHumidity": 81,
    "precipChance": 4,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 48,
+   "cloudCover": 43,
    "description": "Partly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-24T18:00:20Z",
+   "lastUpdated": "2026-11-25T00:00:50Z",
    "localizedKey": "weather_condition_partly_cloudy",
    "defaultTitle": "Partly Cloudy"
   }
@@ -106,13 +106,6 @@
     "nombre": "Nathan Saliba",
     "motivo": "lesion",
     "regreso": "Early January 2027",
-    "p_juega": 0.0
-   },
-   {
-    "jugador": "VIL-246438",
-    "nombre": "Gerard Moreno",
-    "motivo": "lesion",
-    "regreso": "Back in training",
     "p_juega": 0.0
    },
    {

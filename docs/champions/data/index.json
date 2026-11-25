@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-24T19:55Z",
+ "actualizado": "2026-11-25T01:11Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -360,17 +360,17 @@
    "arbitro": "Nick Walsh",
    "1x2": [
     0.04,
-    0.113,
-    0.847
+    0.109,
+    0.851
    ],
-   "goles": 3.8,
-   "over25": 0.723,
-   "ambos": 0.515,
-   "corners": 8.51,
-   "amarillas": 3.25,
+   "goles": 3.94,
+   "over25": 0.745,
+   "ambos": 0.525,
+   "corners": 8.92,
+   "amarillas": 3.27,
    "marcador": [
-    "0-2",
-    0.11
+    "0-3",
+    0.104
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -397,18 +397,18 @@
    "derbi": null,
    "arbitro": "Rade Obrenović",
    "1x2": [
-    0.286,
-    0.275,
-    0.438
+    0.24,
+    0.253,
+    0.507
    ],
-   "goles": 3.04,
-   "over25": 0.581,
-   "ambos": 0.639,
-   "corners": 10.72,
-   "amarillas": 3.69,
+   "goles": 3.37,
+   "over25": 0.645,
+   "ambos": 0.677,
+   "corners": 10.51,
+   "amarillas": 3.83,
    "marcador": [
     "1-1",
-    0.123
+    0.106
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -420,7 +420,7 @@
    },
    "bajas": {
     "SLA": 3,
-    "VIL": 5
+    "VIL": 4
    }
   },
   {
@@ -435,18 +435,18 @@
    "derbi": null,
    "arbitro": "Erik Lambrechts",
    "1x2": [
-    0.843,
-    0.116,
-    0.041
+    0.848,
+    0.112,
+    0.04
    ],
-   "goles": 3.7,
-   "over25": 0.711,
-   "ambos": 0.497,
-   "corners": 12.39,
-   "amarillas": 2.6,
+   "goles": 3.73,
+   "over25": 0.712,
+   "ambos": 0.493,
+   "corners": 12.23,
+   "amarillas": 2.51,
    "marcador": [
     "2-0",
-    0.114
+    0.111
    ],
    "n_picks": 4,
    "ejemplo": false,
@@ -457,7 +457,7 @@
     "VIK": "prevista (últimos 10)"
    },
    "bajas": {
-    "ATM": 4,
+    "ATM": 3,
     "VIK": 0
    }
   },
@@ -473,18 +473,18 @@
    "derbi": null,
    "arbitro": "Alejandro José Hernández Hernández",
    "1x2": [
-    0.214,
-    0.239,
-    0.547
+    0.209,
+    0.233,
+    0.558
    ],
-   "goles": 3.75,
-   "over25": 0.71,
-   "ambos": 0.725,
-   "corners": 10.9,
-   "amarillas": 4.24,
+   "goles": 3.72,
+   "over25": 0.707,
+   "ambos": 0.711,
+   "corners": 10.87,
+   "amarillas": 4.16,
    "marcador": [
     "1-2",
-    0.097
+    0.098
    ],
    "n_picks": 3,
    "ejemplo": false,
@@ -495,7 +495,7 @@
     "LIV": "prevista (últimos 10)"
    },
    "bajas": {
-    "BRU": 1,
+    "BRU": 0,
     "LIV": 2
    }
   },
@@ -511,18 +511,18 @@
    "derbi": null,
    "arbitro": "François Letexier",
    "1x2": [
-    0.693,
-    0.186,
-    0.12
+    0.683,
+    0.189,
+    0.128
    ],
-   "goles": 3.87,
-   "over25": 0.733,
-   "ambos": 0.674,
-   "corners": 11.25,
-   "amarillas": 3.19,
+   "goles": 3.95,
+   "over25": 0.744,
+   "ambos": 0.687,
+   "corners": 11.08,
+   "amarillas": 3.44,
    "marcador": [
     "2-1",
-    0.101
+    0.097
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -534,7 +534,7 @@
    },
    "bajas": {
     "INT": 3,
-    "VFB": 3
+    "VFB": 1
    }
   },
   {
@@ -549,18 +549,18 @@
    "derbi": null,
    "arbitro": "Marco Guida",
    "1x2": [
-    0.23,
-    0.264,
-    0.505
+    0.25,
+    0.269,
+    0.481
    ],
-   "goles": 3.08,
-   "over25": 0.587,
-   "ambos": 0.629,
-   "corners": 9.2,
-   "amarillas": 2.61,
+   "goles": 2.97,
+   "over25": 0.558,
+   "ambos": 0.611,
+   "corners": 9.34,
+   "amarillas": 2.63,
    "marcador": [
     "1-1",
-    0.117
+    0.122
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -572,7 +572,7 @@
    },
    "bajas": {
     "LIL": 2,
-    "BAY": 7
+    "BAY": 6
    }
   },
   {
@@ -587,18 +587,18 @@
    "derbi": null,
    "arbitro": "Glenn Nyberg",
    "1x2": [
-    0.663,
-    0.201,
-    0.136
+    0.652,
+    0.206,
+    0.142
    ],
-   "goles": 3.64,
-   "over25": 0.697,
-   "ambos": 0.659,
-   "corners": 7.59,
-   "amarillas": 2.52,
+   "goles": 3.68,
+   "over25": 0.7,
+   "ambos": 0.669,
+   "corners": 7.71,
+   "amarillas": 2.39,
    "marcador": [
     "2-1",
-    0.105
+    0.104
    ],
    "n_picks": 5,
    "ejemplo": false,
@@ -610,7 +610,7 @@
    },
    "bajas": {
     "PSG": 2,
-    "ROM": 3
+    "ROM": 2
    }
   },
   {
@@ -625,18 +625,18 @@
    "derbi": null,
    "arbitro": "Szymon Marciniak",
    "1x2": [
-    0.419,
-    0.266,
-    0.315
+    0.415,
+    0.27,
+    0.314
    ],
-   "goles": 3.39,
-   "over25": 0.648,
-   "ambos": 0.693,
+   "goles": 3.37,
+   "over25": 0.645,
+   "ambos": 0.694,
    "corners": 9.14,
-   "amarillas": 4.09,
+   "amarillas": 4.07,
    "marcador": [
     "1-1",
-    0.111
+    0.113
    ],
    "n_picks": 2,
    "ejemplo": false,
@@ -663,18 +663,18 @@
    "derbi": null,
    "arbitro": "Michael Oliver",
    "1x2": [
-    0.421,
-    0.284,
-    0.295
+    0.419,
+    0.287,
+    0.294
    ],
-   "goles": 2.87,
-   "over25": 0.543,
-   "ambos": 0.616,
-   "corners": 12.74,
-   "amarillas": 2.24,
+   "goles": 2.85,
+   "over25": 0.535,
+   "ambos": 0.605,
+   "corners": 12.98,
+   "amarillas": 2.06,
    "marcador": [
     "1-1",
-    0.13
+    0.129
    ],
    "n_picks": 6,
    "ejemplo": false,
@@ -936,29 +936,11 @@
    "congelado": true
   },
   "2026-11-25": {
-   "cuota": 54.06,
-   "p": 0.02733,
-   "ev": 0.478,
-   "n": 9,
+   "cuota": 59.01,
+   "p": 0.03003,
+   "ev": 0.772,
+   "n": 8,
    "patas": [
-    {
-     "tipo": "jugador",
-     "jugador": "Orphé Mbina",
-     "equipo": "SAB",
-     "stat": "faltas_recibidas",
-     "linea": 0.5,
-     "suplente_oro": false,
-     "un_lado": true,
-     "lado": "over",
-     "cuota": 1.37,
-     "p_modelo": 0.925,
-     "p": 0.726,
-     "ev": -0.006,
-     "id": "2026-11-25-SAB-BAR",
-     "game": "SAB–BAR",
-     "fecha": "2026-11-25",
-     "hora": "12:45"
-    },
     {
      "tipo": "equipo",
      "jugador": "BAR",
@@ -969,9 +951,9 @@
      "suplente_oro": false,
      "lado": "over",
      "cuota": 1.75,
-     "p_modelo": 0.823,
-     "p": 0.639,
-     "ev": 0.119,
+     "p_modelo": 0.826,
+     "p": 0.64,
+     "ev": 0.12,
      "id": "2026-11-25-SAB-BAR",
      "game": "SAB–BAR",
      "fecha": "2026-11-25",
@@ -979,35 +961,17 @@
     },
     {
      "tipo": "equipo",
-     "jugador": "SLA",
-     "equipo": "SLA",
+     "jugador": "VIL",
+     "equipo": "VIL",
      "stat": "corners",
-     "linea": 3.5,
+     "linea": 5.5,
      "casa": "Betano",
      "suplente_oro": false,
-     "lado": "over",
-     "cuota": 1.37,
-     "p_modelo": 0.88,
-     "p": 0.755,
-     "ev": 0.034,
-     "id": "2026-11-25-SLA-VIL",
-     "game": "SLA–VIL",
-     "fecha": "2026-11-25",
-     "hora": "12:45"
-    },
-    {
-     "tipo": "jugador",
-     "jugador": "Renato Veiga",
-     "equipo": "VIL",
-     "stat": "faltas_cometidas",
-     "linea": 0.5,
-     "suplente_oro": false,
-     "un_lado": true,
-     "lado": "over",
-     "cuota": 1.57,
-     "p_modelo": 0.816,
-     "p": 0.635,
-     "ev": -0.003,
+     "lado": "under",
+     "cuota": 1.62,
+     "p_modelo": 0.851,
+     "p": 0.658,
+     "ev": 0.066,
      "id": "2026-11-25-SLA-VIL",
      "game": "SLA–VIL",
      "fecha": "2026-11-25",
@@ -1023,8 +987,8 @@
      "suplente_oro": false,
      "lado": "over",
      "cuota": 1.53,
-     "p_modelo": 0.729,
-     "p": 0.688,
+     "p_modelo": 0.731,
+     "p": 0.689,
      "ev": 0.053,
      "id": "2026-11-25-ATM-VIK",
      "game": "ATM–VIK",
@@ -1032,18 +996,18 @@
      "hora": "15:00"
     },
     {
-     "tipo": "jugador",
-     "jugador": "Virgil van Dijk",
+     "tipo": "equipo",
+     "jugador": "LIV",
      "equipo": "LIV",
-     "stat": "remates",
-     "linea": 0.5,
+     "stat": "faltas",
+     "linea": 9.5,
+     "casa": "Betano",
      "suplente_oro": false,
-     "un_lado": true,
      "lado": "over",
-     "cuota": 1.45,
-     "p_modelo": 0.871,
-     "p": 0.685,
-     "ev": -0.007,
+     "cuota": 1.8,
+     "p_modelo": 0.75,
+     "p": 0.608,
+     "ev": 0.095,
      "id": "2026-11-25-BRU-LIV",
      "game": "BRU–LIV",
      "fecha": "2026-11-25",
@@ -1059,9 +1023,9 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.72,
-     "p_modelo": 0.862,
-     "p": 0.615,
-     "ev": 0.058,
+     "p_modelo": 0.851,
+     "p": 0.613,
+     "ev": 0.054,
      "id": "2026-11-25-LIL-BAY",
      "game": "LIL–BAY",
      "fecha": "2026-11-25",
@@ -1077,9 +1041,9 @@
      "suplente_oro": false,
      "lado": "under",
      "cuota": 1.75,
-     "p_modelo": 0.87,
+     "p_modelo": 0.868,
      "p": 0.631,
-     "ev": 0.105,
+     "ev": 0.104,
      "id": "2026-11-25-PSG-ROM",
      "game": "PSG–ROM",
      "fecha": "2026-11-25",
@@ -1087,24 +1051,42 @@
     },
     {
      "tipo": "equipo",
-     "jugador": "partido",
-     "equipo": "partido",
-     "stat": "tarjetas",
-     "linea": 4.5,
+     "jugador": "SCP",
+     "equipo": "SCP",
+     "stat": "corners",
+     "linea": 5.5,
      "casa": "Betano",
      "suplente_oro": false,
      "lado": "under",
-     "cuota": 1.57,
-     "p_modelo": 0.909,
-     "p": 0.672,
-     "ev": 0.055,
+     "cuota": 1.55,
+     "p_modelo": 0.883,
+     "p": 0.674,
+     "ev": 0.045,
+     "id": "2026-11-25-SCP-MUN",
+     "game": "SCP–MUN",
+     "fecha": "2026-11-25",
+     "hora": "15:00"
+    },
+    {
+     "tipo": "equipo",
+     "jugador": "SHA",
+     "equipo": "SHA",
+     "stat": "corners",
+     "linea": 4.5,
+     "casa": "Betano",
+     "suplente_oro": false,
+     "lado": "over",
+     "cuota": 1.62,
+     "p_modelo": 0.913,
+     "p": 0.653,
+     "ev": 0.058,
      "id": "2026-11-25-SHA-FEN",
      "game": "SHA–FEN",
      "fecha": "2026-11-25",
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-24T19:55Z"
+   "armado": "2026-11-25T01:11Z"
   }
  }
 }
