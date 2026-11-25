@@ -5,6 +5,8 @@ hace desde el navegador de Nicolas (solo lectura) y queda en futbol/champions/cu
     {"eventos": {id_betano: "Local - Visitante"}, "datos": {id_betano: {jugador: {"e": equipo, "rp": [k0, c_k0, c_k0+1, ...],
      "p_k": [ks si no son consecutivos]}}}}
 con rp=remates_puerta, r=remates, a=atajadas, fc=faltas_cometidas, fr=faltas_recibidas, p=pases.
+En la API de Betano las faltas recibidas se llaman "<Jugador> Faltas ganadas" (typeId 1000678); también hay
+"Tackles totales" (599, entradas) y "Asistencias totales" (593), que el modelo aún no proyecta.
 "N+" equivale a la línea N-0,5 (Más) → [línea, cuota_más, None]: sin lado Menos. build_site_futbol las suma a
 partido["props"] al simular (sin pisar un jugador que ya tenga cuota a dos lados); no se guardan en partidos/.
 
