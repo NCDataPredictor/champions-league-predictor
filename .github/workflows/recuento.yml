@@ -33,6 +33,8 @@ jobs:
       - name: Liquidar picks
         run: python -m futbol.recuento champions
       - name: Publicar
+        env:
+          HOOK: ${{ secrets.CF_DEPLOY_HOOK_NCDATA }}
         run: |
           git config user.name "ncdata-bot"
           git config user.email "ncdata-bot@users.noreply.github.com"
@@ -41,3 +43,5 @@ jobs:
           git commit -m "Recuento de picks de la Champions ($(date -u +%Y-%m-%d))"
           git pull --rebase -X theirs origin main
           git push origin HEAD:main
+          # El push con el token de Actions no dispara el despliegue: se pide a Cloudflare aquí (como en jornada.yml).
+          if [ -n "$HOOK" ]; then if curl -fsS -X POST "$HOOK" > /dev/null; then echo "Redespliegue pedido."; else echo "::warning::El deploy hook de Cloudflare falló"; fi; fi

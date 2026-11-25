@@ -55,6 +55,16 @@ def real_de(k, h):
     if not j or not j.get("jugo"):
         return "no jugó"
     campo = STAT_JUG.get(k["stat"], k["stat"])
+    if k["stat"] == "atajadas" and campo not in j:
+        # el histórico viejo no trae atajadas: remates a puerta del rival − goles recibidos, solo si el portero
+        # jugó todo el partido (si no, no se sabe cuáles le tocaron a él)
+        if not (j.get("titular") and (j.get("min_sale") or 0) >= 90):
+            return None
+        rival = h["visitante"] if k.get("equipo") == h["local"] else h["local"]
+        er = h["equipos"].get(rival) or {}
+        if er.get("remates_puerta") is None or er.get("goles") is None:
+            return None
+        return max(0, er["remates_puerta"] - er["goles"])
     if k["stat"] == "tarjetas":
         return j.get("amarillas", 0) + j.get("rojas", 0)
     return j.get(campo)
@@ -132,6 +142,8 @@ def main(liga):
     with open(f_acum, "w", encoding="utf-8") as fh:
         json.dump(acum, fh, ensure_ascii=False, indent=1)
 
+    sonador = _sonador(liga, dd, hist)
+
     picks = sorted(acum["picks"].values(), key=lambda x: (x["fecha"], x["id"]), reverse=True)
     por = lambda campo: {k: _resumen(v) for k, v in sorted(_grupo(picks, campo).items())}
     partidos = sorted(acum["partidos"].values(), key=lambda x: x["fecha"])
@@ -148,12 +160,39 @@ def main(liga):
     out = {"actualizado": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"), "resumen": _resumen(picks),
            "errores_cuota": _resumen([x for x in picks if x.get("error_cuota")]),
            "por_stat": por("stat"), "por_casa": por("casa"), "por_fecha": por("fecha"),
-           "calibracion_1x2": cal, "partidos": list(reversed(partidos)), "picks": picks}
+           "calibracion_1x2": cal, "partidos": list(reversed(partidos)), "picks": picks, "sonador": sonador}
     with open(os.path.join(dd, "recuento.json"), "w", encoding="utf-8") as fh:
         json.dump(out, fh, ensure_ascii=False, separators=(",", ":"))
     r = out["resumen"]
     print(f"Recuento {liga}: {r['n']} picks liquidados, {r['ganados']} ganados, {r['unidades']:+} u (ROI {r['roi']}); "
           f"{cal['n']} partidos en la calibración del 1X2")
+
+
+def _sonador(liga, dd, hist):
+    """Liquida las soñadoras congeladas (index.json["sonador"]) y las guarda en futbol/<liga>/recuento/sonador.json,
+    porque index.json las pierde cuando cambia la jornada. Una pata "no jugó" se anula (cuota 1); la soñadora se
+    gana si todas las demás se ganan."""
+    f = os.path.join(RAIZ, "futbol", liga, "recuento", "sonador.json")
+    acum = _cargar(f, {})
+    idx = _cargar(os.path.join(dd, "index.json"), {})
+    for fecha, s in (idx.get("sonador") or {}).items():
+        if not s.get("congelado") or (acum.get(fecha) or {}).get("estado") in ("ganada", "perdida"):
+            continue
+        patas = []
+        for k in s["patas"]:
+            h = hist.get(k["id"])
+            r = liquidar(k, h) if h else None
+            patas.append({**k, **(r or {"estado": "pendiente", "real": None})})
+        est = [k["estado"] for k in patas]
+        cuota = math.prod(k["cuota"] for k in patas if k["estado"] != "nulo")
+        estado = "perdida" if "perdido" in est else "pendiente" if "pendiente" in est else "ganada"
+        acum[fecha] = {**{c: s.get(c) for c in ("cuota", "p", "ev", "n", "armado")}, "fecha": fecha, "patas": patas,
+                       "estado": estado, "cuota_final": round(cuota, 2), "ganadas": est.count("ganado"),
+                       "u": round(cuota - 1, 2) if estado == "ganada" else -1.0 if estado == "perdida" else None}
+    os.makedirs(os.path.dirname(f), exist_ok=True)
+    with open(f, "w", encoding="utf-8") as fh:
+        json.dump(acum, fh, ensure_ascii=False, indent=1)
+    return sorted(acum.values(), key=lambda x: x["fecha"], reverse=True)
 
 
 def _grupo(xs, campo):
