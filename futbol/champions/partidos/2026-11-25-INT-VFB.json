@@ -26,14 +26,14 @@
    "windSpeed": 2,
    "windDirectionCardinal": "N",
    "iconCode": 11,
-   "relativeHumidity": 99,
-   "precipChance": 65,
-   "precipitation": 0.32,
+   "relativeHumidity": 100,
+   "precipChance": 61,
+   "precipitation": 0.47,
    "snow": 0,
    "cloudCover": 100,
    "description": "Light Rain",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-25T14:00:18Z",
+   "lastUpdated": "2026-11-25T16:00:13Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }

@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-25T15:10Z",
+ "actualizado": "2026-11-25T16:53Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -1104,7 +1104,7 @@
      "hora": "15:00"
     }
    ],
-   "armado": "2026-11-25T15:10Z"
+   "armado": "2026-11-25T16:53Z"
   }
  }
 }
