@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-25T23:46Z",
+ "actualizado": "2026-11-26T00:50Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -701,18 +701,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.405,
-    0.254,
-    0.342
+    0.404,
+    0.255,
+    0.341
    ],
-   "goles": 3.78,
-   "over25": 0.721,
-   "ambos": 0.743,
+   "goles": 3.76,
+   "over25": 0.712,
+   "ambos": 0.742,
    "corners": 11.33,
    "amarillas": 2.96,
    "marcador": [
     "1-1",
-    0.09
+    0.093
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -723,7 +723,7 @@
     "FEY": "prevista (últimos 10)"
    },
    "bajas": {
-    "VIK": 1,
+    "VIK": 0,
     "FEY": 3
    }
   },
@@ -739,18 +739,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.664,
-    0.21,
-    0.126
+    0.667,
+    0.206,
+    0.127
    ],
-   "goles": 3.17,
-   "over25": 0.605,
-   "ambos": 0.573,
-   "corners": 11.91,
+   "goles": 3.2,
+   "over25": 0.611,
+   "ambos": 0.576,
+   "corners": 11.9,
    "amarillas": 3.51,
    "marcador": [
     "2-1",
-    0.106
+    0.108
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -777,18 +777,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.447,
-    0.266,
-    0.287
+    0.445,
+    0.265,
+    0.29
    ],
-   "goles": 3.26,
+   "goles": 3.25,
    "over25": 0.624,
-   "ambos": 0.67,
-   "corners": 8.96,
-   "amarillas": 3.82,
+   "ambos": 0.673,
+   "corners": 8.95,
+   "amarillas": 3.81,
    "marcador": [
     "1-1",
-    0.113
+    0.114
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -815,18 +815,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.227,
-    0.246,
-    0.527
+    0.23,
+    0.24,
+    0.531
    ],
-   "goles": 3.69,
-   "over25": 0.702,
-   "ambos": 0.718,
-   "corners": 9.16,
-   "amarillas": 2.66,
+   "goles": 3.71,
+   "over25": 0.703,
+   "ambos": 0.72,
+   "corners": 9.17,
+   "amarillas": 2.68,
    "marcador": [
     "1-2",
-    0.099
+    0.097
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -853,18 +853,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.584,
-    0.218,
-    0.198
+    0.575,
+    0.223,
+    0.202
    ],
    "goles": 4.16,
-   "over25": 0.769,
-   "ambos": 0.756,
-   "corners": 8.58,
-   "amarillas": 3.06,
+   "over25": 0.771,
+   "ambos": 0.76,
+   "corners": 8.56,
+   "amarillas": 3.05,
    "marcador": [
     "2-1",
-    0.09
+    0.087
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -891,18 +891,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.419,
-    0.281,
-    0.3
+    0.421,
+    0.283,
+    0.296
    ],
-   "goles": 2.95,
-   "over25": 0.555,
-   "ambos": 0.621,
+   "goles": 2.93,
+   "over25": 0.559,
+   "ambos": 0.625,
    "corners": 9.31,
-   "amarillas": 2.65,
+   "amarillas": 2.64,
    "marcador": [
     "1-1",
-    0.13
+    0.129
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -930,17 +930,17 @@
    "arbitro": "",
    "1x2": [
     0.205,
-    0.216,
-    0.579
+    0.211,
+    0.585
    ],
-   "goles": 4.49,
-   "over25": 0.813,
-   "ambos": 0.799,
-   "corners": 10.07,
-   "amarillas": 3.71,
+   "goles": 4.51,
+   "over25": 0.815,
+   "ambos": 0.791,
+   "corners": 10.03,
+   "amarillas": 3.7,
    "marcador": [
     "1-2",
-    0.081
+    0.078
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -951,7 +951,7 @@
     "RBL": "prevista (últimos 10)"
    },
    "bajas": {
-    "MUN": 5,
+    "MUN": 3,
     "RBL": 1
    }
   },
@@ -967,18 +967,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.31,
-    0.242,
-    0.449
+    0.302,
+    0.243,
+    0.455
    ],
-   "goles": 4.08,
-   "over25": 0.762,
-   "ambos": 0.779,
-   "corners": 11.07,
-   "amarillas": 3.53,
+   "goles": 4.09,
+   "over25": 0.763,
+   "ambos": 0.781,
+   "corners": 11.01,
+   "amarillas": 3.52,
    "marcador": [
     "1-2",
-    0.086
+    0.085
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1005,18 +1005,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.426,
-    0.254,
-    0.321
+    0.423,
+    0.257,
+    0.32
    ],
-   "goles": 3.79,
-   "over25": 0.715,
-   "ambos": 0.744,
-   "corners": 8.79,
-   "amarillas": 3.08,
+   "goles": 3.78,
+   "over25": 0.712,
+   "ambos": 0.74,
+   "corners": 8.77,
+   "amarillas": 3.1,
    "marcador": [
     "1-1",
-    0.091
+    0.095
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1043,18 +1043,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.257,
-    0.281,
-    0.462
+    0.256,
+    0.287,
+    0.457
    ],
-   "goles": 2.77,
-   "over25": 0.521,
-   "ambos": 0.585,
-   "corners": 7.88,
-   "amarillas": 4.53,
+   "goles": 2.75,
+   "over25": 0.515,
+   "ambos": 0.584,
+   "corners": 7.89,
+   "amarillas": 4.49,
    "marcador": [
     "1-1",
-    0.131
+    0.132
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1082,17 +1082,17 @@
    "arbitro": "",
    "1x2": [
     0.21,
-    0.311,
-    0.48
+    0.315,
+    0.475
    ],
    "goles": 2.14,
-   "over25": 0.359,
-   "ambos": 0.436,
-   "corners": 9.15,
-   "amarillas": 1.92,
+   "over25": 0.361,
+   "ambos": 0.442,
+   "corners": 9.17,
+   "amarillas": 1.91,
    "marcador": [
     "0-1",
-    0.163
+    0.161
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1104,7 +1104,7 @@
    },
    "bajas": {
     "SLO": 4,
-    "SHA": 4
+    "SHA": 3
    }
   },
   {
@@ -1120,17 +1120,17 @@
    "arbitro": "",
    "1x2": [
     0.32,
-    0.276,
-    0.404
+    0.279,
+    0.402
    ],
    "goles": 3.11,
-   "over25": 0.597,
-   "ambos": 0.655,
-   "corners": 7.98,
-   "amarillas": 3.22,
+   "over25": 0.594,
+   "ambos": 0.656,
+   "corners": 7.99,
+   "amarillas": 3.21,
    "marcador": [
     "1-1",
-    0.118
+    0.123
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1157,18 +1157,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.232,
-    0.263,
-    0.505
+    0.234,
+    0.258,
+    0.507
    ],
-   "goles": 3.15,
-   "over25": 0.601,
-   "ambos": 0.64,
-   "corners": 10.73,
-   "amarillas": 3.24,
+   "goles": 3.14,
+   "over25": 0.607,
+   "ambos": 0.643,
+   "corners": 10.71,
+   "amarillas": 3.23,
    "marcador": [
     "1-1",
-    0.114
+    0.113
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1195,18 +1195,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.438,
-    0.249,
+    0.446,
+    0.242,
     0.313
    ],
-   "goles": 4.19,
-   "over25": 0.777,
-   "ambos": 0.795,
-   "corners": 10.38,
-   "amarillas": 3.36,
+   "goles": 4.18,
+   "over25": 0.774,
+   "ambos": 0.788,
+   "corners": 10.39,
+   "amarillas": 3.37,
    "marcador": [
     "2-2",
-    0.087
+    0.084
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1233,18 +1233,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.15,
+    0.154,
     0.228,
-    0.623
+    0.618
    ],
-   "goles": 3.13,
-   "over25": 0.6,
-   "ambos": 0.589,
-   "corners": 8.47,
-   "amarillas": 2.54,
+   "goles": 3.11,
+   "over25": 0.595,
+   "ambos": 0.586,
+   "corners": 8.5,
+   "amarillas": 2.53,
    "marcador": [
     "1-2",
-    0.108
+    0.106
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1271,18 +1271,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.38,
+    0.381,
     0.289,
-    0.331
+    0.33
    ],
-   "goles": 2.83,
-   "over25": 0.53,
-   "ambos": 0.605,
-   "corners": 10.58,
-   "amarillas": 3.11,
+   "goles": 2.84,
+   "over25": 0.539,
+   "ambos": 0.61,
+   "corners": 10.55,
+   "amarillas": 3.09,
    "marcador": [
     "1-1",
-    0.133
+    0.13
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1309,18 +1309,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.273,
-    0.291,
-    0.437
+    0.275,
+    0.285,
+    0.44
    ],
    "goles": 2.75,
-   "over25": 0.515,
-   "ambos": 0.581,
-   "corners": 8.52,
-   "amarillas": 2.84,
+   "over25": 0.513,
+   "ambos": 0.582,
+   "corners": 8.5,
+   "amarillas": 2.81,
    "marcador": [
     "1-1",
-    0.13
+    0.134
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1347,18 +1347,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.364,
-    0.299,
-    0.337
+    0.345,
+    0.308,
+    0.346
    ],
-   "goles": 2.6,
-   "over25": 0.478,
-   "ambos": 0.559,
-   "corners": 10.09,
+   "goles": 2.56,
+   "over25": 0.462,
+   "ambos": 0.556,
+   "corners": 10.1,
    "amarillas": 3.22,
    "marcador": [
     "1-1",
-    0.14
+    0.147
    ],
    "n_picks": 0,
    "ejemplo": false,
@@ -1369,7 +1369,7 @@
     "LIL": "prevista (últimos 10)"
    },
    "bajas": {
-    "VFB": 1,
+    "VFB": 0,
     "LIL": 2
    }
   }
