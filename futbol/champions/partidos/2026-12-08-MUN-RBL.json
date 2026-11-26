@@ -44,6 +44,13 @@
  "bajas": {
   "MUN": [
    {
+    "jugador": "MUN-1070052",
+    "nombre": "Amad Diallo",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
+   {
     "jugador": "MUN-1352713",
     "nombre": "Carlos Baleba",
     "motivo": "lesion",

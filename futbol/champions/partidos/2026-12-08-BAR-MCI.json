@@ -51,10 +51,17 @@
     "p_juega": 0.0
    },
    {
+    "jugador": "BAR-1708842",
+    "nombre": "Hamza Abdelkarim",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
+   {
     "jugador": "BAR-1254166",
     "nombre": "Alejandro Balde",
     "motivo": "lesion",
-    "regreso": "Late December 2026",
+    "regreso": "Mid December 2026",
     "p_juega": 0.0
    },
    {
@@ -68,15 +75,15 @@
     "jugador": "BAR-449232",
     "nombre": "Andreas Christensen",
     "motivo": "lesion",
-    "regreso": "About 1-2 weeks",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "BAR-675088",
     "nombre": "Rodri",
     "motivo": "lesion",
-    "regreso": "Back in training",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "BAR-1815149",
