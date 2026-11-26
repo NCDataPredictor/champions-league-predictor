@@ -17,7 +17,7 @@ import glob
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 
 RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, RAIZ)
@@ -323,11 +323,31 @@ def resumen(res):
             "arbitro": res["arbitro"].get("nombre"), "1x2": pa["1x2"], "goles": pa["total_goles"]["dist"]["media"],
             "over25": next(p for l, p in pa["total_goles"]["over"] if l == 2.5), "ambos": pa["ambos_marcan"],
             "corners": pa["totales"]["corners"]["dist"]["media"], "amarillas": pa["totales"]["amarillas"]["dist"]["media"],
-            "marcador": pa["marcadores"][0], "n_picks": len(res["picks"]), "ejemplo": res["ejemplo"],
+            "marcador": pa["marcadores"][0], "n_picks": len(res["picks"]), "picks_desde": res.get("picks_desde"), "ejemplo": res["ejemplo"],
             "n_errores": sum(1 for x in res["picks"] if x.get("error_cuota")),
             "cuotas_capturadas": (res.get("cuotas_casa") or {}).get("capturado"),
             "alineacion": {t: res["alineacion"][t]["estado"] for t in (L, V)},
             "bajas": {t: len(res["bajas"][t]["lista"]) for t in (L, V)}}
+
+
+# Pedido de Nicolas (26-nov): los picks de una jornada se publican la mañana del día ANTERIOR a su primer día de
+# partidos (jornada del 8-dic -> picks el 7-dic). Antes de eso el partido sale con sus probabilidades, pero sin picks,
+# sin líneas de casa y sin soñadora. 06:00 Bogotá = 11:00 UTC (Colombia no cambia de hora); la corrida de las
+# 11:15 UTC de jornada.yml es la primera que los publica.
+HORA_PUBLICAR_UTC = 11
+
+
+def apertura_picks(todos):
+    """{jornada: datetime UTC desde la que se publican sus picks}, con el primer día de cada jornada."""
+    primero = {}
+    for p in todos:
+        m = p["match"]
+        j = m.get("jornada")
+        if j is None:
+            continue
+        primero[j] = min(primero.get(j, m["fecha"]), m["fecha"])
+    return {j: datetime.combine(date.fromisoformat(f) - timedelta(days=1), datetime.min.time(), timezone.utc)
+            + timedelta(hours=HORA_PUBLICAR_UTC) for j, f in primero.items()}
 
 
 def main():
@@ -348,6 +368,7 @@ def main():
     if len(hist) < n0:
         print(f"{n0 - len(hist)} partidos sin estadísticas en FotMob: fuera del cálculo")
     partidos = cargar(os.path.join(RAIZ, "futbol", a.liga, "partidos", "*.json"))
+    apertura = apertura_picks(partidos)
     if a.fecha:
         partidos = [p for p in partidos if p["match"]["fecha"] == a.fecha]
     if a.solo_futuros:
@@ -377,6 +398,14 @@ def main():
             cu["equipo"] = list(cu.get("equipo") or []) + betano.cuotas_equipo(p, extracto)
             p = {**p, "cuotas": cu, "lambda_mercado": fuerza_mercado.desde_extracto(extracto)}
         res = predecir(a.liga, p, hist, a.sims)
+        m = p["match"]
+        abre = apertura.get(m.get("jornada")) or (datetime.combine(date.fromisoformat(m["fecha"]) - timedelta(days=1),
+                                                                   datetime.min.time(), timezone.utc)
+                                                  + timedelta(hours=HORA_PUBLICAR_UTC))
+        if datetime.now(timezone.utc) < abre:
+            # todavía no: sin picks, sin errores de cuota y sin líneas para la soñadora
+            res["picks"], res["lineas_casa"] = [], []
+            res["picks_desde"] = abre.strftime("%Y-%m-%dT%H:%MZ")
         cons = _consenso(a.liga, res["id"])
         if cons:
             res["consenso"] = cons

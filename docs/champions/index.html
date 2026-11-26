@@ -831,7 +831,7 @@ function inicio() {
       <div class="mc-foot"><span>${ic("arbitro")}Árbitro <b>${esc(p.arbitro || "por designar")}</b> · Bajas ${esc(L)} <b>${p.bajas[L] || 0}</b> · ${esc(V)} <b>${p.bajas[V] || 0}</b></span><span class="mc-go">Ver partido <span>→</span></span></div>
     </a>`; }).join("")}</div>
   ${plegable("picks", `<h2>${ic("over")}Picks ${ps === todos ? "de la jornada" : "por jugar"}</h2><span class="eyebrow">${picks} picks · cuotas de Betano</span>`, `
-  ${picks ? "" : `<div class="card callout">Todavía no hay cuotas cargadas, así que no hay picks: el modelo nunca supone una cuota. Mientras tanto, en cada partido están sus probabilidades y la cuota justa (1 / probabilidad) para compararla con la de tu casa.</div>`}
+  ${picks ? "" : abrePicks(ps) ? `<div class="card callout">Los picks de esta jornada se publican <b>${esc(abrePicks(ps))}</b> (hora Bogotá), la mañana antes del primer partido, con las cuotas y alineaciones más frescas. Mientras tanto, en cada partido están sus probabilidades y la cuota justa (1 / probabilidad) para compararla con la de tu casa.</div>` : `<div class="card callout">Todavía no hay cuotas cargadas, así que no hay picks: el modelo nunca supone una cuota. Mientras tanto, en cada partido están sus probabilidades y la cuota justa (1 / probabilidad) para compararla con la de tu casa.</div>`}
   <div id="picks"></div>`)}
   ${plegable("errores", `<h2>${ic("tarjetas")}Errores de cuota</h2><span class="eyebrow">línea de la casa lejos de lo que pasa en la cancha</span>`, `<div id="errores"></div>`)}
   ${sonadoraHTML()}
@@ -863,6 +863,12 @@ function contar(root) {
       node.textContent = txt.replace(m[0], (to * e).toFixed(dec)); if (k < 1) requestAnimationFrame(step); };
     requestAnimationFrame(step);
   });
+}
+// Pedido de Nicolas (26-nov): los picks de la jornada salen la mañana del día anterior a su primer partido.
+function abrePicks(ps) {
+  const t = ps.map(p => p.picks_desde).filter(Boolean).sort()[0];
+  if (!t) return "";
+  return new Date(t.replace("Z", ":00Z")).toLocaleString("es-CO", {timeZone: "America/Bogota", weekday: "long", day: "numeric", month: "short", hour: "numeric", minute: "2-digit"});
 }
 function fecha(s) { const d = new Date(s + "T12:00:00"); return d.toLocaleDateString("es-CO", {weekday: "short", day: "numeric", month: "short"}); }
 
@@ -1183,6 +1189,10 @@ function picksPartido(d, el) {
       ${g25 != null ? row("Más de 2,5 goles", [g25], cs["goles 2.5"] && {...cs["goles 2.5"], consenso: [cs["goles 2.5"].consenso[0]], pinnacle: cs["goles 2.5"].pinnacle && [cs["goles 2.5"].pinnacle[0]], mejor: [cs["goles 2.5"].mejor[0]]}, [0]) : ""}
       ${g25 != null ? row("Menos de 2,5 goles", [1 - g25], cs["goles 2.5"] && {...cs["goles 2.5"], consenso: [cs["goles 2.5"].consenso[1]], pinnacle: cs["goles 2.5"].pinnacle && [cs["goles 2.5"].pinnacle[1]], mejor: [cs["goles 2.5"].mejor[1]]}, [0]) : ""}
     </table></div><p class="note" style="margin-top:-8px">Casas de EE. UU. y Europa (DraftKings, FanDuel, BetMGM, Pinnacle, Unibet…) vía The Odds API, ${esc((cs.hora || "").replace("T", " "))} UTC. Si el modelo se aleja mucho de Pinnacle, lo más probable es que el que se equivoca sea el modelo.</p>` : "";
+  if (d.picks_desde) {
+    el.innerHTML = consHTML + `<div class="card callout">Los picks de este partido se publican <b>${esc(abrePicks([d]))}</b> (hora Bogotá), la mañana antes del primer partido de la jornada. En Resumen tienes la cuota justa de cada línea para comparar.</div>`;
+    return;
+  }
   el.innerHTML = consHTML + `
     ${cc ? `<p class="note" style="margin:0 0 10px">Cuotas de ${esc(cc.casa)} capturadas ${esc((cc.capturado || "").replace("T", " "))} UTC${cc["1x2"] ? ` · 1X2 ${cc["1x2"].map(x => x.toFixed(2)).join(" / ")} (modelo: ${d.partido["1x2"].map(p => fair(p)).join(" / ")})` : ""}.</p>`
       : `<div class="card callout">Todavía no hay cuotas de la casa para este partido, así que no hay picks: el modelo nunca supone una cuota. En Resumen tienes la cuota justa de cada línea para comparar.</div>`}
