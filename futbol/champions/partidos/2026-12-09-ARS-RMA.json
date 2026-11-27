@@ -22,20 +22,20 @@
    "nombre": ""
   },
   "clima": {
-   "temperature": 4,
+   "temperature": 5,
    "windSpeed": 3,
    "windDirectionCardinal": "N",
-   "iconCode": 27,
-   "relativeHumidity": 81,
-   "precipChance": 21,
-   "precipitation": 0,
+   "iconCode": 11,
+   "relativeHumidity": 82,
+   "precipChance": 31,
+   "precipitation": 0.1,
    "snow": 0,
-   "cloudCover": 67,
-   "description": "Mostly Cloudy",
+   "cloudCover": 72,
+   "description": "Few Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-26T20:00:49Z",
-   "localizedKey": "weather_condition_cloudy",
-   "defaultTitle": "Cloudy"
+   "lastUpdated": "2026-11-27T08:00:32Z",
+   "localizedKey": "weather_condition_light_rain",
+   "defaultTitle": "Light Rain"
   }
  },
  "alineaciones": {
@@ -61,11 +61,18 @@
     "jugador": "ARS-961995",
     "nombre": "Bukayo Saka",
     "motivo": "lesion",
-    "regreso": "Late December 2026",
+    "regreso": "Back in training",
     "p_juega": 0.0
    }
   ],
   "RMA": [
+   {
+    "jugador": "RMA-760712",
+    "nombre": "Trent Alexander-Arnold",
+    "motivo": "lesion",
+    "regreso": "A few days",
+    "p_juega": 0.0
+   },
    {
     "jugador": "RMA-1406729",
     "nombre": "Endrick",

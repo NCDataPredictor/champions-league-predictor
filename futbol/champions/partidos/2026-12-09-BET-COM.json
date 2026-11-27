@@ -24,16 +24,16 @@
   "clima": {
    "temperature": 14,
    "windSpeed": 2,
-   "windDirectionCardinal": "W",
+   "windDirectionCardinal": "WSW",
    "iconCode": 33,
-   "relativeHumidity": 66,
-   "precipChance": 5,
+   "relativeHumidity": 64,
+   "precipChance": 10,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 23,
+   "cloudCover": 25,
    "description": "Mostly Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-26T18:00:19Z",
+   "lastUpdated": "2026-11-27T06:00:24Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -54,15 +54,15 @@
     "jugador": "BET-604126",
     "nombre": "Giovani Lo Celso",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "Mid December 2026",
+    "p_juega": 0.0
    },
    {
     "jugador": "BET-531629",
     "nombre": "Dani Ceballos",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "Early December 2026",
+    "p_juega": 0.0
    }
   ],
   "COM": [
@@ -72,6 +72,13 @@
     "motivo": "internationalDuty",
     "regreso": "",
     "p_juega": 0.0
+   },
+   {
+    "jugador": "COM-1344550",
+    "nombre": "Willy Kambwala",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "COM-846000",

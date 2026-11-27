@@ -22,20 +22,20 @@
    "nombre": ""
   },
   "clima": {
-   "temperature": 3,
-   "windSpeed": 3,
+   "temperature": 5,
+   "windSpeed": 4,
    "windDirectionCardinal": "NNW",
-   "iconCode": 29,
-   "relativeHumidity": 87,
-   "precipChance": 20,
+   "iconCode": 27,
+   "relativeHumidity": 88,
+   "precipChance": 24,
    "precipitation": 0,
    "snow": 0,
-   "cloudCover": 50,
-   "description": "Partly Cloudy",
+   "cloudCover": 72,
+   "description": "Mostly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-26T20:00:49Z",
-   "localizedKey": "weather_condition_partly_cloudy",
-   "defaultTitle": "Partly Cloudy"
+   "lastUpdated": "2026-11-27T08:00:32Z",
+   "localizedKey": "weather_condition_cloudy",
+   "defaultTitle": "Cloudy"
   }
  },
  "alineaciones": {
@@ -54,15 +54,15 @@
     "jugador": "LIV-806552",
     "nombre": "Cody Gakpo",
     "motivo": "lesion",
-    "regreso": "A few days",
+    "regreso": "Late November 2026",
     "p_juega": 0.0
    },
    {
     "jugador": "LIV-956683",
     "nombre": "Ryan Gravenberch",
     "motivo": "lesion",
-    "regreso": "A few days",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "LIV-1197030",

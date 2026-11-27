@@ -22,20 +22,20 @@
    "nombre": ""
   },
   "clima": {
-   "temperature": -2,
+   "temperature": -1,
    "windSpeed": 3,
    "windDirectionCardinal": "WSW",
-   "iconCode": 27,
+   "iconCode": 14,
    "relativeHumidity": 85,
-   "precipChance": 24,
-   "precipitation": 0,
-   "snow": 0,
-   "cloudCover": 73,
-   "description": "Mostly Cloudy",
+   "precipChance": 30,
+   "precipitation": 0.1,
+   "snow": 0.1,
+   "cloudCover": 63,
+   "description": "Few Snow Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-26T20:00:49Z",
-   "localizedKey": "weather_condition_cloudy",
-   "defaultTitle": "Cloudy"
+   "lastUpdated": "2026-11-27T08:00:32Z",
+   "localizedKey": "weather_condition_snowy",
+   "defaultTitle": "Snowy"
   }
  },
  "alineaciones": {
@@ -43,6 +43,13 @@
  },
  "bajas": {
   "BAY": [
+   {
+    "jugador": "BAY-1156141",
+    "nombre": "Jamal Musiala",
+    "motivo": "lesion",
+    "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
    {
     "jugador": "BAY-194165",
     "nombre": "Harry Kane",
@@ -54,15 +61,15 @@
     "jugador": "BAY-1029063",
     "nombre": "Michael Olise",
     "motivo": "lesion",
-    "regreso": "Doubtful",
-    "p_juega": 0.5
+    "regreso": "About 1-2 weeks",
+    "p_juega": 0.0
    },
    {
     "jugador": "BAY-751202",
     "nombre": "Alphonso Davies",
     "motivo": "lesion",
-    "regreso": "A few weeks",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "BAY-27299",
@@ -75,8 +82,8 @@
     "jugador": "BAY-385437",
     "nombre": "Serge Gnabry",
     "motivo": "lesion",
-    "regreso": "Early January 2027",
-    "p_juega": 0.0
+    "regreso": "Doubtful",
+    "p_juega": 0.5
    },
    {
     "jugador": "BAY-1180288",
