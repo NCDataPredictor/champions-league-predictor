@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-26T19:08Z",
+ "actualizado": "2026-11-27T03:47Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -857,18 +857,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.583,
-    0.22,
-    0.197
+    0.603,
+    0.208,
+    0.189
    ],
-   "goles": 4.15,
-   "over25": 0.774,
-   "ambos": 0.759,
-   "corners": 8.53,
-   "amarillas": 3.04,
+   "goles": 4.28,
+   "over25": 0.79,
+   "ambos": 0.768,
+   "corners": 8.72,
+   "amarillas": 3.05,
    "marcador": [
     "2-1",
-    0.089
+    0.091
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -880,7 +880,7 @@
     "MCI": "prevista (últimos 10)"
    },
    "bajas": {
-    "BAR": 6,
+    "BAR": 5,
     "MCI": 1
    }
   },
@@ -1052,18 +1052,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.255,
-    0.283,
-    0.462
+    0.254,
+    0.287,
+    0.459
    ],
    "goles": 2.74,
-   "over25": 0.512,
-   "ambos": 0.579,
-   "corners": 7.91,
-   "amarillas": 4.47,
+   "over25": 0.509,
+   "ambos": 0.575,
+   "corners": 7.83,
+   "amarillas": 4.46,
    "marcador": [
     "1-1",
-    0.132
+    0.131
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -1075,7 +1075,7 @@
     "COM": "prevista (últimos 10)"
    },
    "bajas": {
-    "BET": 4,
+    "BET": 3,
     "COM": 5
    }
   },
@@ -1325,18 +1325,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
+    0.253,
     0.273,
-    0.29,
-    0.437
+    0.474
    ],
-   "goles": 2.74,
-   "over25": 0.515,
-   "ambos": 0.584,
-   "corners": 8.54,
-   "amarillas": 2.8,
+   "goles": 2.86,
+   "over25": 0.541,
+   "ambos": 0.6,
+   "corners": 8.78,
+   "amarillas": 2.96,
    "marcador": [
     "1-1",
-    0.13
+    0.127
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
