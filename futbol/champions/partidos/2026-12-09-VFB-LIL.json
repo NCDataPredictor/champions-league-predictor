@@ -22,20 +22,20 @@
    "nombre": ""
   },
   "clima": {
-   "temperature": 1,
+   "temperature": 0,
    "windSpeed": 3,
-   "windDirectionCardinal": "W",
-   "iconCode": 14,
+   "windDirectionCardinal": "SW",
+   "iconCode": 29,
    "relativeHumidity": 84,
-   "precipChance": 35,
-   "precipitation": 0.1,
-   "snow": 0.1,
-   "cloudCover": 81,
-   "description": "Snow Showers",
+   "precipChance": 24,
+   "precipitation": 0,
+   "snow": 0,
+   "cloudCover": 53,
+   "description": "Partly Cloudy",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-27T20:00:31Z",
-   "localizedKey": "weather_condition_snowy",
-   "defaultTitle": "Snowy"
+   "lastUpdated": "2026-11-28T08:00:33Z",
+   "localizedKey": "weather_condition_partly_cloudy",
+   "defaultTitle": "Partly Cloudy"
   }
  },
  "alineaciones": {

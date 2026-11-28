@@ -26,14 +26,14 @@
    "windSpeed": 3,
    "windDirectionCardinal": "WSW",
    "iconCode": 14,
-   "relativeHumidity": 84,
-   "precipChance": 47,
-   "precipitation": 0.3,
-   "snow": 0.3,
-   "cloudCover": 80,
-   "description": "Snow Showers",
+   "relativeHumidity": 85,
+   "precipChance": 30,
+   "precipitation": 0.1,
+   "snow": 0.1,
+   "cloudCover": 74,
+   "description": "Few Snow Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-27T20:00:30Z",
+   "lastUpdated": "2026-11-28T08:00:32Z",
    "localizedKey": "weather_condition_snowy",
    "defaultTitle": "Snowy"
   }
@@ -94,6 +94,13 @@
    }
   ],
   "SLA": [
+   {
+    "jugador": "SLA-1781770",
+    "nombre": "Toumani Diakité",
+    "motivo": "lesion",
+    "regreso": "Doubtful",
+    "p_juega": 0.5
+   },
    {
     "jugador": "SLA-791682",
     "nombre": "Lukás Provod",

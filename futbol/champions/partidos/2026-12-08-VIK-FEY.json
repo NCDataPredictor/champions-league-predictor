@@ -24,16 +24,16 @@
   "clima": {
    "temperature": 1,
    "windSpeed": 3,
-   "windDirectionCardinal": "NW",
+   "windDirectionCardinal": "NE",
    "iconCode": 11,
-   "relativeHumidity": 83,
-   "precipChance": 47,
-   "precipitation": 0.2,
+   "relativeHumidity": 82,
+   "precipChance": 37,
+   "precipitation": 0.1,
    "snow": 0,
-   "cloudCover": 65,
+   "cloudCover": 51,
    "description": "Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-27T18:00:25Z",
+   "lastUpdated": "2026-11-28T06:00:28Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }
