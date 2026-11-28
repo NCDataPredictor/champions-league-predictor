@@ -2,7 +2,7 @@
  "liga": "Champions",
  "temporada": "2026-27",
  "version": "futbol-0.1",
- "actualizado": "2026-11-27T16:47Z",
+ "actualizado": "2026-11-28T01:36Z",
  "ejemplo": false,
  "partidos": [
   {
@@ -740,18 +740,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.663,
-    0.21,
-    0.127
+    0.673,
+    0.204,
+    0.123
    ],
-   "goles": 3.2,
-   "over25": 0.613,
-   "ambos": 0.569,
-   "corners": 11.9,
-   "amarillas": 3.49,
+   "goles": 3.26,
+   "over25": 0.625,
+   "ambos": 0.582,
+   "corners": 11.96,
+   "amarillas": 3.43,
    "marcador": [
     "2-1",
-    0.104
+    0.107
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -763,7 +763,7 @@
     "SAB": "prevista (últimos 10)"
    },
    "bajas": {
-    "VIL": 4,
+    "VIL": 2,
     "SAB": 1
    }
   },
@@ -779,18 +779,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.453,
-    0.265,
-    0.282
+    0.446,
+    0.266,
+    0.288
    ],
-   "goles": 3.26,
-   "over25": 0.622,
-   "ambos": 0.669,
-   "corners": 8.95,
-   "amarillas": 3.8,
+   "goles": 3.27,
+   "over25": 0.629,
+   "ambos": 0.678,
+   "corners": 9.0,
+   "amarillas": 3.83,
    "marcador": [
     "1-1",
-    0.112
+    0.116
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -803,7 +803,7 @@
    },
    "bajas": {
     "AEK": 2,
-    "GAL": 5
+    "GAL": 4
    }
   },
   {
@@ -818,18 +818,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.217,
+    0.223,
     0.239,
-    0.544
+    0.538
    ],
-   "goles": 3.77,
-   "over25": 0.717,
-   "ambos": 0.727,
-   "corners": 9.31,
-   "amarillas": 2.68,
+   "goles": 3.75,
+   "over25": 0.713,
+   "ambos": 0.725,
+   "corners": 9.35,
+   "amarillas": 2.7,
    "marcador": [
     "1-2",
-    0.1
+    0.096
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -857,15 +857,15 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.58,
-    0.221,
-    0.199
+    0.592,
+    0.216,
+    0.192
    ],
-   "goles": 4.15,
-   "over25": 0.77,
-   "ambos": 0.758,
-   "corners": 8.66,
-   "amarillas": 3.05,
+   "goles": 4.22,
+   "over25": 0.782,
+   "ambos": 0.766,
+   "corners": 8.64,
+   "amarillas": 3.1,
    "marcador": [
     "2-1",
     0.09
@@ -880,7 +880,7 @@
     "MCI": "prevista (últimos 10)"
    },
    "bajas": {
-    "BAR": 6,
+    "BAR": 5,
     "MCI": 1
    }
   },
@@ -1052,18 +1052,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.254,
-    0.281,
+    0.256,
+    0.277,
     0.466
    ],
-   "goles": 2.75,
-   "over25": 0.515,
-   "ambos": 0.577,
-   "corners": 7.79,
-   "amarillas": 4.45,
+   "goles": 2.78,
+   "over25": 0.526,
+   "ambos": 0.587,
+   "corners": 7.88,
+   "amarillas": 4.58,
    "marcador": [
     "1-1",
-    0.129
+    0.13
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -1075,7 +1075,7 @@
     "COM": "prevista (últimos 10)"
    },
    "bajas": {
-    "BET": 3,
+    "BET": 2,
     "COM": 6
    }
   },
@@ -1169,14 +1169,14 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.235,
-    0.264,
-    0.501
+    0.245,
+    0.263,
+    0.492
    ],
-   "goles": 3.13,
-   "over25": 0.596,
-   "ambos": 0.642,
-   "corners": 10.52,
+   "goles": 3.1,
+   "over25": 0.591,
+   "ambos": 0.638,
+   "corners": 10.39,
    "amarillas": 3.24,
    "marcador": [
     "1-1",
@@ -1193,7 +1193,7 @@
    },
    "bajas": {
     "BVB": 1,
-    "INT": 4
+    "INT": 3
    }
   },
   {
@@ -1247,18 +1247,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.149,
-    0.233,
-    0.619
+    0.142,
+    0.23,
+    0.628
    ],
-   "goles": 3.14,
-   "over25": 0.599,
-   "ambos": 0.597,
-   "corners": 8.48,
-   "amarillas": 2.53,
+   "goles": 3.1,
+   "over25": 0.59,
+   "ambos": 0.584,
+   "corners": 8.63,
+   "amarillas": 2.56,
    "marcador": [
     "1-2",
-    0.109
+    0.111
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -1270,7 +1270,7 @@
     "BOD": "prevista (últimos 10)"
    },
    "bajas": {
-    "LEN": 3,
+    "LEN": 2,
     "BOD": 0
    }
   },
@@ -1325,18 +1325,18 @@
    "derbi": null,
    "arbitro": "",
    "1x2": [
-    0.247,
-    0.272,
-    0.481
+    0.252,
+    0.278,
+    0.47
    ],
-   "goles": 2.86,
-   "over25": 0.539,
-   "ambos": 0.597,
-   "corners": 8.8,
-   "amarillas": 2.99,
+   "goles": 2.85,
+   "over25": 0.536,
+   "ambos": 0.595,
+   "corners": 8.78,
+   "amarillas": 3.04,
    "marcador": [
     "1-1",
-    0.125
+    0.127
    ],
    "n_picks": 0,
    "picks_desde": "2026-12-07T11:00Z",
@@ -1349,7 +1349,7 @@
    },
    "bajas": {
     "PSV": 1,
-    "ATM": 3
+    "ATM": 4
    }
   },
   {

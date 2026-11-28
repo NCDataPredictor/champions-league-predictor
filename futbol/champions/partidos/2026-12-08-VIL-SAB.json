@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 13,
-   "windSpeed": 2,
+   "windSpeed": 1,
    "windDirectionCardinal": "WNW",
    "iconCode": 33,
    "relativeHumidity": 62,
-   "precipChance": 8,
+   "precipChance": 3,
    "precipitation": 0,
    "snow": 0,
    "cloudCover": 26,
    "description": "Mostly Clear",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-27T06:00:24Z",
+   "lastUpdated": "2026-11-27T18:00:25Z",
    "localizedKey": "weather_condition_clear",
    "defaultTitle": "Clear"
   }
@@ -51,24 +51,10 @@
     "p_juega": 0.0
    },
    {
-    "jugador": "VIL-833219",
-    "nombre": "Juan Foyth",
-    "motivo": "lesion",
-    "regreso": "Back in training",
-    "p_juega": 0.0
-   },
-   {
     "jugador": "VIL-1695966",
     "nombre": "Alassane Diatta",
     "motivo": "lesion",
     "regreso": "Early December 2026",
-    "p_juega": 0.0
-   },
-   {
-    "jugador": "VIL-1311915",
-    "nombre": "Ilias Akhomach",
-    "motivo": "lesion",
-    "regreso": "Back in training",
     "p_juega": 0.0
    }
   ],

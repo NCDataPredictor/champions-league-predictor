@@ -23,17 +23,17 @@
   },
   "clima": {
    "temperature": 1,
-   "windSpeed": 4,
-   "windDirectionCardinal": "SSW",
+   "windSpeed": 3,
+   "windDirectionCardinal": "W",
    "iconCode": 11,
-   "relativeHumidity": 90,
-   "precipChance": 31,
+   "relativeHumidity": 92,
+   "precipChance": 30,
    "precipitation": 0.1,
    "snow": 0,
-   "cloudCover": 83,
+   "cloudCover": 79,
    "description": "Few Showers",
    "apiUsed": "forecast",
-   "lastUpdated": "2026-11-27T08:00:32Z",
+   "lastUpdated": "2026-11-27T20:00:31Z",
    "localizedKey": "weather_condition_light_rain",
    "defaultTitle": "Light Rain"
   }
@@ -99,6 +99,13 @@
     "nombre": "Ademola Lookman",
     "motivo": "lesion",
     "regreso": "Early January 2027",
+    "p_juega": 0.0
+   },
+   {
+    "jugador": "ATM-789066",
+    "nombre": "Cristian Romero",
+    "motivo": "lesion",
+    "regreso": "Back in training",
     "p_juega": 0.0
    }
   ]
